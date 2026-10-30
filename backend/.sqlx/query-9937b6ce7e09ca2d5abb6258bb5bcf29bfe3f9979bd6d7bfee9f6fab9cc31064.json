@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM demo.\"notif\" WHERE id=$1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "9937b6ce7e09ca2d5abb6258bb5bcf29bfe3f9979bd6d7bfee9f6fab9cc31064"
+}

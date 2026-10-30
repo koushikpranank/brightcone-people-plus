@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM demo.\"cycle\" WHERE id=$1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "7e52683ccdb2d5b02aa817d835b7c4a5f5e0ef351cb934d8aa089ec9f128d6c0"
+}

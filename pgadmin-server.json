@@ -1,0 +1,13 @@
+{
+  "Servers": {
+    "1": {
+      "Name": "Brightcone PostgreSQL 16",
+      "Group": "Servers",
+      "Host": "127.0.0.1",
+      "Port": 55440,
+      "MaintenanceDB": "brightcone_demo",
+      "Username": "postgres",
+      "SSLMode": "prefer"
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM live.\"onboard2\" WHERE id=$1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "01444d0ef2334f7b0ce91208bd607904b2f6144e660307c6409a4f6f09dccfd7"
+}

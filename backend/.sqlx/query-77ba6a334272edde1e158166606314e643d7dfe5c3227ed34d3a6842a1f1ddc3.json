@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM demo.\"referrals\" WHERE id=$1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "77ba6a334272edde1e158166606314e643d7dfe5c3227ed34d3a6842a1f1ddc3"
+}

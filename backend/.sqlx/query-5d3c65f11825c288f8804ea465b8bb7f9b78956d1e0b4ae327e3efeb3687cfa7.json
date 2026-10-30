@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM live.\"feedback\" WHERE id=$1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "5d3c65f11825c288f8804ea465b8bb7f9b78956d1e0b4ae327e3efeb3687cfa7"
+}

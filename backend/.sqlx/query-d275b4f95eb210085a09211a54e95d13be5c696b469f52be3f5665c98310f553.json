@@ -1,0 +1,16 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "INSERT INTO demo.\"leaves\" (id,position,record) VALUES ($1,$2,$3) ON CONFLICT(id) DO UPDATE SET position=EXCLUDED.position, record=EXCLUDED.record",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text",
+        "Int4",
+        "Jsonb"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "d275b4f95eb210085a09211a54e95d13be5c696b469f52be3f5665c98310f553"
+}

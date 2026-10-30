@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM live.\"emp\" WHERE id=$1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "abcb55f56cbe7a603d4adbe3deb0fe282c4e99428df7f857d0c14b7abfb5c72a"
+}

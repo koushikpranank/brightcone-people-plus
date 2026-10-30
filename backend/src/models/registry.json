@@ -1,0 +1,5870 @@
+{
+  "emp": {
+    "title": "Employee master data",
+    "one": "Employee",
+    "icon": "users",
+    "app": "people",
+    "desc": "The live employee register. Every other record links here by Employee ID.",
+    "f": [
+      {
+        "k": "first",
+        "l": "First name",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "last",
+        "l": "Last name",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "email",
+        "l": "Work email",
+        "t": "email",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "phone",
+        "l": "Phone",
+        "t": "tel",
+        "half": 1
+      },
+      {
+        "k": "dob",
+        "l": "Date of birth",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "gender",
+        "l": "Gender",
+        "t": "select",
+        "o": [
+          "Female",
+          "Male",
+          "Non-binary",
+          "Prefer not to say"
+        ],
+        "half": 1
+      },
+      {
+        "k": "department",
+        "l": "Department",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "half": 1
+      },
+      {
+        "k": "designation",
+        "l": "Designation",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "half": 1
+      },
+      {
+        "k": "grade",
+        "l": "Grade",
+        "t": "text",
+        "suggest": 1,
+        "half": 1
+      },
+      {
+        "k": "location",
+        "l": "Location",
+        "t": "text",
+        "suggest": 1,
+        "half": 1
+      },
+      {
+        "k": "manager",
+        "l": "Reporting manager",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "type",
+        "l": "Employment type",
+        "t": "select",
+        "o": [
+          "Full-time",
+          "Part-time",
+          "Contract",
+          "Intern",
+          "Consultant"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "doj",
+        "l": "Date of joining",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "probEnd",
+        "l": "Probation end",
+        "t": "date",
+        "half": 1,
+        "help": "Leave blank to set 6 months from joining"
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Probation",
+          "Active",
+          "Notice period",
+          "Exited"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "id",
+      "name",
+      "department",
+      "designation",
+      "location",
+      "doj",
+      "status"
+    ],
+    "filter": "department",
+    "kpi": [
+      "Active",
+      "Probation",
+      "Notice period",
+      "Exited"
+    ],
+    "unique": [
+      "email"
+    ],
+    "k": "emp",
+    "st": "status",
+    "statuses": [
+      "Probation",
+      "Active",
+      "Notice period",
+      "Exited"
+    ],
+    "idp": "EMP-",
+    "defaults": {}
+  },
+  "profile": {
+    "title": "Employee profiles",
+    "one": "Profile",
+    "icon": "user",
+    "app": "people",
+    "desc": "Personal, emergency and statutory details for each employee. Sensitive numbers are masked in lists and exports.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "pemail",
+        "l": "Personal email",
+        "t": "email",
+        "half": 1
+      },
+      {
+        "k": "marital",
+        "l": "Marital status",
+        "t": "select",
+        "o": [
+          "Single",
+          "Married",
+          "Other"
+        ],
+        "half": 1
+      },
+      {
+        "k": "address",
+        "l": "Current address",
+        "t": "textarea"
+      },
+      {
+        "k": "ecName",
+        "l": "Emergency contact name",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "ecPhone",
+        "l": "Emergency contact phone",
+        "t": "tel",
+        "half": 1
+      },
+      {
+        "k": "blood",
+        "l": "Blood group",
+        "t": "select",
+        "o": [
+          "A+",
+          "A-",
+          "B+",
+          "B-",
+          "O+",
+          "O-",
+          "AB+",
+          "AB-"
+        ],
+        "half": 1
+      },
+      {
+        "k": "pan",
+        "l": "PAN",
+        "t": "text",
+        "mask": 1,
+        "half": 1
+      },
+      {
+        "k": "aadhaar",
+        "l": "Aadhaar (last 4 digits only)",
+        "t": "text",
+        "half": 1,
+        "ph": "1234"
+      },
+      {
+        "k": "uan",
+        "l": "UAN",
+        "t": "text",
+        "mask": 1,
+        "half": 1
+      },
+      {
+        "k": "bank",
+        "l": "Bank name",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "acct",
+        "l": "Account number",
+        "t": "text",
+        "mask": 1,
+        "half": 1
+      },
+      {
+        "k": "ifsc",
+        "l": "IFSC",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Verification",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Verified"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "pemail",
+      "blood",
+      "pan",
+      "acct",
+      "status"
+    ],
+    "kpi": [
+      "Pending",
+      "Verified"
+    ],
+    "unique": [
+      "emp"
+    ],
+    "k": "profile",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Verified"
+    ],
+    "idp": "PRO-",
+    "defaults": {}
+  },
+  "probation": {
+    "title": "Probation tracking",
+    "one": "Probation record",
+    "icon": "clock",
+    "app": "people",
+    "desc": "Every employee on probation, their end date and the outcome. Overdue when the end date passes without a decision.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "start",
+        "l": "Probation start",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "end",
+        "l": "Probation end",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "reviewer",
+        "l": "Reviewer",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "outcome",
+        "l": "Outcome",
+        "t": "select",
+        "o": [
+          "Confirm",
+          "Extend",
+          "Terminate"
+        ],
+        "half": 1
+      },
+      {
+        "k": "extTill",
+        "l": "Extended till",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "In review",
+          "Confirmed",
+          "Extended"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "remarks",
+        "l": "Remarks",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "emp",
+      "start",
+      "end",
+      "reviewer",
+      "outcome",
+      "status"
+    ],
+    "due": "end",
+    "closed": [
+      "Confirmed"
+    ],
+    "kpi": [
+      "Pending",
+      "In review",
+      "Confirmed",
+      "Overdue"
+    ],
+    "k": "probation",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "In review",
+      "Confirmed",
+      "Extended",
+      "Overdue"
+    ],
+    "idp": "PRO-",
+    "defaults": {}
+  },
+  "docs": {
+    "title": "Employee documents",
+    "one": "Document",
+    "icon": "doc",
+    "app": "people",
+    "desc": "ID proofs, certificates and letters for each employee, with verification and expiry.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "dtype",
+        "l": "Document type",
+        "t": "select",
+        "o": [
+          "Aadhaar",
+          "PAN",
+          "Passport",
+          "Degree certificate",
+          "Experience letter",
+          "Relieving letter",
+          "Offer letter",
+          "Appointment letter",
+          "Address proof",
+          "Photograph",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "dno",
+        "l": "Document number",
+        "t": "text",
+        "mask": 1,
+        "half": 1
+      },
+      {
+        "k": "file",
+        "l": "File",
+        "t": "file"
+      },
+      {
+        "k": "issued",
+        "l": "Issue date",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "expiry",
+        "l": "Expiry date",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "verifiedBy",
+        "l": "Verified by",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Verified",
+          "Rejected",
+          "Expired"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "dtype",
+      "dno",
+      "file",
+      "expiry",
+      "status"
+    ],
+    "filter": "dtype",
+    "kpi": [
+      "Pending",
+      "Verified",
+      "Rejected",
+      "Expired"
+    ],
+    "k": "docs",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Verified",
+      "Rejected",
+      "Expired"
+    ],
+    "idp": "DOC-",
+    "defaults": {}
+  },
+  "exit": {
+    "title": "Employee exit management",
+    "one": "Exit",
+    "icon": "logout",
+    "app": "people",
+    "desc": "Resignations and exits from notice to final settlement. Completing an exit marks the employee as Exited.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "etype",
+        "l": "Exit type",
+        "t": "select",
+        "o": [
+          "Resignation",
+          "Termination",
+          "Retirement",
+          "Contract end",
+          "Absconding"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "resDate",
+        "l": "Resignation date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "lwd",
+        "l": "Last working day",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "notice",
+        "l": "Notice period (days)",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "reason",
+        "l": "Reason",
+        "t": "textarea"
+      },
+      {
+        "k": "handover",
+        "l": "Handover to",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "assets",
+        "l": "Asset return",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Done",
+          "Not applicable"
+        ],
+        "half": 1
+      },
+      {
+        "k": "interview",
+        "l": "Exit interview date",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "ff",
+        "l": "F&F settlement",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Processed",
+          "Paid"
+        ],
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Approved",
+          "In clearance",
+          "Completed"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "etype",
+      "resDate",
+      "lwd",
+      "assets",
+      "ff",
+      "status"
+    ],
+    "due": "lwd",
+    "closed": [
+      "Completed"
+    ],
+    "kpi": [
+      "Pending",
+      "In clearance",
+      "Completed",
+      "Overdue"
+    ],
+    "filter": "etype",
+    "k": "exit",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Approved",
+      "In clearance",
+      "Completed",
+      "Overdue"
+    ],
+    "idp": "EXI-",
+    "defaults": {}
+  },
+  "appraisal": {
+    "title": "Appraisal tracker",
+    "one": "Appraisal",
+    "icon": "chart",
+    "app": "people",
+    "desc": "Where each employee is in the appraisal cycle. Overdue when the review due date passes.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "cycle",
+        "l": "Appraisal cycle",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "half": 1,
+        "ph": "e.g. FY 2026-27 annual"
+      },
+      {
+        "k": "appraiser",
+        "l": "Appraiser",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "due",
+        "l": "Review due",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "rating",
+        "l": "Final rating (1–5)",
+        "t": "select",
+        "o": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "half": 1
+      },
+      {
+        "k": "incPct",
+        "l": "Recommended increment (%)",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Self review done",
+          "Manager review done",
+          "Completed"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "released",
+        "l": "Rating released to employee",
+        "t": "yesno",
+        "half": 1
+      },
+      {
+        "k": "notes",
+        "l": "Notes",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "emp",
+      "cycle",
+      "appraiser",
+      "due",
+      "rating",
+      "incPct",
+      "status"
+    ],
+    "due": "due",
+    "closed": [
+      "Completed"
+    ],
+    "filter": "cycle",
+    "kpi": [
+      "Pending",
+      "Manager review done",
+      "Completed",
+      "Overdue"
+    ],
+    "k": "appraisal",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Self review done",
+      "Manager review done",
+      "Completed",
+      "Overdue"
+    ],
+    "idp": "APP-",
+    "defaults": {}
+  },
+  "reviews": {
+    "title": "Employee performance reviews",
+    "one": "Review",
+    "icon": "chart",
+    "app": "people",
+    "desc": "Written reviews with goals, strengths and areas to improve.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "reviewer",
+        "l": "Reviewer",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "from",
+        "l": "Period from",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "to",
+        "l": "Period to",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "goals",
+        "l": "Goals achieved",
+        "t": "textarea"
+      },
+      {
+        "k": "strengths",
+        "l": "Strengths",
+        "t": "textarea"
+      },
+      {
+        "k": "improve",
+        "l": "Areas to improve",
+        "t": "textarea"
+      },
+      {
+        "k": "rating",
+        "l": "Rating (1–5)",
+        "t": "select",
+        "o": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "half": 1
+      },
+      {
+        "k": "rdate",
+        "l": "Review date",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Draft",
+          "Submitted",
+          "Acknowledged"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "reviewer",
+      "from",
+      "to",
+      "rating",
+      "status"
+    ],
+    "kpi": [
+      "Draft",
+      "Submitted",
+      "Acknowledged"
+    ],
+    "k": "reviews",
+    "st": "status",
+    "statuses": [
+      "Draft",
+      "Submitted",
+      "Acknowledged"
+    ],
+    "idp": "REV-",
+    "defaults": {}
+  },
+  "probrev": {
+    "title": "Probation reviews",
+    "one": "Probation review",
+    "icon": "check",
+    "app": "people",
+    "desc": "Assessment at the end of probation. A completed review with “Confirm” makes the employee Active and closes their probation record.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "reviewer",
+        "l": "Reviewer",
+        "t": "emp",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "pEnd",
+        "l": "Probation end",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "perf",
+        "l": "Performance",
+        "t": "select",
+        "o": [
+          "Exceeds",
+          "Meets",
+          "Below"
+        ],
+        "half": 1
+      },
+      {
+        "k": "conduct",
+        "l": "Conduct & attendance",
+        "t": "select",
+        "o": [
+          "Good",
+          "Satisfactory",
+          "Needs improvement"
+        ],
+        "half": 1
+      },
+      {
+        "k": "rec",
+        "l": "Recommendation",
+        "t": "select",
+        "o": [
+          "Confirm",
+          "Extend",
+          "Terminate"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "rdate",
+        "l": "Review date",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "comments",
+        "l": "Comments",
+        "t": "textarea"
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Completed"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "reviewer",
+      "pEnd",
+      "perf",
+      "rec",
+      "status"
+    ],
+    "due": "pEnd",
+    "closed": [
+      "Completed"
+    ],
+    "kpi": [
+      "Pending",
+      "Completed",
+      "Overdue"
+    ],
+    "defaults": {
+      "status": "Pending"
+    },
+    "k": "probrev",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Completed",
+      "Overdue"
+    ],
+    "idp": "PRO-"
+  },
+  "increments": {
+    "title": "Increment history",
+    "one": "Increment",
+    "icon": "pay",
+    "app": "people",
+    "desc": "Every pay change for each employee. Approved salary revisions in Payroll are added here automatically.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "eff",
+        "l": "Effective date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "itype",
+        "l": "Type",
+        "t": "select",
+        "o": [
+          "Annual increment",
+          "Promotion",
+          "Market correction",
+          "Probation confirmation",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "prev",
+        "l": "Previous CTC (₹/year)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "next",
+        "l": "New CTC (₹/year)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "pct",
+        "l": "Increment %",
+        "t": "number",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "approver",
+        "l": "Approved by",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "letter",
+        "l": "Letter issued",
+        "t": "yesno",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Approved",
+          "Completed"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "eff",
+      "itype",
+      "prev",
+      "next",
+      "pct",
+      "status"
+    ],
+    "kpi": [
+      "Pending",
+      "Approved",
+      "Completed"
+    ],
+    "filter": "itype",
+    "k": "increments",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Approved",
+      "Completed"
+    ],
+    "idp": "INC-",
+    "defaults": {}
+  },
+  "recog": {
+    "title": "Employee recognition",
+    "one": "Recognition",
+    "icon": "star",
+    "app": "people",
+    "desc": "Awards and spot recognition, from nomination to award.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "award",
+        "l": "Award",
+        "t": "select",
+        "o": [
+          "Star performer",
+          "Team player",
+          "Customer hero",
+          "Spot award",
+          "Innovation award",
+          "Long service"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "by",
+        "l": "Nominated by",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "date",
+        "l": "Date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "reward",
+        "l": "Reward (₹)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "citation",
+        "l": "Citation",
+        "t": "textarea"
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Nominated",
+          "Approved",
+          "Awarded"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "award",
+      "by",
+      "date",
+      "reward",
+      "status"
+    ],
+    "filter": "award",
+    "kpi": [
+      "Nominated",
+      "Approved",
+      "Awarded"
+    ],
+    "k": "recog",
+    "st": "status",
+    "statuses": [
+      "Nominated",
+      "Approved",
+      "Awarded"
+    ],
+    "idp": "REC-",
+    "defaults": {}
+  },
+  "assets2": {
+    "title": "Laptop & asset management",
+    "one": "Asset",
+    "icon": "laptop",
+    "app": "people",
+    "desc": "Company laptops and equipment, who has them, and their condition.",
+    "f": [
+      {
+        "k": "tag",
+        "l": "Asset tag",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "atype",
+        "l": "Asset type",
+        "t": "select",
+        "o": [
+          "Laptop",
+          "Desktop",
+          "Monitor",
+          "Mobile phone",
+          "Headset",
+          "Keyboard & mouse",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "model",
+        "l": "Make & model",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "serial",
+        "l": "Serial number",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "purchase",
+        "l": "Purchase date",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "warranty",
+        "l": "Warranty till",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "emp",
+        "l": "Assigned to",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "assigned",
+        "l": "Assigned on",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "condition",
+        "l": "Condition",
+        "t": "select",
+        "o": [
+          "New",
+          "Good",
+          "Fair",
+          "Damaged"
+        ],
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "In stock",
+          "Assigned",
+          "In repair",
+          "Returned",
+          "Retired"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "tag",
+      "atype",
+      "model",
+      "emp",
+      "warranty",
+      "status"
+    ],
+    "filter": "atype",
+    "unique": [
+      "tag"
+    ],
+    "kpi": [
+      "In stock",
+      "Assigned",
+      "In repair",
+      "Retired"
+    ],
+    "k": "assets2",
+    "st": "status",
+    "statuses": [
+      "In stock",
+      "Assigned",
+      "In repair",
+      "Returned",
+      "Retired"
+    ],
+    "idp": "AS-",
+    "defaults": {}
+  },
+  "cards": {
+    "title": "Access card tracker",
+    "one": "Access card",
+    "icon": "idcard",
+    "app": "people",
+    "desc": "Office access cards: who holds them, validity and returns.",
+    "f": [
+      {
+        "k": "cardNo",
+        "l": "Card number",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "ctype",
+        "l": "Card type",
+        "t": "select",
+        "o": [
+          "Employee",
+          "Temporary",
+          "Visitor",
+          "Contractor"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "emp",
+        "l": "Issued to",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "holder",
+        "l": "Holder name (non-employee)",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "issued",
+        "l": "Issued on",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "valid",
+        "l": "Valid till",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "zones",
+        "l": "Access zones",
+        "t": "text",
+        "suggest": 1
+      },
+      {
+        "k": "returned",
+        "l": "Returned on",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Active",
+          "Lost",
+          "Returned",
+          "Deactivated"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "cardNo",
+      "ctype",
+      "emp",
+      "issued",
+      "valid",
+      "status"
+    ],
+    "due": "valid",
+    "closed": [
+      "Returned",
+      "Deactivated",
+      "Lost"
+    ],
+    "unique": [
+      "cardNo"
+    ],
+    "filter": "ctype",
+    "kpi": [
+      "Active",
+      "Lost",
+      "Returned",
+      "Overdue"
+    ],
+    "k": "cards",
+    "st": "status",
+    "statuses": [
+      "Active",
+      "Lost",
+      "Returned",
+      "Deactivated",
+      "Overdue"
+    ],
+    "idp": "AC-",
+    "defaults": {}
+  },
+  "facilities": {
+    "title": "Office facilities",
+    "one": "Facility request",
+    "icon": "building",
+    "app": "people",
+    "desc": "Maintenance and facility requests for the office, with owners and due dates.",
+    "f": [
+      {
+        "k": "facility",
+        "l": "Facility",
+        "t": "select",
+        "o": [
+          "Meeting room",
+          "Housekeeping",
+          "Electrical",
+          "Air conditioning",
+          "Furniture",
+          "Internet & Wi-Fi",
+          "Pantry",
+          "Security",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "location",
+        "l": "Location / floor",
+        "t": "text",
+        "suggest": 1,
+        "half": 1
+      },
+      {
+        "k": "raisedBy",
+        "l": "Raised by",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "priority",
+        "l": "Priority",
+        "t": "select",
+        "o": [
+          "Low",
+          "Normal",
+          "High",
+          "Urgent"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "desc",
+        "l": "Description",
+        "t": "textarea",
+        "req": 1
+      },
+      {
+        "k": "owner",
+        "l": "Assigned to",
+        "t": "text",
+        "suggest": 1,
+        "half": 1
+      },
+      {
+        "k": "due",
+        "l": "Due date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "In progress",
+          "Completed"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "id",
+      "facility",
+      "location",
+      "priority",
+      "owner",
+      "due",
+      "status"
+    ],
+    "due": "due",
+    "closed": [
+      "Completed"
+    ],
+    "filter": "facility",
+    "kpi": [
+      "Pending",
+      "In progress",
+      "Completed",
+      "Overdue"
+    ],
+    "k": "facilities",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "In progress",
+      "Completed",
+      "Overdue"
+    ],
+    "idp": "FR-",
+    "defaults": {}
+  },
+  "vendors": {
+    "title": "Vendor management",
+    "one": "Vendor",
+    "icon": "briefcase",
+    "app": "people",
+    "desc": "Office and HR vendors with contracts and renewal dates.",
+    "f": [
+      {
+        "k": "name",
+        "l": "Vendor name",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "cat",
+        "l": "Category",
+        "t": "select",
+        "o": [
+          "IT & hardware",
+          "Housekeeping",
+          "Security",
+          "Catering",
+          "Transport",
+          "Stationery",
+          "Recruitment agency",
+          "Insurance",
+          "Payroll / compliance",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "contact",
+        "l": "Contact person",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "phone",
+        "l": "Phone",
+        "t": "tel",
+        "half": 1
+      },
+      {
+        "k": "email",
+        "l": "Email",
+        "t": "email",
+        "half": 1
+      },
+      {
+        "k": "gstin",
+        "l": "GSTIN",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "pan",
+        "l": "PAN",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "terms",
+        "l": "Payment terms",
+        "t": "select",
+        "o": [
+          "Advance",
+          "Net 15",
+          "Net 30",
+          "Net 45",
+          "Net 60"
+        ],
+        "half": 1
+      },
+      {
+        "k": "start",
+        "l": "Contract start",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "end",
+        "l": "Contract end",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "value",
+        "l": "Monthly value (₹)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending approval",
+          "Active",
+          "Expired",
+          "Terminated"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "name",
+      "cat",
+      "contact",
+      "end",
+      "value",
+      "status"
+    ],
+    "due": "end",
+    "closed": [
+      "Expired",
+      "Terminated"
+    ],
+    "filter": "cat",
+    "kpi": [
+      "Active",
+      "Pending approval",
+      "Expired",
+      "Overdue"
+    ],
+    "k": "vendors",
+    "st": "status",
+    "statuses": [
+      "Pending approval",
+      "Active",
+      "Expired",
+      "Terminated",
+      "Overdue"
+    ],
+    "idp": "VN-",
+    "defaults": {}
+  },
+  "manpower": {
+    "title": "Manpower requirements",
+    "one": "Requirement",
+    "icon": "briefcase",
+    "app": "recruit",
+    "desc": "Approved headcount to hire against. Candidates are tracked against these requirements.",
+    "f": [
+      {
+        "k": "department",
+        "l": "Department",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "sugFrom": "emp",
+        "half": 1
+      },
+      {
+        "k": "designation",
+        "l": "Designation",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "sugFrom": "emp",
+        "half": 1
+      },
+      {
+        "k": "positions",
+        "l": "Positions",
+        "t": "number",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "etype",
+        "l": "Employment type",
+        "t": "select",
+        "o": [
+          "Full-time",
+          "Contract",
+          "Intern",
+          "Part-time"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "location",
+        "l": "Location",
+        "t": "text",
+        "suggest": 1,
+        "sugFrom": "emp",
+        "half": 1
+      },
+      {
+        "k": "exp",
+        "l": "Experience (years)",
+        "t": "text",
+        "half": 1,
+        "ph": "e.g. 3-5"
+      },
+      {
+        "k": "budget",
+        "l": "Budget CTC (₹/year)",
+        "t": "text",
+        "half": 1,
+        "ph": "e.g. 12-15 lakh"
+      },
+      {
+        "k": "reason",
+        "l": "Reason",
+        "t": "select",
+        "o": [
+          "New position",
+          "Replacement"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "replacing",
+        "l": "Replacing",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "hm",
+        "l": "Hiring manager",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "by",
+        "l": "Required by",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Approved",
+          "On hold",
+          "Closed"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "jd",
+        "l": "Job description",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "id",
+      "designation",
+      "department",
+      "positions",
+      "hm",
+      "by",
+      "status"
+    ],
+    "due": "by",
+    "closed": [
+      "Closed"
+    ],
+    "filter": "department",
+    "kpi": [
+      "Pending",
+      "Approved",
+      "On hold",
+      "Overdue"
+    ],
+    "k": "manpower",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Approved",
+      "On hold",
+      "Closed",
+      "Overdue"
+    ],
+    "idp": "MR-",
+    "defaults": {}
+  },
+  "cands": {
+    "title": "Candidate tracker",
+    "one": "Candidate",
+    "icon": "users",
+    "app": "recruit",
+    "desc": "Every applicant and their stage. “Convert to employee” creates their Employee ID and sets up onboarding.",
+    "f": [
+      {
+        "k": "name",
+        "l": "Full name",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "email",
+        "l": "Email",
+        "t": "email",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "phone",
+        "l": "Phone",
+        "t": "tel",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "req",
+        "l": "Applied for",
+        "t": "ref",
+        "ref": "manpower",
+        "half": 1
+      },
+      {
+        "k": "source",
+        "l": "Source",
+        "t": "select",
+        "o": [
+          "Careers page",
+          "LinkedIn",
+          "Naukri",
+          "Referral",
+          "Agency",
+          "Campus",
+          "Walk-in",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "exp",
+        "l": "Total experience (years)",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "cctc",
+        "l": "Current CTC (₹/year)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "ectc",
+        "l": "Expected CTC (₹/year)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "notice",
+        "l": "Notice period (days)",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "loc",
+        "l": "Current location",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "resume",
+        "l": "Resume",
+        "t": "file"
+      },
+      {
+        "k": "consent",
+        "l": "Consent to store data",
+        "t": "yesno",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "stage",
+        "l": "Stage",
+        "t": "select",
+        "o": [
+          "Applied",
+          "Screening",
+          "Interview",
+          "Selected",
+          "Offered",
+          "Joined",
+          "Rejected",
+          "On hold"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "empId",
+        "l": "Employee ID",
+        "t": "text",
+        "ro": 1,
+        "noForm": 1
+      }
+    ],
+    "st": "stage",
+    "cols": [
+      "id",
+      "name",
+      "req",
+      "source",
+      "exp",
+      "ectc",
+      "stage"
+    ],
+    "filter": "source",
+    "kpi": [
+      "Applied",
+      "Interview",
+      "Offered",
+      "Joined"
+    ],
+    "unique": [
+      "email"
+    ],
+    "k": "cands",
+    "statuses": [
+      "Applied",
+      "Screening",
+      "Interview",
+      "Selected",
+      "Offered",
+      "Joined",
+      "Rejected",
+      "On hold"
+    ],
+    "idp": "CAN-",
+    "defaults": {}
+  },
+  "interviews2": {
+    "title": "Interview scheduling",
+    "one": "Interview",
+    "icon": "calendar",
+    "app": "recruit",
+    "desc": "Interview rounds with panel, time, feedback and result.",
+    "f": [
+      {
+        "k": "cand",
+        "l": "Candidate",
+        "t": "ref",
+        "ref": "cands",
+        "req": 1
+      },
+      {
+        "k": "round",
+        "l": "Round",
+        "t": "select",
+        "o": [
+          "HR screening",
+          "Technical 1",
+          "Technical 2",
+          "Managerial",
+          "Final / founder"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "mode",
+        "l": "Mode",
+        "t": "select",
+        "o": [
+          "In person",
+          "Video call",
+          "Phone"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "date",
+        "l": "Date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "time",
+        "l": "Time",
+        "t": "time",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "panel",
+        "l": "Interviewer",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "venue",
+        "l": "Venue or meeting link",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "rating",
+        "l": "Rating (1–5)",
+        "t": "select",
+        "o": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "half": 1
+      },
+      {
+        "k": "result",
+        "l": "Result",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Selected",
+          "Rejected",
+          "On hold"
+        ],
+        "half": 1
+      },
+      {
+        "k": "feedback",
+        "l": "Feedback",
+        "t": "textarea"
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Scheduled",
+          "Completed",
+          "Rescheduled",
+          "Cancelled"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "cand",
+      "round",
+      "date",
+      "time",
+      "panel",
+      "result",
+      "status"
+    ],
+    "filter": "round",
+    "kpi": [
+      "Scheduled",
+      "Completed",
+      "Rescheduled",
+      "Cancelled"
+    ],
+    "k": "interviews2",
+    "st": "status",
+    "statuses": [
+      "Scheduled",
+      "Completed",
+      "Rescheduled",
+      "Cancelled"
+    ],
+    "idp": "INT-",
+    "defaults": {}
+  },
+  "offers2": {
+    "title": "Offer letters",
+    "one": "Offer",
+    "icon": "send",
+    "app": "recruit",
+    "desc": "Offers from draft to acceptance. Overdue when the offer passes its valid-till date unanswered.",
+    "f": [
+      {
+        "k": "cand",
+        "l": "Candidate",
+        "t": "ref",
+        "ref": "cands",
+        "req": 1
+      },
+      {
+        "k": "designation",
+        "l": "Designation",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "sugFrom": "emp",
+        "half": 1
+      },
+      {
+        "k": "department",
+        "l": "Department",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "sugFrom": "emp",
+        "half": 1
+      },
+      {
+        "k": "ctc",
+        "l": "Annual CTC (₹)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "doj",
+        "l": "Joining date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "odate",
+        "l": "Offer date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "valid",
+        "l": "Valid till",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "approver",
+        "l": "Approved by",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "file",
+        "l": "Offer letter file",
+        "t": "file",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Draft",
+          "Pending approval",
+          "Approved",
+          "Sent",
+          "Accepted",
+          "Declined"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "id",
+      "cand",
+      "designation",
+      "ctc",
+      "doj",
+      "valid",
+      "status"
+    ],
+    "due": "valid",
+    "closed": [
+      "Accepted",
+      "Declined"
+    ],
+    "kpi": [
+      "Pending approval",
+      "Sent",
+      "Accepted",
+      "Overdue"
+    ],
+    "k": "offers2",
+    "st": "status",
+    "statuses": [
+      "Draft",
+      "Pending approval",
+      "Approved",
+      "Sent",
+      "Accepted",
+      "Declined",
+      "Overdue"
+    ],
+    "idp": "OF-",
+    "defaults": {}
+  },
+  "joining": {
+    "title": "Joining formalities",
+    "one": "Joining record",
+    "icon": "login",
+    "app": "recruit",
+    "desc": "Day-one paperwork and setup for each new joiner. Created automatically when a candidate is converted.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "doj",
+        "l": "Joining date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "docs",
+        "l": "Documents collected",
+        "t": "select",
+        "o": [
+          "Not started",
+          "Partial",
+          "All collected"
+        ],
+        "half": 1
+      },
+      {
+        "k": "idcard",
+        "l": "ID card issued",
+        "t": "yesno",
+        "half": 1
+      },
+      {
+        "k": "mail",
+        "l": "Work email created",
+        "t": "yesno",
+        "half": 1
+      },
+      {
+        "k": "laptop",
+        "l": "Laptop issued",
+        "t": "yesno",
+        "half": 1
+      },
+      {
+        "k": "bankd",
+        "l": "Bank details received",
+        "t": "yesno",
+        "half": 1
+      },
+      {
+        "k": "pf",
+        "l": "PF / nomination form",
+        "t": "yesno",
+        "half": 1
+      },
+      {
+        "k": "appt",
+        "l": "Appointment letter issued",
+        "t": "yesno",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "In progress",
+          "Completed"
+        ],
+        "req": 1
+      },
+      {
+        "k": "notes",
+        "l": "Notes",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "emp",
+      "doj",
+      "docs",
+      "idcard",
+      "mail",
+      "laptop",
+      "status"
+    ],
+    "due": "doj",
+    "closed": [
+      "Completed"
+    ],
+    "kpi": [
+      "Pending",
+      "In progress",
+      "Completed",
+      "Overdue"
+    ],
+    "k": "joining",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "In progress",
+      "Completed",
+      "Overdue"
+    ],
+    "idp": "JOI-",
+    "defaults": {}
+  },
+  "onboard2": {
+    "title": "Onboarding checklist",
+    "one": "Onboarding task",
+    "icon": "list",
+    "app": "recruit",
+    "desc": "Tasks to settle each new joiner in. Use “Add standard checklist” to create the usual 8 tasks in one step.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "task",
+        "l": "Task",
+        "t": "text",
+        "req": 1,
+        "suggest": 1
+      },
+      {
+        "k": "owner",
+        "l": "Owner",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "due",
+        "l": "Due date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Completed"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "done",
+        "l": "Completed on",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "notes",
+        "l": "Notes",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "emp",
+      "task",
+      "owner",
+      "due",
+      "status"
+    ],
+    "due": "due",
+    "closed": [
+      "Completed"
+    ],
+    "kpi": [
+      "Pending",
+      "Completed",
+      "Overdue"
+    ],
+    "k": "onboard2",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Completed",
+      "Overdue"
+    ],
+    "idp": "ONB-",
+    "defaults": {}
+  },
+  "interns": {
+    "title": "Internship management",
+    "one": "Intern",
+    "icon": "learn",
+    "app": "recruit",
+    "desc": "Interns, mentors, projects and evaluations. “Convert to employee” moves a good intern into the employee register.",
+    "f": [
+      {
+        "k": "name",
+        "l": "Intern name",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "email",
+        "l": "Email",
+        "t": "email",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "phone",
+        "l": "Phone",
+        "t": "tel",
+        "half": 1
+      },
+      {
+        "k": "college",
+        "l": "College",
+        "t": "text",
+        "suggest": 1,
+        "half": 1
+      },
+      {
+        "k": "course",
+        "l": "Course",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "department",
+        "l": "Department",
+        "t": "text",
+        "suggest": 1,
+        "sugFrom": "emp",
+        "half": 1
+      },
+      {
+        "k": "mentor",
+        "l": "Mentor",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "stipend",
+        "l": "Monthly stipend (₹)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "start",
+        "l": "Start date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "end",
+        "l": "End date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "project",
+        "l": "Project",
+        "t": "text"
+      },
+      {
+        "k": "eval",
+        "l": "Evaluation",
+        "t": "select",
+        "o": [
+          "Not evaluated",
+          "Excellent",
+          "Good",
+          "Average",
+          "Poor"
+        ],
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Active",
+          "Extended",
+          "Completed",
+          "Converted",
+          "Discontinued"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "empId",
+        "l": "Employee ID",
+        "t": "text",
+        "ro": 1,
+        "noForm": 1
+      }
+    ],
+    "cols": [
+      "name",
+      "college",
+      "department",
+      "mentor",
+      "start",
+      "end",
+      "status"
+    ],
+    "due": "end",
+    "closed": [
+      "Completed",
+      "Converted",
+      "Discontinued"
+    ],
+    "filter": "department",
+    "kpi": [
+      "Active",
+      "Completed",
+      "Converted",
+      "Overdue"
+    ],
+    "unique": [
+      "email"
+    ],
+    "k": "interns",
+    "st": "status",
+    "statuses": [
+      "Active",
+      "Extended",
+      "Completed",
+      "Converted",
+      "Discontinued",
+      "Overdue"
+    ],
+    "idp": "IN-",
+    "defaults": {}
+  },
+  "att": {
+    "title": "Daily attendance",
+    "one": "Attendance entry",
+    "icon": "clock",
+    "app": "shift",
+    "desc": "One entry per employee per day. Hours are worked out from in and out times.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "date",
+        "l": "Date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "mark",
+        "l": "Attendance",
+        "t": "select",
+        "o": [
+          "Present",
+          "Absent",
+          "Half day",
+          "On leave",
+          "Work from home",
+          "Holiday",
+          "Week off"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "in",
+        "l": "In time",
+        "t": "time",
+        "half": 1
+      },
+      {
+        "k": "out",
+        "l": "Out time",
+        "t": "time",
+        "half": 1
+      },
+      {
+        "k": "hours",
+        "l": "Hours worked",
+        "t": "text",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Entry status",
+        "t": "select",
+        "o": [
+          "Recorded",
+          "Pending",
+          "Regularised"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "remarks",
+        "l": "Remarks",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "emp",
+      "date",
+      "mark",
+      "in",
+      "out",
+      "hours",
+      "status"
+    ],
+    "filter": "mark",
+    "kpi": [
+      "Recorded",
+      "Pending",
+      "Regularised"
+    ],
+    "defaults": {
+      "date": "2026-10-30",
+      "status": "Recorded",
+      "mark": "Present"
+    },
+    "k": "att",
+    "st": "status",
+    "statuses": [
+      "Recorded",
+      "Pending",
+      "Regularised"
+    ],
+    "idp": "ATT-"
+  },
+  "logs": {
+    "title": "Login & logout tracking",
+    "one": "Login record",
+    "icon": "login",
+    "app": "shift",
+    "desc": "Clock-in and clock-out times. Use “Log in / out now” to stamp the current time for an employee.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "date",
+        "l": "Date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "source",
+        "l": "Source",
+        "t": "select",
+        "o": [
+          "Web",
+          "Biometric",
+          "Mobile",
+          "Manual entry"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "login",
+        "l": "Login time",
+        "t": "time",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "logout",
+        "l": "Logout time",
+        "t": "time",
+        "half": 1
+      },
+      {
+        "k": "hours",
+        "l": "Total hours",
+        "t": "text",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "place",
+        "l": "Location / IP",
+        "t": "text",
+        "half": 1
+      }
+    ],
+    "st": null,
+    "statuses": [
+      "Pending",
+      "Completed"
+    ],
+    "cols": [
+      "emp",
+      "date",
+      "login",
+      "logout",
+      "hours",
+      "source"
+    ],
+    "filter": "source",
+    "kpi": [
+      "Pending",
+      "Completed"
+    ],
+    "defaults": {
+      "date": "2026-10-30",
+      "source": "Manual entry"
+    },
+    "k": "logs",
+    "idp": "LOG-"
+  },
+  "leaves2": {
+    "title": "Leave requests",
+    "one": "Leave request",
+    "icon": "leave",
+    "app": "shift",
+    "desc": "Leave applications and approvals. Approved days count against Leave Balance.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "ltype",
+        "l": "Leave type",
+        "t": "select",
+        "o": [
+          "Casual leave",
+          "Sick leave",
+          "Earned leave",
+          "Comp-off",
+          "Loss of pay",
+          "Maternity leave",
+          "Paternity leave",
+          "Bereavement leave"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "half",
+        "l": "Half day",
+        "t": "yesno",
+        "half": 1
+      },
+      {
+        "k": "from",
+        "l": "From",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "to",
+        "l": "To",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "days",
+        "l": "Working days",
+        "t": "number",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "approver",
+        "l": "Approver",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "reason",
+        "l": "Reason",
+        "t": "textarea"
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Approved",
+          "Rejected",
+          "Cancelled"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "ltype",
+      "from",
+      "to",
+      "days",
+      "approver",
+      "status"
+    ],
+    "filter": "ltype",
+    "kpi": [
+      "Pending",
+      "Approved",
+      "Rejected",
+      "Cancelled"
+    ],
+    "defaults": {
+      "status": "Pending",
+      "half": "No"
+    },
+    "k": "leaves2",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Approved",
+      "Rejected",
+      "Cancelled"
+    ],
+    "idp": "LV-"
+  },
+  "wfh": {
+    "title": "Work from home tracker",
+    "one": "WFH request",
+    "icon": "home",
+    "app": "shift",
+    "desc": "WFH requests checked against your Leave Policy: 1 day a month, requested at least 15 days ahead.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "date",
+        "l": "WFH date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "reqOn",
+        "l": "Requested on",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "reason",
+        "l": "Reason",
+        "t": "textarea"
+      },
+      {
+        "k": "approver",
+        "l": "Approver",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Approved",
+          "Rejected"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "notice",
+        "l": "Notice (days)",
+        "t": "number",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "flag",
+        "l": "Policy check",
+        "t": "text",
+        "ro": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "date",
+      "reqOn",
+      "notice",
+      "flag",
+      "status"
+    ],
+    "kpi": [
+      "Pending",
+      "Approved",
+      "Rejected"
+    ],
+    "defaults": {
+      "reqOn": "2026-10-30",
+      "status": "Pending"
+    },
+    "k": "wfh",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Approved",
+      "Rejected"
+    ],
+    "idp": "WFH-"
+  },
+  "compoff": {
+    "title": "Comp-off tracker",
+    "one": "Comp-off",
+    "icon": "swap",
+    "app": "shift",
+    "desc": "Compensatory days earned for working on a holiday or week off, and when they are used.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "worked",
+        "l": "Worked on",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "hours",
+        "l": "Hours worked",
+        "t": "number",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "reason",
+        "l": "Reason / project",
+        "t": "textarea",
+        "req": 1
+      },
+      {
+        "k": "approver",
+        "l": "Approved by",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "useBy",
+        "l": "Use by",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "availed",
+        "l": "Availed on",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Approved",
+          "Availed",
+          "Rejected",
+          "Expired"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "worked",
+      "hours",
+      "useBy",
+      "availed",
+      "status"
+    ],
+    "due": "useBy",
+    "closed": [
+      "Availed",
+      "Rejected",
+      "Expired"
+    ],
+    "kpi": [
+      "Pending",
+      "Approved",
+      "Availed",
+      "Overdue"
+    ],
+    "defaults": {
+      "status": "Pending"
+    },
+    "k": "compoff",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Approved",
+      "Availed",
+      "Rejected",
+      "Expired",
+      "Overdue"
+    ],
+    "idp": "CO-"
+  },
+  "holidays2": {
+    "title": "Holiday calendar",
+    "one": "Holiday",
+    "icon": "gift",
+    "app": "shift",
+    "desc": "Company holidays by location. The status updates itself as dates pass.",
+    "f": [
+      {
+        "k": "date",
+        "l": "Date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "day",
+        "l": "Day",
+        "t": "text",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "name",
+        "l": "Holiday",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "htype",
+        "l": "Type",
+        "t": "select",
+        "o": [
+          "National",
+          "Festival",
+          "Optional",
+          "Company"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "loc",
+        "l": "Applies to",
+        "t": "text",
+        "suggest": 1,
+        "ph": "All locations"
+      }
+    ],
+    "st": null,
+    "statuses": [
+      "Upcoming",
+      "Past"
+    ],
+    "cols": [
+      "date",
+      "day",
+      "name",
+      "htype",
+      "loc"
+    ],
+    "filter": "htype",
+    "kpi": [
+      "Upcoming",
+      "Past"
+    ],
+    "unique": [
+      "date"
+    ],
+    "k": "holidays2",
+    "idp": "HOL-",
+    "defaults": {}
+  },
+  "payroll2": {
+    "title": "Monthly payroll",
+    "one": "Payroll entry",
+    "icon": "pay",
+    "app": "payroll",
+    "desc": "One line per employee per month. Net pay is gross minus deductions.",
+    "f": [
+      {
+        "k": "month",
+        "l": "Month",
+        "t": "month",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "wdays",
+        "l": "Working days",
+        "t": "number",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "lop",
+        "l": "LOP days",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "pdays",
+        "l": "Paid days",
+        "t": "number",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "gross",
+        "l": "Gross pay (₹)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "ded",
+        "l": "Total deductions (₹)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "net",
+        "l": "Net pay (₹)",
+        "t": "money",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "paidOn",
+        "l": "Payment date",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Draft",
+          "Processed",
+          "Approved",
+          "Paid"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "month",
+      "emp",
+      "pdays",
+      "gross",
+      "ded",
+      "net",
+      "status"
+    ],
+    "filter": "month",
+    "kpi": [
+      "Draft",
+      "Processed",
+      "Approved",
+      "Paid"
+    ],
+    "defaults": {
+      "status": "Draft"
+    },
+    "k": "payroll2",
+    "st": "status",
+    "statuses": [
+      "Draft",
+      "Processed",
+      "Approved",
+      "Paid"
+    ],
+    "idp": "PR-"
+  },
+  "structure": {
+    "title": "Salary structure",
+    "one": "Salary structure",
+    "icon": "list",
+    "app": "payroll",
+    "desc": "Monthly salary components for each employee. Monthly gross is the sum of earnings.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "eff",
+        "l": "Effective from",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "ctc",
+        "l": "Annual CTC (₹)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "basic",
+        "l": "Basic (₹/month)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "hra",
+        "l": "HRA (₹/month)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "special",
+        "l": "Special allowance (₹/month)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "other",
+        "l": "Other allowances (₹/month)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "pfEr",
+        "l": "Employer PF (₹/month)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "mgross",
+        "l": "Monthly gross (₹)",
+        "t": "money",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Draft",
+          "Active",
+          "Superseded"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "eff",
+      "ctc",
+      "basic",
+      "mgross",
+      "status"
+    ],
+    "kpi": [
+      "Draft",
+      "Active",
+      "Superseded"
+    ],
+    "k": "structure",
+    "st": "status",
+    "statuses": [
+      "Draft",
+      "Active",
+      "Superseded"
+    ],
+    "idp": "STR-",
+    "defaults": {}
+  },
+  "revisions": {
+    "title": "Salary revision & appraisals",
+    "one": "Salary revision",
+    "icon": "chart",
+    "app": "payroll",
+    "desc": "Pay revisions from appraisals. Approving one adds it to the employee’s Increment History.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "cycle",
+        "l": "Appraisal cycle",
+        "t": "text",
+        "suggest": 1,
+        "sugFrom": "appraisal",
+        "half": 1
+      },
+      {
+        "k": "rating",
+        "l": "Rating (1–5)",
+        "t": "select",
+        "o": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "half": 1
+      },
+      {
+        "k": "cur",
+        "l": "Current CTC (₹/year)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "rev",
+        "l": "Revised CTC (₹/year)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "pct",
+        "l": "Change %",
+        "t": "number",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "eff",
+        "l": "Effective date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "approver",
+        "l": "Approved by",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Approved",
+          "Rejected",
+          "Completed"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "incId",
+        "l": "Increment record",
+        "t": "text",
+        "ro": 1,
+        "noForm": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "cycle",
+      "cur",
+      "rev",
+      "pct",
+      "eff",
+      "status"
+    ],
+    "kpi": [
+      "Pending",
+      "Approved",
+      "Rejected",
+      "Completed"
+    ],
+    "defaults": {
+      "status": "Pending"
+    },
+    "k": "revisions",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Approved",
+      "Rejected",
+      "Completed"
+    ],
+    "idp": "SR-"
+  },
+  "payslips2": {
+    "title": "Payslip records",
+    "one": "Payslip",
+    "icon": "download",
+    "app": "payroll",
+    "desc": "Issued payslips by month, with acknowledgement.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "month",
+        "l": "Month",
+        "t": "month",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "issued",
+        "l": "Issued on",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "gross",
+        "l": "Gross (₹)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "ded",
+        "l": "Deductions (₹)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "net",
+        "l": "Net pay (₹)",
+        "t": "money",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "file",
+        "l": "Payslip file",
+        "t": "file",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Generated",
+          "Sent",
+          "Acknowledged"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "month",
+      "gross",
+      "net",
+      "issued",
+      "status"
+    ],
+    "filter": "month",
+    "kpi": [
+      "Generated",
+      "Sent",
+      "Acknowledged"
+    ],
+    "k": "payslips2",
+    "st": "status",
+    "statuses": [
+      "Generated",
+      "Sent",
+      "Acknowledged"
+    ],
+    "idp": "PS-",
+    "defaults": {}
+  },
+  "pfesi": {
+    "title": "PF & ESI compliance",
+    "one": "PF/ESI filing",
+    "icon": "shield",
+    "app": "payroll",
+    "desc": "Monthly PF and ESI contributions and challans. Overdue after the due date.",
+    "f": [
+      {
+        "k": "month",
+        "l": "Wage month",
+        "t": "month",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "scheme",
+        "l": "Scheme",
+        "t": "select",
+        "o": [
+          "PF",
+          "ESI"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "count",
+        "l": "Employees covered",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "ee",
+        "l": "Employee share (₹)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "er",
+        "l": "Employer share (₹)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "total",
+        "l": "Total (₹)",
+        "t": "money",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "due",
+        "l": "Due date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "challan",
+        "l": "Challan / TRRN no.",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "paidOn",
+        "l": "Paid on",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Paid"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "month",
+      "scheme",
+      "count",
+      "total",
+      "due",
+      "paidOn",
+      "status"
+    ],
+    "due": "due",
+    "closed": [
+      "Paid"
+    ],
+    "filter": "scheme",
+    "kpi": [
+      "Pending",
+      "Paid",
+      "Overdue"
+    ],
+    "k": "pfesi",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Paid",
+      "Overdue"
+    ],
+    "idp": "PFE-",
+    "defaults": {}
+  },
+  "statutory": {
+    "title": "Statutory compliance tracker",
+    "one": "Compliance item",
+    "icon": "shield",
+    "app": "payroll",
+    "desc": "All statutory filings and renewals with owners and due dates.",
+    "f": [
+      {
+        "k": "item",
+        "l": "Compliance",
+        "t": "select",
+        "o": [
+          "Professional tax",
+          "TDS return (24Q)",
+          "Form 16",
+          "Labour welfare fund",
+          "Shops & establishment renewal",
+          "Gratuity",
+          "Bonus Act",
+          "Maternity benefit returns",
+          "POSH annual report",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "period",
+        "l": "Period",
+        "t": "text",
+        "req": 1,
+        "half": 1,
+        "ph": "e.g. Q2 FY 2026-27"
+      },
+      {
+        "k": "authority",
+        "l": "Authority / portal",
+        "t": "text",
+        "suggest": 1,
+        "half": 1
+      },
+      {
+        "k": "due",
+        "l": "Due date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "owner",
+        "l": "Responsible",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "filed",
+        "l": "Filed on",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "ack",
+        "l": "Acknowledgement no.",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Completed"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "notes",
+        "l": "Notes",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "item",
+      "period",
+      "due",
+      "owner",
+      "filed",
+      "status"
+    ],
+    "due": "due",
+    "closed": [
+      "Completed"
+    ],
+    "filter": "item",
+    "kpi": [
+      "Pending",
+      "Completed",
+      "Overdue"
+    ],
+    "k": "statutory",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Completed",
+      "Overdue"
+    ],
+    "idp": "STA-",
+    "defaults": {}
+  },
+  "events": {
+    "title": "Company events",
+    "one": "Event",
+    "icon": "gift",
+    "app": "connect",
+    "desc": "Celebrations, offsites and festivals, with budget and turnout.",
+    "f": [
+      {
+        "k": "name",
+        "l": "Event name",
+        "t": "text",
+        "req": 1
+      },
+      {
+        "k": "etype",
+        "l": "Type",
+        "t": "select",
+        "o": [
+          "Celebration",
+          "Festival",
+          "Offsite",
+          "Sports",
+          "CSR",
+          "Team outing",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "date",
+        "l": "Date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "time",
+        "l": "Time",
+        "t": "time",
+        "half": 1
+      },
+      {
+        "k": "venue",
+        "l": "Venue",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "organiser",
+        "l": "Organiser",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "budget",
+        "l": "Budget (₹)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "att",
+        "l": "Attendees",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Planned",
+          "Confirmed",
+          "Completed",
+          "Cancelled"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "notes",
+        "l": "Notes",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "name",
+      "etype",
+      "date",
+      "venue",
+      "budget",
+      "status"
+    ],
+    "filter": "etype",
+    "kpi": [
+      "Planned",
+      "Confirmed",
+      "Completed",
+      "Cancelled"
+    ],
+    "k": "events",
+    "st": "status",
+    "statuses": [
+      "Planned",
+      "Confirmed",
+      "Completed",
+      "Cancelled"
+    ],
+    "idp": "EV-",
+    "defaults": {}
+  },
+  "feedback": {
+    "title": "Employee feedback",
+    "one": "Feedback",
+    "icon": "chat",
+    "app": "connect",
+    "desc": "Suggestions and concerns from employees, with the action taken. Anonymous feedback hides the employee.",
+    "f": [
+      {
+        "k": "anon",
+        "l": "Anonymous",
+        "t": "yesno",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "cat",
+        "l": "Category",
+        "t": "select",
+        "o": [
+          "Workplace",
+          "Manager",
+          "Policy",
+          "Facilities",
+          "Pay & benefits",
+          "Culture",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "rating",
+        "l": "Rating (1–5)",
+        "t": "select",
+        "o": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5"
+        ],
+        "half": 1
+      },
+      {
+        "k": "text",
+        "l": "Feedback",
+        "t": "textarea",
+        "req": 1
+      },
+      {
+        "k": "date",
+        "l": "Submitted on",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "owner",
+        "l": "Action owner",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "action",
+        "l": "Action taken",
+        "t": "textarea"
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "In progress",
+          "Completed"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "date",
+      "cat",
+      "emp",
+      "rating",
+      "owner",
+      "status"
+    ],
+    "filter": "cat",
+    "kpi": [
+      "Pending",
+      "In progress",
+      "Completed"
+    ],
+    "defaults": {
+      "anon": "No",
+      "date": "2026-10-30",
+      "status": "Pending"
+    },
+    "k": "feedback",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "In progress",
+      "Completed"
+    ],
+    "idp": "FB-"
+  },
+  "townhall": {
+    "title": "Town hall meetings",
+    "one": "Town hall",
+    "icon": "mega",
+    "app": "connect",
+    "desc": "Agenda, attendance, minutes and action items for each town hall.",
+    "f": [
+      {
+        "k": "title",
+        "l": "Title",
+        "t": "text",
+        "req": 1
+      },
+      {
+        "k": "date",
+        "l": "Date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "time",
+        "l": "Time",
+        "t": "time",
+        "half": 1
+      },
+      {
+        "k": "mode",
+        "l": "Mode",
+        "t": "select",
+        "o": [
+          "In person",
+          "Online",
+          "Hybrid"
+        ],
+        "half": 1
+      },
+      {
+        "k": "host",
+        "l": "Host",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "agenda",
+        "l": "Agenda",
+        "t": "textarea"
+      },
+      {
+        "k": "att",
+        "l": "Attendance",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Scheduled",
+          "Completed",
+          "Cancelled"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "minutes",
+        "l": "Minutes",
+        "t": "textarea"
+      },
+      {
+        "k": "actions",
+        "l": "Action items",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "title",
+      "date",
+      "time",
+      "host",
+      "att",
+      "status"
+    ],
+    "kpi": [
+      "Scheduled",
+      "Completed",
+      "Cancelled"
+    ],
+    "k": "townhall",
+    "st": "status",
+    "statuses": [
+      "Scheduled",
+      "Completed",
+      "Cancelled"
+    ],
+    "idp": "TH-",
+    "defaults": {}
+  },
+  "training": {
+    "title": "Training & development",
+    "one": "Training programme",
+    "icon": "learn",
+    "app": "learn",
+    "desc": "Training programmes with trainer, dates, participants and cost.",
+    "f": [
+      {
+        "k": "prog",
+        "l": "Programme",
+        "t": "text",
+        "req": 1
+      },
+      {
+        "k": "ttype",
+        "l": "Type",
+        "t": "select",
+        "o": [
+          "Technical",
+          "Soft skills",
+          "Leadership",
+          "Induction",
+          "Compliance",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "trainer",
+        "l": "Trainer",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "mode",
+        "l": "Mode",
+        "t": "select",
+        "o": [
+          "Classroom",
+          "Online",
+          "Hybrid",
+          "Self-paced"
+        ],
+        "half": 1
+      },
+      {
+        "k": "start",
+        "l": "Start date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "end",
+        "l": "End date",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "parts",
+        "l": "Participants",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "cost",
+        "l": "Cost (₹)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Planned",
+          "Ongoing",
+          "Completed",
+          "Cancelled"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "notes",
+        "l": "Notes",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "prog",
+      "ttype",
+      "trainer",
+      "start",
+      "end",
+      "parts",
+      "status"
+    ],
+    "filter": "ttype",
+    "kpi": [
+      "Planned",
+      "Ongoing",
+      "Completed",
+      "Cancelled"
+    ],
+    "k": "training",
+    "st": "status",
+    "statuses": [
+      "Planned",
+      "Ongoing",
+      "Completed",
+      "Cancelled"
+    ],
+    "idp": "TR-",
+    "defaults": {}
+  },
+  "posh": {
+    "title": "POSH training & committee",
+    "one": "POSH record",
+    "icon": "shield",
+    "app": "learn",
+    "desc": "Internal Committee members and POSH training sessions. Complaints are not recorded here.",
+    "f": [
+      {
+        "k": "rtype",
+        "l": "Record type",
+        "t": "select",
+        "o": [
+          "Committee member",
+          "Training session"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "name",
+        "l": "Name or session title",
+        "t": "text",
+        "req": 1
+      },
+      {
+        "k": "role",
+        "l": "Role",
+        "t": "select",
+        "o": [
+          "Presiding officer",
+          "Member",
+          "External member",
+          "Trainer",
+          "Session"
+        ],
+        "half": 1
+      },
+      {
+        "k": "date",
+        "l": "Appointed on / session date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "valid",
+        "l": "Valid till",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "parts",
+        "l": "Participants",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Active",
+          "Scheduled",
+          "Completed"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "rtype",
+      "name",
+      "role",
+      "date",
+      "valid",
+      "status"
+    ],
+    "due": "valid",
+    "closed": [
+      "Completed"
+    ],
+    "filter": "rtype",
+    "kpi": [
+      "Active",
+      "Scheduled",
+      "Completed",
+      "Overdue"
+    ],
+    "k": "posh",
+    "st": "status",
+    "statuses": [
+      "Active",
+      "Scheduled",
+      "Completed",
+      "Overdue"
+    ],
+    "idp": "POS-",
+    "defaults": {}
+  },
+  "sectrain": {
+    "title": "Security & compliance training",
+    "one": "Training assignment",
+    "icon": "shield",
+    "app": "learn",
+    "desc": "Mandatory courses assigned to each employee, with due dates and scores.",
+    "f": [
+      {
+        "k": "course",
+        "l": "Course",
+        "t": "select",
+        "o": [
+          "Information security awareness",
+          "Data privacy (DPDP Act)",
+          "POSH awareness",
+          "Code of conduct",
+          "Anti-bribery",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "assigned",
+        "l": "Assigned on",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "due",
+        "l": "Due date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "done",
+        "l": "Completed on",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "score",
+        "l": "Score (%)",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "In progress",
+          "Completed"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "course",
+      "assigned",
+      "due",
+      "done",
+      "score",
+      "status"
+    ],
+    "due": "due",
+    "closed": [
+      "Completed"
+    ],
+    "filter": "course",
+    "kpi": [
+      "Pending",
+      "In progress",
+      "Completed",
+      "Overdue"
+    ],
+    "defaults": {
+      "assigned": "2026-10-30",
+      "status": "Pending"
+    },
+    "k": "sectrain",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "In progress",
+      "Completed",
+      "Overdue"
+    ],
+    "idp": "SEC-"
+  },
+  "handbook": {
+    "title": "Employee handbook",
+    "one": "Handbook version",
+    "icon": "doc",
+    "app": "sign",
+    "desc": "Versions of the employee handbook. Publish a version, then send it for acknowledgement.",
+    "f": [
+      {
+        "k": "ver",
+        "l": "Version",
+        "t": "text",
+        "req": 1,
+        "half": 1,
+        "ph": "e.g. 4.0"
+      },
+      {
+        "k": "eff",
+        "l": "Effective date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "title",
+        "l": "Title",
+        "t": "text",
+        "req": 1
+      },
+      {
+        "k": "owner",
+        "l": "Owner",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "file",
+        "l": "File",
+        "t": "file",
+        "half": 1
+      },
+      {
+        "k": "changes",
+        "l": "Summary of changes",
+        "t": "textarea"
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Draft",
+          "Under review",
+          "Published",
+          "Archived"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "ver",
+      "title",
+      "eff",
+      "owner",
+      "file",
+      "status"
+    ],
+    "kpi": [
+      "Draft",
+      "Under review",
+      "Published"
+    ],
+    "k": "handbook",
+    "st": "status",
+    "statuses": [
+      "Draft",
+      "Under review",
+      "Published",
+      "Archived"
+    ],
+    "idp": "HB-",
+    "defaults": {}
+  },
+  "policies": {
+    "title": "HR policies",
+    "one": "Policy",
+    "icon": "doc",
+    "app": "sign",
+    "desc": "All HR policies with owners and review dates. Overdue when the review date passes.",
+    "f": [
+      {
+        "k": "name",
+        "l": "Policy name",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "cat",
+        "l": "Category",
+        "t": "select",
+        "o": [
+          "Leave",
+          "Attendance & WFH",
+          "Travel & expense",
+          "IT & security",
+          "Code of conduct",
+          "POSH",
+          "Compensation",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "ver",
+        "l": "Version",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "eff",
+        "l": "Effective date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "review",
+        "l": "Next review due",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "owner",
+        "l": "Owner",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "file",
+        "l": "Policy file",
+        "t": "file",
+        "half": 1
+      },
+      {
+        "k": "ackReq",
+        "l": "Acknowledgement required",
+        "t": "yesno",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Draft",
+          "Under review",
+          "Published"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "name",
+      "cat",
+      "ver",
+      "eff",
+      "review",
+      "ackReq",
+      "status"
+    ],
+    "due": "review",
+    "filter": "cat",
+    "kpi": [
+      "Draft",
+      "Under review",
+      "Published",
+      "Overdue"
+    ],
+    "k": "policies",
+    "st": "status",
+    "statuses": [
+      "Draft",
+      "Under review",
+      "Published",
+      "Overdue"
+    ],
+    "idp": "POL-",
+    "defaults": {}
+  },
+  "acks": {
+    "title": "Policy acknowledgements",
+    "one": "Acknowledgement",
+    "icon": "check",
+    "app": "sign",
+    "desc": "Who has acknowledged which policy. Use “Send to all employees” to create pending acknowledgements in one step.",
+    "f": [
+      {
+        "k": "policy",
+        "l": "Policy or handbook",
+        "t": "select",
+        "req": 1
+      },
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "sent",
+        "l": "Sent on",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "due",
+        "l": "Due",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "ackOn",
+        "l": "Acknowledged on",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Acknowledged"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "policy",
+      "emp",
+      "sent",
+      "due",
+      "ackOn",
+      "status"
+    ],
+    "due": "due",
+    "closed": [
+      "Acknowledged"
+    ],
+    "kpi": [
+      "Pending",
+      "Acknowledged",
+      "Overdue"
+    ],
+    "defaults": {
+      "sent": "2026-10-30",
+      "status": "Pending"
+    },
+    "k": "acks",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Acknowledged",
+      "Overdue"
+    ],
+    "idp": "ACK-"
+  },
+  "officeexp": {
+    "title": "Office expenses",
+    "one": "Office expense",
+    "icon": "receipt",
+    "app": "expense",
+    "desc": "Company spend on rent, utilities, supplies and services, linked to vendors.",
+    "f": [
+      {
+        "k": "date",
+        "l": "Date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "cat",
+        "l": "Category",
+        "t": "select",
+        "o": [
+          "Rent",
+          "Electricity & utilities",
+          "Internet",
+          "Stationery",
+          "Pantry",
+          "Housekeeping",
+          "Repairs & maintenance",
+          "Travel",
+          "Events",
+          "Software",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "vendor",
+        "l": "Vendor",
+        "t": "ref",
+        "ref": "vendors",
+        "half": 1
+      },
+      {
+        "k": "inv",
+        "l": "Invoice no.",
+        "t": "text",
+        "half": 1
+      },
+      {
+        "k": "desc",
+        "l": "Description",
+        "t": "textarea",
+        "req": 1
+      },
+      {
+        "k": "amount",
+        "l": "Amount before GST (₹)",
+        "t": "money",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "gst",
+        "l": "GST (₹)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "total",
+        "l": "Total (₹)",
+        "t": "money",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "mode",
+        "l": "Payment mode",
+        "t": "select",
+        "o": [
+          "Bank transfer",
+          "UPI",
+          "Card",
+          "Cash",
+          "Cheque"
+        ],
+        "half": 1
+      },
+      {
+        "k": "paidBy",
+        "l": "Paid by",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "approver",
+        "l": "Approved by",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "receipt",
+        "l": "Bill / receipt",
+        "t": "file",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Pending",
+          "Approved",
+          "Paid",
+          "Rejected"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "date",
+      "cat",
+      "vendor",
+      "desc",
+      "total",
+      "status"
+    ],
+    "filter": "cat",
+    "kpi": [
+      "Pending",
+      "Approved",
+      "Paid",
+      "Rejected"
+    ],
+    "k": "officeexp",
+    "st": "status",
+    "statuses": [
+      "Pending",
+      "Approved",
+      "Paid",
+      "Rejected"
+    ],
+    "idp": "OX-",
+    "defaults": {}
+  },
+  "goals": {
+    "title": "Goals & KRAs",
+    "one": "Goal",
+    "icon": "chart",
+    "app": "plus",
+    "acc": "perf",
+    "desc": "Goals for each employee and cycle. Weights for one cycle should add up to 100%.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "cycle",
+        "l": "Cycle",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "sugFrom": "appraisal",
+        "half": 1,
+        "ph": "e.g. FY 2026-27"
+      },
+      {
+        "k": "kra",
+        "l": "KRA area",
+        "t": "select",
+        "o": [
+          "Delivery",
+          "Quality",
+          "Customer",
+          "People",
+          "Learning",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "title",
+        "l": "Goal",
+        "t": "text",
+        "req": 1
+      },
+      {
+        "k": "measure",
+        "l": "Measure / target",
+        "t": "text"
+      },
+      {
+        "k": "weight",
+        "l": "Weight %",
+        "t": "number",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "due",
+        "l": "Due date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "progress",
+        "l": "Progress %",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Draft",
+          "Pending approval",
+          "Active",
+          "At risk",
+          "Achieved",
+          "Missed",
+          "Dropped"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "ec",
+        "l": "Employee comment",
+        "t": "textarea"
+      },
+      {
+        "k": "mc",
+        "l": "Manager comment",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "emp",
+      "cycle",
+      "title",
+      "weight",
+      "progress",
+      "due"
+    ],
+    "due": "due",
+    "closed": [
+      "Achieved",
+      "Missed",
+      "Dropped"
+    ],
+    "filter": "cycle",
+    "kpi": [
+      "Active",
+      "At risk",
+      "Achieved"
+    ],
+    "defaults": {
+      "status": "Draft",
+      "progress": 0
+    },
+    "k": "goals",
+    "st": "status",
+    "statuses": [
+      "Draft",
+      "Pending approval",
+      "Active",
+      "At risk",
+      "Achieved",
+      "Missed",
+      "Dropped",
+      "Overdue"
+    ],
+    "idp": "GL-"
+  },
+  "checkins": {
+    "title": "Check-ins",
+    "one": "Check-in",
+    "icon": "chat",
+    "app": "plus",
+    "acc": "perf",
+    "desc": "Regular one-to-one conversations between employees and managers.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "mgr",
+        "l": "Manager",
+        "t": "emp",
+        "half": 1,
+        "help": "Filled from master data if left blank"
+      },
+      {
+        "k": "date",
+        "l": "Date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "well",
+        "l": "What went well",
+        "t": "textarea"
+      },
+      {
+        "k": "block",
+        "l": "Blockers",
+        "t": "textarea"
+      },
+      {
+        "k": "acts",
+        "l": "Agreed actions",
+        "t": "textarea"
+      },
+      {
+        "k": "next",
+        "l": "Next check-in",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Scheduled",
+          "Completed",
+          "Missed"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "mgr",
+      "date",
+      "next"
+    ],
+    "due": "date",
+    "closed": [
+      "Completed",
+      "Missed"
+    ],
+    "kpi": [
+      "Scheduled",
+      "Completed",
+      "Missed"
+    ],
+    "defaults": {
+      "date": "2026-10-30",
+      "status": "Scheduled"
+    },
+    "k": "checkins",
+    "st": "status",
+    "statuses": [
+      "Scheduled",
+      "Completed",
+      "Missed",
+      "Overdue"
+    ],
+    "idp": "CI-"
+  },
+  "pips": {
+    "title": "Improvement plans",
+    "one": "Improvement plan",
+    "icon": "shield",
+    "app": "plus",
+    "acc": "pip",
+    "desc": "Performance improvement plans. Confidential: visible only to HR Admin, the assigned HR partner, the manager, and the employee once shared.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "mgr",
+        "l": "Manager",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "hrp",
+        "l": "HR partner",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "start",
+        "l": "Start",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "end",
+        "l": "End",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "reason",
+        "l": "Reason",
+        "t": "textarea",
+        "req": 1
+      },
+      {
+        "k": "targets",
+        "l": "Improvement targets",
+        "t": "textarea",
+        "req": 1
+      },
+      {
+        "k": "support",
+        "l": "Support offered",
+        "t": "textarea"
+      },
+      {
+        "k": "reviews",
+        "l": "Review dates and notes",
+        "t": "textarea"
+      },
+      {
+        "k": "outcome",
+        "l": "Outcome",
+        "t": "select",
+        "o": [
+          "Successful",
+          "Extended",
+          "Exit"
+        ],
+        "half": 1
+      },
+      {
+        "k": "shared",
+        "l": "Shared with employee",
+        "t": "yesno",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Draft",
+          "Active",
+          "Completed",
+          "Closed"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "mgr",
+      "start",
+      "end",
+      "outcome"
+    ],
+    "due": "end",
+    "closed": [
+      "Completed",
+      "Closed"
+    ],
+    "kpi": [
+      "Draft",
+      "Active",
+      "Completed"
+    ],
+    "defaults": {
+      "status": "Draft",
+      "shared": "No"
+    },
+    "k": "pips",
+    "st": "status",
+    "statuses": [
+      "Draft",
+      "Active",
+      "Completed",
+      "Closed",
+      "Overdue"
+    ],
+    "idp": "PIP-"
+  },
+  "promos": {
+    "title": "Promotion nominations",
+    "one": "Nomination",
+    "icon": "chart",
+    "app": "plus",
+    "acc": "promo",
+    "desc": "Promotions from nomination to effect. Current designation, grade and pay are read from master data and Salary structure.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "curDes",
+        "l": "Current designation",
+        "t": "text",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "curGrade",
+        "l": "Current grade",
+        "t": "text",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "curCtc",
+        "l": "Current CTC (₹/year)",
+        "t": "money",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "rating",
+        "l": "Latest rating",
+        "t": "text",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "propDes",
+        "l": "Proposed designation",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "sugFrom": "emp",
+        "half": 1
+      },
+      {
+        "k": "propGrade",
+        "l": "Proposed grade",
+        "t": "text",
+        "suggest": 1,
+        "sugFrom": "emp",
+        "half": 1
+      },
+      {
+        "k": "propCtc",
+        "l": "Proposed CTC (₹/year)",
+        "t": "money",
+        "half": 1
+      },
+      {
+        "k": "pct",
+        "l": "Change %",
+        "t": "number",
+        "ro": 1,
+        "half": 1
+      },
+      {
+        "k": "elig",
+        "l": "Eligibility",
+        "t": "text",
+        "ro": 1
+      },
+      {
+        "k": "just",
+        "l": "Justification",
+        "t": "textarea",
+        "req": 1
+      },
+      {
+        "k": "override",
+        "l": "Override reason (if not eligible)",
+        "t": "textarea"
+      },
+      {
+        "k": "nomBy",
+        "l": "Nominated by",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "eff",
+        "l": "Effective date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Stage",
+        "t": "select",
+        "o": [
+          "Nominated",
+          "Manager endorsed",
+          "HR reviewed",
+          "Approved",
+          "Rejected",
+          "Effected"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "curDes",
+      "propDes",
+      "pct",
+      "rating",
+      "eff"
+    ],
+    "kpi": [
+      "Nominated",
+      "HR reviewed",
+      "Approved",
+      "Effected"
+    ],
+    "filter": "status",
+    "defaults": {
+      "status": "Nominated",
+      "nomBy": ""
+    },
+    "k": "promos",
+    "st": "status",
+    "statuses": [
+      "Nominated",
+      "Manager endorsed",
+      "HR reviewed",
+      "Approved",
+      "Rejected",
+      "Effected"
+    ],
+    "idp": "PRM-"
+  },
+  "idps": {
+    "title": "Career plans",
+    "one": "Career plan",
+    "icon": "learn",
+    "app": "plus",
+    "acc": "idp",
+    "desc": "Individual development plans: target role, skills to build and progress.",
+    "f": [
+      {
+        "k": "emp",
+        "l": "Employee",
+        "t": "emp",
+        "req": 1
+      },
+      {
+        "k": "target",
+        "l": "Target role",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "sugFrom": "emp",
+        "half": 1
+      },
+      {
+        "k": "time",
+        "l": "Timeframe",
+        "t": "select",
+        "o": [
+          "6 months",
+          "1 year",
+          "2 years",
+          "3+ years"
+        ],
+        "half": 1
+      },
+      {
+        "k": "skills",
+        "l": "Skills to build",
+        "t": "textarea"
+      },
+      {
+        "k": "courses",
+        "l": "Linked courses / training",
+        "t": "text"
+      },
+      {
+        "k": "mentor",
+        "l": "Mentor",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "review",
+        "l": "Next review",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "progress",
+        "l": "Progress %",
+        "t": "number",
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Draft",
+          "Active",
+          "Achieved",
+          "On hold"
+        ],
+        "req": 1,
+        "half": 1
+      }
+    ],
+    "cols": [
+      "emp",
+      "target",
+      "time",
+      "mentor",
+      "progress",
+      "review"
+    ],
+    "due": "review",
+    "closed": [
+      "Achieved",
+      "On hold"
+    ],
+    "kpi": [
+      "Active",
+      "Achieved",
+      "Overdue"
+    ],
+    "defaults": {
+      "status": "Draft",
+      "progress": 0
+    },
+    "k": "idps",
+    "st": "status",
+    "statuses": [
+      "Draft",
+      "Active",
+      "Achieved",
+      "On hold",
+      "Overdue"
+    ],
+    "idp": "IDP-"
+  },
+  "succession": {
+    "title": "Succession planning",
+    "one": "Succession plan",
+    "icon": "users",
+    "app": "plus",
+    "acc": "succ",
+    "accEmp": "inc",
+    "desc": "Successors for critical roles and how ready they are. Restricted to HR Admin and Leadership.",
+    "f": [
+      {
+        "k": "role",
+        "l": "Critical role",
+        "t": "text",
+        "req": 1,
+        "suggest": 1,
+        "sugFrom": "emp"
+      },
+      {
+        "k": "inc",
+        "l": "Incumbent",
+        "t": "emp",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "risk",
+        "l": "Risk of losing incumbent",
+        "t": "select",
+        "o": [
+          "Low",
+          "Medium",
+          "High"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "s1",
+        "l": "Successor 1",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "r1",
+        "l": "Readiness 1",
+        "t": "select",
+        "o": [
+          "Ready now",
+          "1–2 years",
+          "3+ years"
+        ],
+        "half": 1
+      },
+      {
+        "k": "s2",
+        "l": "Successor 2",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "r2",
+        "l": "Readiness 2",
+        "t": "select",
+        "o": [
+          "Ready now",
+          "1–2 years",
+          "3+ years"
+        ],
+        "half": 1
+      },
+      {
+        "k": "s3",
+        "l": "Successor 3",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "r3",
+        "l": "Readiness 3",
+        "t": "select",
+        "o": [
+          "Ready now",
+          "1–2 years",
+          "3+ years"
+        ],
+        "half": 1
+      },
+      {
+        "k": "notes",
+        "l": "Notes",
+        "t": "textarea"
+      }
+    ],
+    "st": null,
+    "statuses": [
+      "Covered",
+      "Partly covered",
+      "Not covered"
+    ],
+    "cols": [
+      "role",
+      "inc",
+      "risk",
+      "s1",
+      "r1"
+    ],
+    "kpi": [
+      "Covered",
+      "Partly covered",
+      "Not covered"
+    ],
+    "k": "succession",
+    "idp": "SUC-",
+    "defaults": {}
+  },
+  "surveys": {
+    "title": "Pulse surveys",
+    "one": "Pulse survey",
+    "icon": "chat",
+    "app": "plus",
+    "desc": "Short anonymous surveys. Every survey asks the eNPS question (0–10) plus your statements rated 1–5.",
+    "f": [
+      {
+        "k": "title",
+        "l": "Title",
+        "t": "text",
+        "req": 1
+      },
+      {
+        "k": "period",
+        "l": "Period",
+        "t": "text",
+        "half": 1,
+        "ph": "e.g. Oct 2026"
+      },
+      {
+        "k": "aud",
+        "l": "Audience",
+        "t": "select",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "stmts",
+        "l": "Statements (one per line)",
+        "t": "textarea",
+        "req": 1
+      },
+      {
+        "k": "open",
+        "l": "Opens",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "close",
+        "l": "Closes",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Draft",
+          "Open",
+          "Closed"
+        ],
+        "req": 1
+      }
+    ],
+    "cols": [
+      "title",
+      "period",
+      "aud",
+      "open",
+      "close"
+    ],
+    "kpi": [
+      "Draft",
+      "Open",
+      "Closed"
+    ],
+    "defaults": {
+      "aud": "All employees",
+      "open": "2026-10-30",
+      "close": "2026-11-13",
+      "status": "Draft",
+      "stmts": "I have the tools and resources to do my job well\nMy manager supports my growth\nI feel recognised for good work\nI understand how my work contributes to company goals\nI see myself working here in two years"
+    },
+    "k": "surveys",
+    "st": "status",
+    "statuses": [
+      "Draft",
+      "Open",
+      "Closed"
+    ],
+    "idp": "SV-"
+  },
+  "licences": {
+    "title": "Licences & registrations",
+    "one": "Licence",
+    "icon": "shield",
+    "app": "plus",
+    "desc": "Company registrations and licences with renewal dates.",
+    "f": [
+      {
+        "k": "name",
+        "l": "Licence / registration",
+        "t": "select",
+        "o": [
+          "Shops & Establishment",
+          "PF establishment code",
+          "ESI registration",
+          "Professional tax registration",
+          "Labour welfare fund",
+          "Contract labour licence",
+          "Trade licence",
+          "Fire NOC",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "no",
+        "l": "Number",
+        "t": "text",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "auth",
+        "l": "Authority",
+        "t": "text",
+        "suggest": 1,
+        "half": 1
+      },
+      {
+        "k": "loc",
+        "l": "Location",
+        "t": "text",
+        "suggest": 1,
+        "half": 1
+      },
+      {
+        "k": "valid",
+        "l": "Valid till",
+        "t": "date",
+        "half": 1
+      },
+      {
+        "k": "owner",
+        "l": "Renewal owner",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "file",
+        "l": "Certificate",
+        "t": "file"
+      }
+    ],
+    "st": null,
+    "statuses": [
+      "Active",
+      "Renewal due",
+      "Expired"
+    ],
+    "cols": [
+      "name",
+      "no",
+      "auth",
+      "loc",
+      "valid",
+      "owner"
+    ],
+    "kpi": [
+      "Active",
+      "Renewal due",
+      "Expired"
+    ],
+    "k": "licences",
+    "idp": "LIC-",
+    "defaults": {}
+  },
+  "actions": {
+    "title": "HR actions & reminders",
+    "one": "Action",
+    "icon": "bell",
+    "app": "plus",
+    "acc": "act",
+    "accEmp": "owner",
+    "desc": "One to-do list for HR. Most actions are created automatically from dates in other modules and close themselves when resolved.",
+    "f": [
+      {
+        "k": "title",
+        "l": "Action",
+        "t": "text",
+        "req": 1
+      },
+      {
+        "k": "cat",
+        "l": "Category",
+        "t": "select",
+        "o": [
+          "Probation",
+          "Appraisal",
+          "Performance",
+          "Promotion",
+          "Documents",
+          "Compliance",
+          "Onboarding",
+          "Exit",
+          "Policy",
+          "Training",
+          "Engagement",
+          "Other"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "pri",
+        "l": "Priority",
+        "t": "select",
+        "o": [
+          "Low",
+          "Normal",
+          "High",
+          "Urgent"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "emp",
+        "l": "Related employee",
+        "t": "emp",
+        "half": 1
+      },
+      {
+        "k": "owner",
+        "l": "Owner",
+        "t": "emp",
+        "half": 1,
+        "help": "Blank = HR team"
+      },
+      {
+        "k": "due",
+        "l": "Due date",
+        "t": "date",
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "remind",
+        "l": "Remind me",
+        "t": "select",
+        "o": [
+          "On the day",
+          "1 day before",
+          "3 days before",
+          "7 days before"
+        ],
+        "half": 1
+      },
+      {
+        "k": "repeat",
+        "l": "Repeat",
+        "t": "select",
+        "o": [
+          "None",
+          "Monthly",
+          "Quarterly",
+          "Yearly"
+        ],
+        "half": 1
+      },
+      {
+        "k": "status",
+        "l": "Status",
+        "t": "select",
+        "o": [
+          "Open",
+          "In progress",
+          "Done",
+          "Snoozed",
+          "Cancelled"
+        ],
+        "req": 1,
+        "half": 1
+      },
+      {
+        "k": "src",
+        "l": "Source",
+        "t": "text",
+        "ro": 1
+      },
+      {
+        "k": "notes",
+        "l": "Notes",
+        "t": "textarea"
+      }
+    ],
+    "cols": [
+      "title",
+      "cat",
+      "emp",
+      "owner",
+      "pri",
+      "due"
+    ],
+    "due": "due",
+    "closed": [
+      "Done",
+      "Cancelled"
+    ],
+    "filter": "cat",
+    "kpi": [
+      "Open",
+      "In progress",
+      "Overdue"
+    ],
+    "defaults": {
+      "status": "Open",
+      "pri": "Normal",
+      "remind": "1 day before",
+      "repeat": "None",
+      "due": "2026-10-30"
+    },
+    "k": "actions",
+    "st": "status",
+    "statuses": [
+      "Open",
+      "In progress",
+      "Done",
+      "Snoozed",
+      "Cancelled",
+      "Overdue"
+    ],
+    "idp": "ACT-"
+  }
+}

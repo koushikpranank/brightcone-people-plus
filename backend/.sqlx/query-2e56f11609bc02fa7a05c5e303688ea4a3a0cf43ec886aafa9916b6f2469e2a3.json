@@ -1,0 +1,38 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT id, record FROM demo.\"employees\" ORDER BY position",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "demo.employees",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "record",
+        "type_info": "Jsonb",
+        "origin": {
+          "Table": {
+            "table": "demo.employees",
+            "name": "record"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false
+    ]
+  },
+  "hash": "2e56f11609bc02fa7a05c5e303688ea4a3a0cf43ec886aafa9916b6f2469e2a3"
+}

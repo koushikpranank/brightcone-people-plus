@@ -1,0 +1,38 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT id, record FROM live.\"increments\" ORDER BY position",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "live.increments",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "record",
+        "type_info": "Jsonb",
+        "origin": {
+          "Table": {
+            "table": "live.increments",
+            "name": "record"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false
+    ]
+  },
+  "hash": "bd18738c2d164e3a064155f6ced197e8e3a58ab08bf1393fad46e03ed464c656"
+}

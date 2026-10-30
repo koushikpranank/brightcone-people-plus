@@ -1,0 +1,38 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "SELECT id, record FROM demo.\"holidays\" ORDER BY position",
+  "describe": {
+    "columns": [
+      {
+        "ordinal": 0,
+        "name": "id",
+        "type_info": "Text",
+        "origin": {
+          "Table": {
+            "table": "demo.holidays",
+            "name": "id"
+          }
+        }
+      },
+      {
+        "ordinal": 1,
+        "name": "record",
+        "type_info": "Jsonb",
+        "origin": {
+          "Table": {
+            "table": "demo.holidays",
+            "name": "record"
+          }
+        }
+      }
+    ],
+    "parameters": {
+      "Left": []
+    },
+    "nullable": [
+      false,
+      false
+    ]
+  },
+  "hash": "d2084cf64ea2b3bdaaac905fd70248a40b0024201351fbe006cfbf7ae508a57c"
+}

@@ -1,0 +1,14 @@
+{
+  "db_name": "PostgreSQL",
+  "query": "DELETE FROM demo.\"regs\" WHERE id=$1",
+  "describe": {
+    "columns": [],
+    "parameters": {
+      "Left": [
+        "Text"
+      ]
+    },
+    "nullable": []
+  },
+  "hash": "f6cc6b29fe9b0abb996451badba9a463826dc5dfc79dfdb1a5b9f922ed9cbbe4"
+}

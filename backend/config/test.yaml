@@ -1,0 +1,11 @@
+logger:
+  enable: false
+  level: warn
+  format: compact
+server:
+  port: 5151
+  binding: 127.0.0.1
+  host: http://localhost:5151
+workers:
+  mode: BackgroundAsync
+settings: {}

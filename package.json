@@ -1,0 +1,22 @@
+{
+  "name": "brightcone-people-plus-workspace",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=20.20.0" },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "db:setup": "pwsh -NoProfile -File scripts/setup-local.ps1",
+    "db:migrate": "pwsh -NoProfile -File scripts/database.ps1 -Action up",
+    "db:status": "pwsh -NoProfile -File scripts/database.ps1 -Action status",
+    "db:verify": "pwsh -NoProfile -File scripts/database.ps1 -Action verify",
+    "build": "npm --prefix frontend run build",
+    "build:release": "node scripts/build-release.mjs",
+    "start:production": "node scripts/start-production.mjs",
+    "health": "node scripts/check-health.mjs",
+    "test:e2e": "npm --prefix frontend run test:e2e",
+    "test:api": "node --test scripts/api.test.mjs",
+    "test:unit": "cargo test --locked --manifest-path backend/Cargo.toml --test business --test money -j 3",
+    "extract": "node scripts/extract.mjs"
+  },
+  "devDependencies": { "acorn": "8.15.0" }
+}

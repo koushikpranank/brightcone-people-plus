@@ -1,0 +1,16 @@
+{
+  "sha256": "dcc4ce66521e71928070c4cf40281ad5c885a13361aaa144c16ec691f9d7d3d9",
+  "bytes": 675264,
+  "employees": 14,
+  "registry": 52,
+  "rules": [
+    "prob",
+    "appr",
+    "doc",
+    "stat",
+    "offer",
+    "exit",
+    "renew",
+    "chk"
+  ]
+}

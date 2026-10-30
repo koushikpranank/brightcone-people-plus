@@ -1,0 +1,24 @@
+[Unit]
+Description=Brightcone People Plus API
+Wants=network-online.target
+After=network-online.target postgresql.service
+
+[Service]
+Type=simple
+User=brightcone
+Group=brightcone
+WorkingDirectory=/opt/brightcone/current/backend
+EnvironmentFile=/etc/brightcone/brightcone.env
+Environment=LOCO_ENV=production
+ExecStart=/opt/brightcone/current/bin/brightcone-people-plus start
+Restart=on-failure
+RestartSec=5
+TimeoutStopSec=30
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+UMask=0077
+
+[Install]
+WantedBy=multi-user.target

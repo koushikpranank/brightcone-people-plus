@@ -1,0 +1,25 @@
+{
+  "v": 1,
+  "data": {
+    "resp": []
+  },
+  "seq": {},
+  "settings": {
+    "empPrefix": "BC-",
+    "quotas": {
+      "Casual leave": 12
+    },
+    "acc": {},
+    "answered": {},
+    "adv": {
+      "ratingHigh": 4,
+      "ratingLow": 2,
+      "eligMonths": 12,
+      "eligRating": 4,
+      "ffDays": 30,
+      "minGroup": 5
+    }
+  },
+  "audit": [],
+  "created": "2026-10-30T09:07:34.476Z"
+}

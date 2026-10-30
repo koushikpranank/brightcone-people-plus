@@ -1,0 +1,16 @@
+logger:
+  enable: true
+  pretty_backtrace: true
+  level: info
+  format: compact
+server:
+  port: <%= get_env(name="PORT", default="5150") %>
+  binding: 127.0.0.1
+  host: http://localhost:5150
+  middlewares:
+    limit_payload:
+      enable: true
+      body_limit: 32mb
+workers:
+  mode: BackgroundAsync
+settings: {}

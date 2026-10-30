@@ -1,0 +1,84 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    env:
+      CARGO_BUILD_JOBS: 2
+      SQLX_OFFLINE: 'true'
+      DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/brightcone_ci
+      PGHOST: 127.0.0.1
+      PGPORT: '5432'
+      PGUSER: postgres
+      PGPASSWORD: postgres
+      JWT_SECRET: ci-only-jwt-signing-secret-not-for-production-0123456789abcdef
+      SESSION_SECRET: ci-only-session-signing-secret-not-for-production-0123456789abcdef
+      PORT: '5150'
+      SEAORM_FRESH_DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/brightcone_seaorm_fresh_ci
+      SEAORM_DRIFT_DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/brightcone_seaorm_drift_ci
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+          cache-dependency-path: |
+            package-lock.json
+            frontend/package-lock.json
+      - name: Rust toolchain
+        run: rustup show active-toolchain
+      - name: Install native PostgreSQL 16
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-16 postgresql-client-16
+          sudo systemctl start postgresql@16-main
+          sudo -u postgres psql -v ON_ERROR_STOP=1 -c "ALTER USER postgres PASSWORD 'postgres';"
+          createdb brightcone_ci
+          createdb brightcone_seaorm_fresh_ci
+          createdb brightcone_seaorm_drift_ci
+      - name: Install JavaScript dependencies
+        run: |
+          npm ci
+          npm --prefix frontend ci
+      - name: Formatting, frontend build and Rust tests
+        run: |
+          cargo fmt --manifest-path backend/Cargo.toml --all -- --check
+          npm run build
+          cargo test --locked --manifest-path backend/Cargo.toml --workspace
+      - name: Fresh migration and rollback tests
+        run: |
+          cargo test --locked --manifest-path backend/Cargo.toml -p brightcone-migration --test postgres creates_fresh_schema -- --ignored
+          cargo test --locked --manifest-path backend/Cargo.toml -p brightcone-migration --test postgres incompatible_existing_schema -- --ignored
+      - name: Build and start the test API
+        run: |
+          cargo build --locked --manifest-path backend/Cargo.toml --workspace
+          cd backend
+          nohup target/debug/brightcone-people-plus start > "$RUNNER_TEMP/brightcone-api.log" 2>&1 &
+      - name: Wait for database-backed readiness
+        run: |
+          for attempt in $(seq 1 60); do
+            if curl --fail --silent http://127.0.0.1:5150/api/health; then exit 0; fi
+            sleep 2
+          done
+          cat "$RUNNER_TEMP/brightcone-api.log"
+          exit 1
+      - name: API and configurable money integration checks
+        env:
+          TEST_API_URL: http://127.0.0.1:5150/api
+        run: |
+          node --test scripts/api.test.mjs
+          node scripts/audit-endpoints.mjs

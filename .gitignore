@@ -1,0 +1,50 @@
+# Dependencies and build products
+node_modules/
+target/
+dist/
+coverage/
+
+# Local configuration and credentials; publish templates only
+.env
+.env.*
+!.env.example
+!.env.production.example
+*.pem
+*.key
+*.p12
+
+# Local database clusters, backups, logs and generated evidence
+/.local/
+/tmp/
+/output/
+*.dump
+*.backup
+*.sqlite
+*.sqlite3
+*.log
+*.mp4
+*.webm
+test-results/
+playwright-report/
+
+# Local document/recording authoring tools are not deployment source
+/scripts/create-lifecycle-report.py
+/scripts/create-project-guide.py
+/scripts/package-lifecycle-evidence.py
+/scripts/package-lifecycle-video.py
+
+# Assistant/editor workflow state
+.agents/
+.codex/
+.claude/
+.cursor/
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+.cursorrules
+.cursorignore
+.mcp.json
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

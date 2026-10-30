@@ -1,0 +1,6 @@
+* text=auto eol=lf
+"specification/Brightcone People Plus.html" -text
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.ico binary

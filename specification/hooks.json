@@ -1,0 +1,241 @@
+{
+  "emp": {
+    "label": "r => `${empName(r)} (${r.id})`",
+    "idf": "() => nextId('emp', R.settings.empPrefix, 4)",
+    "calc": "r => { if (!r.probEnd && r.doj) r.probEnd = addMonths(r.doj, 6) }",
+    "after": "(r, isNew) => { if (isNew && r.status === 'Probation' && !live('probation').some(p => p.emp === r.id)) addRec('probation', { emp: r.id, start: r.doj, end: r.probEnd, status: 'Pending' }) }"
+  },
+  "profile": {
+    "validate": "v => v.aadhaar && !/^\\d{4}$/.test(v.aadhaar) ? 'Enter only the last 4 digits of Aadhaar.' : v.pan && !/^[A-Z]{5}\\d{4}[A-Z]$/i.test(v.pan) ? 'PAN should look like ABCDE1234F.' : v.ifsc && !/^[A-Z]{4}0[A-Z0-9]{6}$/i.test(v.ifsc) ? 'IFSC should look like HDFC0001234.' : ''",
+    "label": "r => `${r.id}`"
+  },
+  "probation": {
+    "validate": "v => v.end < v.start ? 'Probation end must be after the start date.' : v.status === 'Extended' && !v.extTill ? 'Add the date the probation is extended till.' : ''",
+    "calc": "r => { if (r.status === 'Extended' && r.extTill) r.end = r.extTill }",
+    "after": "r => { const e = empById(r.emp); if (!e) return; if (r.status === 'Confirmed' && e.status === 'Probation') { e.status = 'Active' } e.probEnd = r.end }",
+    "label": "r => `${r.id}`"
+  },
+  "docs": {
+    "calc": "r => { if (r.expiry && r.expiry < tdy() && r.status !== 'Rejected') r.status = 'Expired' }",
+    "label": "r => `${r.id}`"
+  },
+  "exit": {
+    "validate": "v => v.lwd < v.resDate ? 'Last working day can’t be before the resignation date.' : v.status === 'Completed' && (v.assets === 'Pending' || v.ff !== 'Paid') ? 'Before completing, mark assets returned and F&F paid.' : ''",
+    "after": "r => { const e = empById(r.emp); if (!e) return; if (r.status === 'Completed') e.status = 'Exited'; else if (['Approved', 'In clearance'].includes(r.status) && e.status !== 'Exited') e.status = 'Notice period' }",
+    "label": "r => `${r.id}`"
+  },
+  "appraisal": {
+    "label": "r => `${r.id}`"
+  },
+  "reviews": {
+    "validate": "v => v.to < v.from ? 'Period end must be after the start.' : ''",
+    "label": "r => `${r.id}`"
+  },
+  "probrev": {
+    "after": "r => { if (r.status !== 'Completed') return; const e = empById(r.emp); live('probation').filter(p => p.emp === r.emp).forEach(p => { if (r.rec === 'Confirm') { p.status = 'Confirmed'; p.outcome = 'Confirm' } else if (r.rec === 'Extend') { p.status = 'Extended'; p.outcome = 'Extend' } else { p.outcome = 'Terminate' } }); if (e && r.rec === 'Confirm' && e.status === 'Probation') e.status = 'Active' }",
+    "label": "r => `${r.id}`"
+  },
+  "increments": {
+    "calc": "r => { r.pct = r.prev ? +((r.next - r.prev) / r.prev * 100).toFixed(2) : '' }",
+    "label": "r => `${r.id}`"
+  },
+  "recog": {
+    "label": "r => `${r.id}`"
+  },
+  "assets2": {
+    "validate": "v => v.status === 'Assigned' && !v.emp ? 'Choose who the asset is assigned to.' : ''",
+    "label": "r => `${r.id}`"
+  },
+  "cards": {
+    "validate": "v => !v.emp && !v.holder ? 'Choose an employee or enter the holder’s name.' : ''",
+    "label": "r => `${r.id}`"
+  },
+  "facilities": {
+    "label": "r => `${r.id}`"
+  },
+  "vendors": {
+    "label": "r => `${r.name} (${r.id})`",
+    "validate": "v => v.gstin && !/^\\d{2}[A-Z]{5}\\d{4}[A-Z][A-Z0-9]Z[A-Z0-9]$/i.test(v.gstin) ? 'GSTIN should be 15 characters, like 36ABCDE1234F1Z5.' : ''"
+  },
+  "manpower": {
+    "label": "r => `${r.designation} · ${r.department} (${r.id})`",
+    "validate": "v => v.reason === 'Replacement' && !v.replacing ? 'Choose the employee being replaced.' : v.positions < 1 ? 'Positions must be at least 1.' : ''"
+  },
+  "cands": {
+    "label": "r => `${r.name} (${r.id})`",
+    "validate": "v => v.consent !== 'Yes' ? 'You need the candidate’s consent to store their data.' : ''",
+    "rowAct": "r => ['Selected', 'Offered'].includes(r.stage) && !r.empId ? `<button class=\"btn sm primary\" onclick=\"convertCand('${r.id}')\">${ic('login', 14)}Convert to employee</button>` : r.empId ? `<span class=\"pill p-ok\">${esc(r.empId)}</span>` : ''"
+  },
+  "interviews2": {
+    "after": "r => { const c = recs('cands').find(x => x.id === r.cand); if (!c) return; if (r.status === 'Scheduled' && ['Applied', 'Screening'].includes(c.stage)) c.stage = 'Interview'; if (r.result === 'Selected' && ['Applied', 'Screening', 'Interview'].includes(c.stage) && r.round === 'Final / founder') c.stage = 'Selected'; if (r.result === 'Rejected' && r.status === 'Completed') c.stage = 'Rejected' }",
+    "label": "r => `${r.id}`"
+  },
+  "offers2": {
+    "validate": "v => v.valid < v.odate ? 'Valid-till must be after the offer date.' : ''",
+    "after": "r => { const c = recs('cands').find(x => x.id === r.cand); if (c && ['Sent', 'Accepted'].includes(r.status) && !['Joined', 'Rejected'].includes(c.stage)) c.stage = 'Offered' }",
+    "label": "r => `${r.id}`"
+  },
+  "joining": {
+    "calc": "r => { const y = ['idcard', 'mail', 'laptop', 'bankd', 'pf', 'appt'].filter(k => r[k] === 'Yes').length; if (y === 6 && r.docs === 'All collected') r.status = 'Completed'; else if (r.status === 'Completed' && (y < 6 || r.docs !== 'All collected')) r.status = 'In progress'; else if (y > 0 && r.status === 'Pending') r.status = 'In progress' }",
+    "label": "r => `${r.id}`"
+  },
+  "onboard2": {
+    "calc": "r => { if (r.status === 'Completed' && !r.done) r.done = tdy() }",
+    "head": "() => btn('Add standard checklist', 'stdChecklist()', '', 'list')",
+    "label": "r => `${r.id}`"
+  },
+  "interns": {
+    "validate": "v => v.end < v.start ? 'End date must be after the start date.' : ''",
+    "rowAct": "r => !r.empId && ['Active', 'Extended', 'Completed'].includes(r.status) ? `<button class=\"btn sm\" onclick=\"convertIntern('${r.id}')\">${ic('login', 14)}Convert</button>` : ''",
+    "label": "r => `${r.id}`"
+  },
+  "att": {
+    "validate": "(v, r) => live('att').some(x => x.emp === v.emp && x.date === v.date && (!r || x.id !== r.id)) ? 'This employee already has an entry for that date. Edit it instead.' : v.in && v.out && v.out < v.in ? 'Out time is before in time.' : ''",
+    "calc": "r => { r.hours = r.in && r.out ? hrs(r.in, r.out) : '' }",
+    "label": "r => `${r.id}`"
+  },
+  "logs": {
+    "stFn": "r => r.logout ? 'Completed' : 'Pending'",
+    "validate": "v => v.logout && v.logout < v.login ? 'Logout is before login.' : ''",
+    "calc": "r => { r.hours = r.login && r.logout ? hrs(r.login, r.logout) : '' }",
+    "head": "() => btn('Log in / out now', 'quickLog()', '', 'clock')",
+    "label": "r => `${r.id}`"
+  },
+  "leaves2": {
+    "validate": "v => v.to < v.from ? '“To” must be on or after “From”.' : weekdays(v.from, v.to) === 0 ? 'Those dates fall on a weekend.' : v.half === 'Yes' && v.from !== v.to ? 'A half day must be a single date.' : ''",
+    "calc": "r => { r.days = r.half === 'Yes' ? 0.5 : weekdays(r.from, r.to) }",
+    "warn": "v => { if (v.status === 'Rejected' || v.status === 'Cancelled') return ''; const q = R.settings.quotas[v.ltype]; if (!q) return ''; const b = q - takenDays(v.emp, v.ltype, v.from.slice(0, 4), v.id); return v.days > b ? `Only ${b} day(s) of ${v.ltype.toLowerCase()} left this year.` : '' }",
+    "label": "r => `${r.id}`"
+  },
+  "wfh": {
+    "calc": "r => { r.notice = dayDiff(r.reqOn, r.date); const same = live('wfh').filter(x => x.emp === r.emp && x.id !== r.id && x.date.slice(0, 7) === r.date.slice(0, 7) && x.status !== 'Rejected').length; const f = []; if (r.notice < 15) f.push('Under 15 days notice'); if (same >= 1) f.push('2nd WFH this month'); r.flag = f.length ? f.join('; ') : 'Within policy' }",
+    "label": "r => `${r.id}`"
+  },
+  "compoff": {
+    "calc": "r => { if (r.availed && r.status === 'Approved') r.status = 'Availed' }",
+    "validate": "v => v.useBy < v.worked ? 'Use-by date must be after the day worked.' : ''",
+    "label": "r => `${r.id}`"
+  },
+  "holidays2": {
+    "stFn": "r => r.date >= tdy() ? 'Upcoming' : 'Past'",
+    "sort": "(a, b) => a.date.localeCompare(b.date)",
+    "calc": "r => { r.day = new Date(r.date + 'T12:00:00').toLocaleDateString('en-US', { weekday: 'long' }); if (!r.loc) r.loc = 'All locations' }",
+    "label": "r => `${r.id}`"
+  },
+  "payroll2": {
+    "validate": "(v, r) => live('payroll2').some(x => x.emp === v.emp && x.month === v.month && (!r || x.id !== r.id)) ? 'This employee already has a payroll line for that month.' : v.ded > v.gross ? 'Deductions can’t exceed gross pay.' : (v.lop || 0) > v.wdays ? 'LOP days can’t exceed working days.' : ''",
+    "calc": "r => { r.pdays = (r.wdays || 0) - (r.lop || 0); r.net = (r.gross || 0) - (r.ded || 0) }",
+    "label": "r => `${r.id}`"
+  },
+  "structure": {
+    "calc": "r => { r.mgross = (r.basic || 0) + (r.hra || 0) + (r.special || 0) + (r.other || 0) }",
+    "after": "r => { if (r.status === 'Active') live('structure').forEach(x => { if (x.emp === r.emp && x.id !== r.id && x.status === 'Active') x.status = 'Superseded' }) }",
+    "label": "r => `${r.id}`"
+  },
+  "revisions": {
+    "calc": "r => { r.pct = r.cur ? +((r.rev - r.cur) / r.cur * 100).toFixed(2) : '' }",
+    "after": "r => { if (['Approved', 'Completed'].includes(r.status) && !r.incId) { const inc = addRec('increments', { emp: r.emp, eff: r.eff, itype: 'Annual increment', prev: r.cur, next: r.rev, approver: r.approver, letter: 'No', status: 'Approved' }); r.incId = inc.id; toast(`Added to Increment History as ${inc.id}`) } }",
+    "label": "r => `${r.id}`"
+  },
+  "payslips2": {
+    "calc": "r => { r.net = (r.gross || 0) - (r.ded || 0) }",
+    "head": "() => btn('Create from payroll', 'slipsFromPayroll()', '', 'pay')",
+    "label": "r => `${r.id}`"
+  },
+  "pfesi": {
+    "calc": "r => { r.total = (r.ee || 0) + (r.er || 0); if (r.paidOn && r.status === 'Pending') r.status = 'Paid' }",
+    "validate": "v => v.status === 'Paid' && !v.challan ? 'Add the challan or TRRN number when marking as paid.' : ''",
+    "label": "r => `${r.id}`"
+  },
+  "statutory": {
+    "calc": "r => { if (r.filed && r.status === 'Pending') r.status = 'Completed' }",
+    "label": "r => `${r.id}`"
+  },
+  "events": {
+    "sort": "(a, b) => b.date.localeCompare(a.date)",
+    "label": "r => `${r.id}`"
+  },
+  "feedback": {
+    "calc": "r => { if (r.anon === 'Yes') r.emp = '' }",
+    "label": "r => `${r.id}`"
+  },
+  "townhall": {
+    "sort": "(a, b) => b.date.localeCompare(a.date)",
+    "label": "r => `${r.id}`"
+  },
+  "training": {
+    "label": "r => `${r.id}`"
+  },
+  "posh": {
+    "label": "r => `${r.id}`"
+  },
+  "sectrain": {
+    "calc": "r => { if (r.done) r.status = 'Completed' }",
+    "head": "() => btn('Assign to everyone', 'assignAll()', '', 'users')",
+    "label": "r => `${r.id}`"
+  },
+  "handbook": {
+    "label": "r => `Handbook v${r.ver} (${r.id})`",
+    "after": "r => { if (r.status === 'Published') live('handbook').forEach(x => { if (x.id !== r.id && x.status === 'Published') x.status = 'Archived' }) }"
+  },
+  "policies": {
+    "label": "r => `${r.name} v${r.ver} (${r.id})`"
+  },
+  "acks": {
+    "calc": "r => { if (r.ackOn) r.status = 'Acknowledged' }",
+    "head": "() => btn('Send to all employees', 'sendAcks()', '', 'send')",
+    "validate": "(v, r) => live('acks').some(x => x.policy === v.policy && x.emp === v.emp && (!r || x.id !== r.id)) ? 'This employee already has this policy assigned.' : ''",
+    "label": "r => `${r.id}`"
+  },
+  "officeexp": {
+    "sort": "(a, b) => b.date.localeCompare(a.date)",
+    "calc": "r => { r.total = (r.amount || 0) + (r.gst || 0) }",
+    "label": "r => `${r.id}`"
+  },
+  "goals": {
+    "validate": "(v, r) => { if (v.progress > 100 || v.weight > 100) return 'Weight and progress can’t be above 100.'; const tot = live('goals').filter(g => g.emp === v.emp && g.cycle === v.cycle && g.status !== 'Dropped' && (!r || g.id !== r.id)).reduce((a, g) => a + (+g.weight || 0), 0) + (v.status === 'Dropped' ? 0 : +v.weight); if (tot > 100) return `Weights for this cycle would total ${tot}%. Keep them at 100% or below.`; if (curRole() === 'Employee' && !['Draft', 'Pending approval'].includes(v.status) && (!r || r.status !== v.status)) return 'Only your manager or HR can set this status.'; return '' }",
+    "warn": "v => { const tot = live('goals').filter(g => g.emp === v.emp && g.cycle === v.cycle && g.status !== 'Dropped').reduce((a, g) => a + (+g.weight || 0), 0); return tot !== 100 ? `weights for ${v.cycle} total ${tot}%, not 100%.` : '' }",
+    "calc": "r => { if (r.status === 'Active' && r.due && dayDiff(tdy(), r.due) <= 14 && (+r.progress || 0) < 70) r.status = 'At risk'; if ((+r.progress || 0) >= 100 && ['Active', 'At risk'].includes(r.status)) r.status = 'Achieved' }",
+    "label": "r => `${r.id}`"
+  },
+  "checkins": {
+    "sort": "(a, b) => b.date.localeCompare(a.date)",
+    "calc": "r => { if (!r.mgr) r.mgr = empById(r.emp)?.manager || '' }",
+    "after": "r => { if (r.status === 'Completed' && r.next && !live('checkins').some(x => x.emp === r.emp && x.date === r.next)) addRec('checkins', { emp: r.emp, mgr: r.mgr, date: r.next, status: 'Scheduled' }) }",
+    "label": "r => `${r.id}`"
+  },
+  "pips": {
+    "calc": "r => { if (!r.mgr) r.mgr = empById(r.emp)?.manager || '' }",
+    "validate": "v => v.end < v.start ? 'End must be after start.' : v.status === 'Completed' && !v.outcome ? 'Choose an outcome before completing.' : ''",
+    "label": "r => `${r.id}`"
+  },
+  "promos": {
+    "calc": "r => { const e = empById(r.emp); if (e && r.status !== 'Effected') { r.curDes = e.designation || ''; r.curGrade = e.grade || ''; const st = live('structure').find(s => s.emp === r.emp && s.status === 'Active'); r.curCtc = st ? +st.ctc : ''; const ra = live('appraisal').filter(x => x.emp === r.emp && x.rating).sort((a, b) => (b.due || '').localeCompare(a.due || ''))[0]; r.rating = ra ? ra.rating : ''; const el = eligibility(r.emp); r.elig = el.ok ? 'Eligible' : 'Not yet: ' + el.why.join('; ') } r.pct = r.curCtc && r.propCtc ? +((r.propCtc - r.curCtc) / r.curCtc * 100).toFixed(2) : '' }",
+    "validate": "(v, r) => { const ord = ['Nominated', 'Manager endorsed', 'HR reviewed', 'Approved', 'Effected']; if (['Approved', 'Rejected', 'Effected'].includes(v.status) && curRole() !== 'HR Admin' && (!r || r.status !== v.status)) return 'Only HR Admin can approve, reject or effect a promotion.'; if (v.status === 'HR reviewed' && !canHR() && (!r || r.status !== v.status)) return 'Only HR can mark a nomination as reviewed.'; if (ord.indexOf(v.status) > 0 && !String(v.elig).startsWith('Eligible') && !v.override) return 'This employee isn’t eligible yet. Add an override reason to move it forward.'; if (v.status === 'Effected' && r && !['Approved', 'Effected'].includes(r.status)) return 'Approve the nomination before marking it Effected.'; return '' }",
+    "after": "r => {\n          if (r.status === 'Effected' && !r.applied) {\n            const e = empById(r.emp); if (e) { e.designation = r.propDes || e.designation; if (r.propGrade) e.grade = r.propGrade; e._u = nowISO(); (e._h = e._h || []).push({ t: e._u, by: USER.email, s: `Promoted to ${r.propDes} (${r.id})` }) }\n            if (r.curCtc && r.propCtc) addRec('increments', { emp: r.emp, eff: r.eff, itype: 'Promotion', prev: r.curCtc, next: r.propCtc, approver: myEmp(), letter: 'No', status: 'Approved' });\n            addRec('actions', { title: `Issue promotion letter to ${empText(r.emp)}`, cat: 'Promotion', emp: r.emp, src: `Promotion ${r.id}`, pri: 'High', due: addDays(tdy(), 3), remind: '1 day before', repeat: 'None', status: 'Open' }); r.applied = true; toast('Master data and Increment history updated; promotion-letter action created.')\n          }\n        }",
+    "label": "r => `${r.id}`"
+  },
+  "idps": {
+    "label": "r => `${r.id}`"
+  },
+  "succession": {
+    "stFn": "r => [r.r1, r.r2, r.r3].includes('Ready now') ? 'Covered' : (r.s1 || r.s2 || r.s3) ? 'Partly covered' : 'Not covered'",
+    "label": "r => `${r.role} (${r.id})`",
+    "validate": "v => { const s = [v.s1, v.s2, v.s3].filter(Boolean); if (s.includes(v.inc)) return 'The incumbent can’t be their own successor.'; if (new Set(s).size !== s.length) return 'Each successor can appear only once.'; return '' }"
+  },
+  "surveys": {
+    "label": "r => `${r.title} (${r.id})`",
+    "validate": "v => v.close < v.open ? 'Close date must be after the open date.' : ''",
+    "rowAct": "r => r.status === 'Open' && myEmp() && !(R.settings.answered[r.id] || []).includes(USER.email) ? `<button class=\"btn sm primary\" onclick=\"respondSurvey('${r.id}')\">Respond</button>` : ''"
+  },
+  "licences": {
+    "stFn": "r => !r.valid ? 'Active' : r.valid < tdy() ? 'Expired' : dayDiff(tdy(), r.valid) <= 30 ? 'Renewal due' : 'Active'",
+    "label": "r => `${r.name} ${r.no}`"
+  },
+  "actions": {
+    "sort": "(a, b) => { const o = x => ['Done', 'Cancelled'].includes(x.status) ? 1 : 0; return o(a) - o(b) || (a.due || '').localeCompare(b.due || '') }",
+    "xf": "r => { const v = TAB.actView || 'My actions', me = myEmp(); if (v === 'My actions') return r.owner === me && !!me || r._cb === USER.email || (!r.owner && canHR()); if (v === 'My team') return teamOf(me).has(r.owner) || teamOf(me).has(r.emp); return true }",
+    "after": "(r, isNew, prev) => { if (r.status === 'Done' && prev !== 'Done' && r.repeat && r.repeat !== 'None') { const n = { Monthly: 1, Quarterly: 3, Yearly: 12 }[r.repeat]; addRec('actions', { title: r.title, cat: r.cat, emp: r.emp, owner: r.owner, pri: r.pri, due: addMonths(r.due, n), remind: r.remind, repeat: r.repeat, status: 'Open', src: r.src }) } }",
+    "label": "r => `${r.id}`"
+  }
+}

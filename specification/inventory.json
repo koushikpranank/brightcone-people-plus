@@ -1,0 +1,1032 @@
+{
+  "NAV": {
+    "admin": {
+      "plus": [
+        [
+          "Suite Overview",
+          [
+            [
+              "suiteDash",
+              "Suite dashboard",
+              "dashboard"
+            ],
+            [
+              "approvals",
+              "Approvals inbox",
+              "inbox"
+            ],
+            [
+              "reports",
+              "Reports & analytics",
+              "chart"
+            ],
+            [
+              "m_actions",
+              "Action center & alerts",
+              "bell"
+            ]
+          ]
+        ],
+        [
+          "Strategic HR",
+          [
+            [
+              "m_wfa",
+              "Workforce analytics",
+              "chart"
+            ],
+            [
+              "m_perf",
+              "Performance management",
+              "star"
+            ],
+            [
+              "m_career",
+              "Career growth & promotions",
+              "briefcase"
+            ],
+            [
+              "m_eng",
+              "Engagement analytics",
+              "heart"
+            ],
+            [
+              "m_comp",
+              "HR compliance dashboard",
+              "shield"
+            ]
+          ]
+        ],
+        [
+          "Suite Administration",
+          [
+            [
+              "settings",
+              "Settings & permissions",
+              "gear"
+            ],
+            [
+              "m_access",
+              "Access control matrix",
+              "shield"
+            ],
+            [
+              "m_backup",
+              "Data & backup",
+              "download"
+            ],
+            [
+              "audit",
+              "Audit log",
+              "list"
+            ]
+          ]
+        ]
+      ],
+      "people": [
+        [
+          "Overview",
+          [
+            [
+              "adminDash",
+              "People dashboard",
+              "dashboard"
+            ]
+          ]
+        ],
+        [
+          "Employee Master & Directory",
+          [
+            [
+              "employees",
+              "Employee master data",
+              "users"
+            ],
+            [
+              "orgStructure",
+              "Org structure",
+              "org"
+            ],
+            [
+              "m_profile",
+              "Employee profiles",
+              "idcard"
+            ]
+          ]
+        ],
+        [
+          "Lifecycle & Movement",
+          [
+            [
+              "onboarding",
+              "Onboarding & joiners",
+              "login"
+            ],
+            [
+              "m_probation",
+              "Probation tracking",
+              "clock"
+            ],
+            [
+              "exits",
+              "Exits & offboarding",
+              "logout"
+            ]
+          ]
+        ],
+        [
+          "Time & Attendance",
+          [
+            [
+              "leaveAdmin",
+              "Leave management",
+              "leave"
+            ],
+            [
+              "attendanceAdmin",
+              "Attendance & shifts",
+              "clock"
+            ]
+          ]
+        ],
+        [
+          "HR Services & Records",
+          [
+            [
+              "docsAdmin",
+              "Documents & letters",
+              "doc"
+            ],
+            [
+              "helpAdmin",
+              "Helpdesk queue",
+              "chat"
+            ]
+          ]
+        ]
+      ],
+      "recruit": [
+        [
+          "Overview",
+          [
+            [
+              "recruitDash",
+              "Recruit dashboard",
+              "dashboard"
+            ]
+          ]
+        ],
+        [
+          "Recruitment & onboarding",
+          [
+            [
+              "m_manpower",
+              "Manpower requirements",
+              "briefcase"
+            ],
+            [
+              "m_cands",
+              "Candidate tracker",
+              "users"
+            ],
+            [
+              "m_interviews2",
+              "Interview scheduling",
+              "calendar"
+            ],
+            [
+              "m_offers2",
+              "Offer letters",
+              "send"
+            ],
+            [
+              "m_joining",
+              "Joining formalities",
+              "login"
+            ],
+            [
+              "m_onboard2",
+              "Onboarding checklist",
+              "list"
+            ],
+            [
+              "m_interns",
+              "Internship management",
+              "learn"
+            ]
+          ]
+        ],
+        [
+          "Hiring",
+          [
+            [
+              "recruitment",
+              "Pipeline & jobs",
+              "briefcase"
+            ]
+          ]
+        ]
+      ],
+      "payroll": [
+        [
+          "Overview",
+          [
+            [
+              "payrollDash",
+              "Payroll dashboard",
+              "dashboard"
+            ]
+          ]
+        ],
+        [
+          "Payroll & compliance",
+          [
+            [
+              "m_payroll2",
+              "Monthly payroll",
+              "pay"
+            ],
+            [
+              "m_structure",
+              "Salary structure",
+              "list"
+            ],
+            [
+              "m_revisions",
+              "Salary revision & appraisals",
+              "chart"
+            ],
+            [
+              "m_payslips2",
+              "Payslip records",
+              "download"
+            ],
+            [
+              "m_pfesi",
+              "PF & ESI compliance",
+              "shield"
+            ],
+            [
+              "m_statutory",
+              "Statutory compliance",
+              "shield"
+            ]
+          ]
+        ],
+        [
+          "Payroll",
+          [
+            [
+              "payrollAdmin",
+              "Payroll runs",
+              "pay"
+            ],
+            [
+              "benefitsAdmin",
+              "Benefits",
+              "heart"
+            ]
+          ]
+        ]
+      ],
+      "expense": [
+        [
+          "Overview",
+          [
+            [
+              "expenseDash",
+              "Expense dashboard",
+              "dashboard"
+            ]
+          ]
+        ],
+        [
+          "Office expenses",
+          [
+            [
+              "m_officeexp",
+              "Office expenses",
+              "receipt"
+            ]
+          ]
+        ],
+        [
+          "Claims",
+          [
+            [
+              "expensesAdmin",
+              "All claims",
+              "receipt"
+            ]
+          ]
+        ]
+      ],
+      "sign": [
+        [
+          "Overview",
+          [
+            [
+              "signDash",
+              "Sign dashboard",
+              "dashboard"
+            ]
+          ]
+        ],
+        [
+          "HR policies & compliance",
+          [
+            [
+              "m_handbook",
+              "Employee handbook",
+              "doc"
+            ],
+            [
+              "m_policies",
+              "HR policies",
+              "doc"
+            ],
+            [
+              "m_acks",
+              "Policy acknowledgements",
+              "check"
+            ]
+          ]
+        ],
+        [
+          "Documents",
+          [
+            [
+              "signDocs",
+              "Signature requests",
+              "pen"
+            ],
+            [
+              "signTemplates",
+              "Templates",
+              "doc"
+            ]
+          ]
+        ]
+      ],
+      "connect": [
+        [
+          "Overview",
+          [
+            [
+              "feed",
+              "Company feed",
+              "chat"
+            ]
+          ]
+        ],
+        [
+          "Employee engagement",
+          [
+            [
+              "m_celebrate",
+              "Birthdays & anniversaries",
+              "gift"
+            ],
+            [
+              "m_events",
+              "Company events",
+              "gift"
+            ],
+            [
+              "m_feedback",
+              "Employee feedback",
+              "chat"
+            ],
+            [
+              "m_townhall",
+              "Town hall meetings",
+              "mega"
+            ]
+          ]
+        ],
+        [
+          "Communicate",
+          [
+            [
+              "announcements",
+              "Announcements",
+              "mega"
+            ],
+            [
+              "directory",
+              "People directory",
+              "users"
+            ]
+          ]
+        ]
+      ],
+      "learn": [
+        [
+          "Overview",
+          [
+            [
+              "learnDash",
+              "Learn dashboard",
+              "dashboard"
+            ]
+          ]
+        ],
+        [
+          "Training & development",
+          [
+            [
+              "m_training",
+              "Training & development",
+              "learn"
+            ]
+          ]
+        ],
+        [
+          "Compliance training",
+          [
+            [
+              "m_posh",
+              "POSH training & committee",
+              "shield"
+            ],
+            [
+              "m_sectrain",
+              "Security & compliance training",
+              "shield"
+            ],
+            [
+              "m_completion",
+              "Training completion",
+              "check"
+            ]
+          ]
+        ],
+        [
+          "Catalogue",
+          [
+            [
+              "learningAdmin",
+              "Courses",
+              "learn"
+            ]
+          ]
+        ]
+      ],
+      "shift": [
+        [
+          "Overview",
+          [
+            [
+              "shiftRoster",
+              "Weekly roster",
+              "calendar"
+            ]
+          ]
+        ],
+        [
+          "Attendance & leave",
+          [
+            [
+              "m_att",
+              "Daily attendance",
+              "clock"
+            ],
+            [
+              "m_logs",
+              "Login & logout",
+              "login"
+            ],
+            [
+              "m_leaves2",
+              "Leave requests",
+              "leave"
+            ],
+            [
+              "m_balance",
+              "Leave balance",
+              "leave"
+            ],
+            [
+              "m_wfh",
+              "Work from home",
+              "home"
+            ],
+            [
+              "m_compoff",
+              "Comp-off tracker",
+              "swap"
+            ],
+            [
+              "m_holidays2",
+              "Holiday calendar",
+              "gift"
+            ]
+          ]
+        ],
+        [
+          "Manage",
+          [
+            [
+              "shiftSwaps",
+              "Swap requests",
+              "swap"
+            ],
+            [
+              "attendanceAdmin",
+              "Attendance & shifts",
+              "clock"
+            ]
+          ]
+        ]
+      ]
+    },
+    "employee": {
+      "plus": [
+        [
+          "My Workspace",
+          [
+            [
+              "home",
+              "My dashboard",
+              "home"
+            ],
+            [
+              "approvals",
+              "My approvals & requests",
+              "inbox"
+            ]
+          ]
+        ],
+        [
+          "Growth & Development",
+          [
+            [
+              "myPerformance",
+              "Goals & performance",
+              "star"
+            ],
+            [
+              "m_career",
+              "Career growth",
+              "briefcase"
+            ]
+          ]
+        ]
+      ],
+      "people": [
+        [
+          "Me & Records",
+          [
+            [
+              "profile",
+              "My profile",
+              "user"
+            ],
+            [
+              "myDocs",
+              "Documents & letters",
+              "doc"
+            ]
+          ]
+        ],
+        [
+          "Time & Attendance",
+          [
+            [
+              "myLeave",
+              "Leave",
+              "leave"
+            ],
+            [
+              "myAttendance",
+              "Attendance & clock",
+              "clock"
+            ]
+          ]
+        ],
+        [
+          "Workplace & Help",
+          [
+            [
+              "myHelp",
+              "HR helpdesk",
+              "chat"
+            ],
+            [
+              "myExit",
+              "Resignation & exit",
+              "logout"
+            ]
+          ]
+        ]
+      ],
+      "recruit": [
+        [
+          "Careers",
+          [
+            [
+              "careers",
+              "Jobs & referrals",
+              "briefcase"
+            ]
+          ]
+        ]
+      ],
+      "payroll": [
+        [
+          "Pay",
+          [
+            [
+              "myPay",
+              "Payslips & tax",
+              "pay"
+            ],
+            [
+              "myBenefits",
+              "Benefits",
+              "heart"
+            ]
+          ]
+        ]
+      ],
+      "expense": [
+        [
+          "Claims",
+          [
+            [
+              "myExpenses",
+              "My expenses",
+              "receipt"
+            ]
+          ]
+        ]
+      ],
+      "sign": [
+        [
+          "Documents",
+          [
+            [
+              "mySign",
+              "Documents to sign",
+              "pen"
+            ]
+          ]
+        ]
+      ],
+      "connect": [
+        [
+          "Community",
+          [
+            [
+              "feed",
+              "Company feed",
+              "chat"
+            ],
+            [
+              "directory",
+              "People directory",
+              "users"
+            ]
+          ]
+        ]
+      ],
+      "learn": [
+        [
+          "Learning",
+          [
+            [
+              "myLearning",
+              "My learning",
+              "learn"
+            ]
+          ]
+        ]
+      ],
+      "shift": [
+        [
+          "Schedule",
+          [
+            [
+              "mySchedule",
+              "My schedule",
+              "calendar"
+            ]
+          ]
+        ]
+      ]
+    }
+  },
+  "APPS": [
+    [
+      "people",
+      "People",
+      "users",
+      "#12A58E",
+      "Employee records, time off and HR operations"
+    ],
+    [
+      "recruit",
+      "Recruit",
+      "briefcase",
+      "#7C5CFF",
+      "Jobs, candidates, interviews and offers"
+    ],
+    [
+      "payroll",
+      "Payroll",
+      "pay",
+      "#0F9F6E",
+      "Payroll runs, salary register and compliance"
+    ],
+    [
+      "expense",
+      "Expense",
+      "receipt",
+      "#E07A1D",
+      "Claims, approvals and reimbursements"
+    ],
+    [
+      "sign",
+      "Sign",
+      "pen",
+      "#D9466F",
+      "E-signatures for offers, NDAs and letters"
+    ],
+    [
+      "connect",
+      "Connect",
+      "chat",
+      "#0BA6CC",
+      "Company feed, kudos and announcements"
+    ],
+    [
+      "learn",
+      "Learn",
+      "learn",
+      "#6366F1",
+      "Courses, compliance training and skills"
+    ],
+    [
+      "shift",
+      "Shift",
+      "calendar",
+      "#3B82C4",
+      "Rosters, shift swaps and attendance"
+    ],
+    [
+      "plus",
+      "People Plus",
+      "grid",
+      "#0B6FDB",
+      "Your whole HR suite on one dashboard"
+    ]
+  ],
+  "ADVNAV": [
+    [
+      "m_perf",
+      "Performance management",
+      "chart",
+      "perf"
+    ],
+    [
+      "m_career",
+      "Career growth & promotions",
+      "star",
+      null
+    ],
+    [
+      "m_wfa",
+      "Workforce analytics",
+      "chart",
+      "wfa"
+    ],
+    [
+      "m_eng",
+      "Engagement analytics",
+      "heart",
+      "eng"
+    ],
+    [
+      "m_comp",
+      "HR compliance dashboard",
+      "shield",
+      "comp"
+    ],
+    [
+      "m_actions",
+      "Actions & reminders",
+      "bell",
+      "act"
+    ],
+    [
+      "m_access",
+      "Access control",
+      "gear",
+      "__admin"
+    ]
+  ],
+  "ACC": {
+    "perf": {
+      "HR Admin": "all",
+      "HR Executive": "all",
+      "Manager": "team",
+      "Finance": "none",
+      "Leadership": "summary",
+      "Employee": "own"
+    },
+    "pip": {
+      "HR Admin": "all",
+      "HR Executive": "assigned",
+      "Manager": "teamx",
+      "Finance": "none",
+      "Leadership": "none",
+      "Employee": "ownshared"
+    },
+    "promo": {
+      "HR Admin": "all",
+      "HR Executive": "view",
+      "Manager": "teamx",
+      "Finance": "view",
+      "Leadership": "summary",
+      "Employee": "none"
+    },
+    "succ": {
+      "HR Admin": "all",
+      "HR Executive": "none",
+      "Manager": "none",
+      "Finance": "none",
+      "Leadership": "view",
+      "Employee": "none"
+    },
+    "idp": {
+      "HR Admin": "all",
+      "HR Executive": "all",
+      "Manager": "team",
+      "Finance": "none",
+      "Leadership": "none",
+      "Employee": "own"
+    },
+    "wfa": {
+      "HR Admin": "all",
+      "HR Executive": "all",
+      "Manager": "team",
+      "Finance": "pay",
+      "Leadership": "all",
+      "Employee": "none"
+    },
+    "pay": {
+      "HR Admin": "all",
+      "HR Executive": "none",
+      "Manager": "none",
+      "Finance": "all",
+      "Leadership": "none",
+      "Employee": "none"
+    },
+    "eng": {
+      "HR Admin": "all",
+      "HR Executive": "all",
+      "Manager": "team",
+      "Finance": "respond",
+      "Leadership": "all",
+      "Employee": "respond"
+    },
+    "risk": {
+      "HR Admin": "all",
+      "HR Executive": "none",
+      "Manager": "none",
+      "Finance": "none",
+      "Leadership": "all",
+      "Employee": "none"
+    },
+    "comp": {
+      "HR Admin": "all",
+      "HR Executive": "all",
+      "Manager": "none",
+      "Finance": "statutory",
+      "Leadership": "scores",
+      "Employee": "none"
+    },
+    "act": {
+      "HR Admin": "all",
+      "HR Executive": "all",
+      "Manager": "team",
+      "Finance": "own",
+      "Leadership": "own",
+      "Employee": "own"
+    }
+  },
+  "ROLES": [
+    "HR Admin",
+    "HR Executive",
+    "Manager",
+    "Finance",
+    "Leadership",
+    "Employee"
+  ],
+  "views": [
+    "home",
+    "profile",
+    "myAttendance",
+    "myLeave",
+    "myPay",
+    "myExpenses",
+    "myBenefits",
+    "myPerformance",
+    "myLearning",
+    "careers",
+    "directory",
+    "myDocs",
+    "myAssets",
+    "myHelp",
+    "myExit",
+    "adminDash",
+    "approvals",
+    "employees",
+    "m_emp",
+    "orgStructure",
+    "onboarding",
+    "exits",
+    "attendanceAdmin",
+    "leaveAdmin",
+    "payrollAdmin",
+    "expensesAdmin",
+    "benefitsAdmin",
+    "recruitment",
+    "performanceAdmin",
+    "learningAdmin",
+    "assetsAdmin",
+    "docsAdmin",
+    "announcements",
+    "helpAdmin",
+    "reports",
+    "settings",
+    "audit",
+    "suiteDash",
+    "recruitDash",
+    "payrollDash",
+    "expenseDash",
+    "signDash",
+    "signDocs",
+    "signTemplates",
+    "mySign",
+    "feed",
+    "learnDash",
+    "shiftRoster",
+    "shiftSwaps",
+    "mySchedule",
+    "m_joiners",
+    "m_balance",
+    "m_celebrate",
+    "m_completion",
+    "m_backup",
+    "m_profile",
+    "m_probation",
+    "m_docs",
+    "m_exit",
+    "m_appraisal",
+    "m_reviews",
+    "m_probrev",
+    "m_increments",
+    "m_recog",
+    "m_assets2",
+    "m_cards",
+    "m_facilities",
+    "m_vendors",
+    "m_manpower",
+    "m_cands",
+    "m_interviews2",
+    "m_offers2",
+    "m_joining",
+    "m_onboard2",
+    "m_interns",
+    "m_att",
+    "m_logs",
+    "m_leaves2",
+    "m_wfh",
+    "m_compoff",
+    "m_holidays2",
+    "m_payroll2",
+    "m_structure",
+    "m_revisions",
+    "m_payslips2",
+    "m_pfesi",
+    "m_statutory",
+    "m_events",
+    "m_feedback",
+    "m_townhall",
+    "m_training",
+    "m_posh",
+    "m_sectrain",
+    "m_handbook",
+    "m_policies",
+    "m_acks",
+    "m_officeexp",
+    "m_perf",
+    "m_career",
+    "m_wfa",
+    "m_eng",
+    "m_comp",
+    "m_actions",
+    "m_access"
+  ]
+}

@@ -1,0 +1,422 @@
+{
+  "plus/suiteDash": {
+    "app": "plus",
+    "view": "suiteDash"
+  },
+  "plus/approvals": {
+    "app": "plus",
+    "view": "approvals"
+  },
+  "plus/reports": {
+    "app": "plus",
+    "view": "reports"
+  },
+  "plus/m_actions": {
+    "app": "plus",
+    "view": "m_actions"
+  },
+  "plus/m_wfa": {
+    "app": "plus",
+    "view": "m_wfa"
+  },
+  "plus/m_perf": {
+    "app": "plus",
+    "view": "m_perf"
+  },
+  "plus/m_career": {
+    "app": "plus",
+    "view": "m_career"
+  },
+  "plus/m_eng": {
+    "app": "plus",
+    "view": "m_eng"
+  },
+  "plus/m_comp": {
+    "app": "plus",
+    "view": "m_comp"
+  },
+  "plus/settings": {
+    "app": "plus",
+    "view": "settings"
+  },
+  "plus/m_access": {
+    "app": "plus",
+    "view": "m_access"
+  },
+  "plus/m_backup": {
+    "app": "plus",
+    "view": "m_backup"
+  },
+  "plus/audit": {
+    "app": "plus",
+    "view": "audit"
+  },
+  "people/adminDash": {
+    "app": "people",
+    "view": "adminDash"
+  },
+  "people/employees": {
+    "app": "people",
+    "view": "employees"
+  },
+  "people/orgStructure": {
+    "app": "people",
+    "view": "orgStructure"
+  },
+  "people/m_profile": {
+    "app": "people",
+    "view": "m_profile"
+  },
+  "people/onboarding": {
+    "app": "people",
+    "view": "onboarding"
+  },
+  "people/m_probation": {
+    "app": "people",
+    "view": "m_probation"
+  },
+  "people/exits": {
+    "app": "people",
+    "view": "exits"
+  },
+  "people/leaveAdmin": {
+    "app": "people",
+    "view": "leaveAdmin"
+  },
+  "people/attendanceAdmin": {
+    "app": "people",
+    "view": "attendanceAdmin"
+  },
+  "people/docsAdmin": {
+    "app": "people",
+    "view": "docsAdmin"
+  },
+  "people/helpAdmin": {
+    "app": "people",
+    "view": "helpAdmin"
+  },
+  "recruit/recruitDash": {
+    "app": "recruit",
+    "view": "recruitDash"
+  },
+  "recruit/m_manpower": {
+    "app": "recruit",
+    "view": "m_manpower"
+  },
+  "recruit/m_cands": {
+    "app": "recruit",
+    "view": "m_cands"
+  },
+  "recruit/m_interviews2": {
+    "app": "recruit",
+    "view": "m_interviews2"
+  },
+  "recruit/m_offers2": {
+    "app": "recruit",
+    "view": "m_offers2"
+  },
+  "recruit/m_joining": {
+    "app": "recruit",
+    "view": "m_joining"
+  },
+  "recruit/m_onboard2": {
+    "app": "recruit",
+    "view": "m_onboard2"
+  },
+  "recruit/m_interns": {
+    "app": "recruit",
+    "view": "m_interns"
+  },
+  "recruit/recruitment": {
+    "app": "recruit",
+    "view": "recruitment"
+  },
+  "payroll/payrollDash": {
+    "app": "payroll",
+    "view": "payrollDash"
+  },
+  "payroll/m_payroll2": {
+    "app": "payroll",
+    "view": "m_payroll2"
+  },
+  "payroll/m_structure": {
+    "app": "payroll",
+    "view": "m_structure"
+  },
+  "payroll/m_revisions": {
+    "app": "payroll",
+    "view": "m_revisions"
+  },
+  "payroll/m_payslips2": {
+    "app": "payroll",
+    "view": "m_payslips2"
+  },
+  "payroll/m_pfesi": {
+    "app": "payroll",
+    "view": "m_pfesi"
+  },
+  "payroll/m_statutory": {
+    "app": "payroll",
+    "view": "m_statutory"
+  },
+  "payroll/payrollAdmin": {
+    "app": "payroll",
+    "view": "payrollAdmin"
+  },
+  "payroll/benefitsAdmin": {
+    "app": "payroll",
+    "view": "benefitsAdmin"
+  },
+  "expense/expenseDash": {
+    "app": "expense",
+    "view": "expenseDash"
+  },
+  "expense/m_officeexp": {
+    "app": "expense",
+    "view": "m_officeexp"
+  },
+  "expense/expensesAdmin": {
+    "app": "expense",
+    "view": "expensesAdmin"
+  },
+  "sign/signDash": {
+    "app": "sign",
+    "view": "signDash"
+  },
+  "sign/m_handbook": {
+    "app": "sign",
+    "view": "m_handbook"
+  },
+  "sign/m_policies": {
+    "app": "sign",
+    "view": "m_policies"
+  },
+  "sign/m_acks": {
+    "app": "sign",
+    "view": "m_acks"
+  },
+  "sign/signDocs": {
+    "app": "sign",
+    "view": "signDocs"
+  },
+  "sign/signTemplates": {
+    "app": "sign",
+    "view": "signTemplates"
+  },
+  "connect/feed": {
+    "app": "connect",
+    "view": "feed"
+  },
+  "connect/m_celebrate": {
+    "app": "connect",
+    "view": "m_celebrate"
+  },
+  "connect/m_events": {
+    "app": "connect",
+    "view": "m_events"
+  },
+  "connect/m_feedback": {
+    "app": "connect",
+    "view": "m_feedback"
+  },
+  "connect/m_townhall": {
+    "app": "connect",
+    "view": "m_townhall"
+  },
+  "connect/announcements": {
+    "app": "connect",
+    "view": "announcements"
+  },
+  "connect/directory": {
+    "app": "connect",
+    "view": "directory"
+  },
+  "learn/learnDash": {
+    "app": "learn",
+    "view": "learnDash"
+  },
+  "learn/m_training": {
+    "app": "learn",
+    "view": "m_training"
+  },
+  "learn/m_posh": {
+    "app": "learn",
+    "view": "m_posh"
+  },
+  "learn/m_sectrain": {
+    "app": "learn",
+    "view": "m_sectrain"
+  },
+  "learn/m_completion": {
+    "app": "learn",
+    "view": "m_completion"
+  },
+  "learn/learningAdmin": {
+    "app": "learn",
+    "view": "learningAdmin"
+  },
+  "shift/shiftRoster": {
+    "app": "shift",
+    "view": "shiftRoster"
+  },
+  "shift/m_att": {
+    "app": "shift",
+    "view": "m_att"
+  },
+  "shift/m_logs": {
+    "app": "shift",
+    "view": "m_logs"
+  },
+  "shift/m_leaves2": {
+    "app": "shift",
+    "view": "m_leaves2"
+  },
+  "shift/m_balance": {
+    "app": "shift",
+    "view": "m_balance"
+  },
+  "shift/m_wfh": {
+    "app": "shift",
+    "view": "m_wfh"
+  },
+  "shift/m_compoff": {
+    "app": "shift",
+    "view": "m_compoff"
+  },
+  "shift/m_holidays2": {
+    "app": "shift",
+    "view": "m_holidays2"
+  },
+  "shift/shiftSwaps": {
+    "app": "shift",
+    "view": "shiftSwaps"
+  },
+  "shift/attendanceAdmin": {
+    "app": "shift",
+    "view": "attendanceAdmin"
+  },
+  "plus/home": {
+    "app": "plus",
+    "view": "home"
+  },
+  "plus/myPerformance": {
+    "app": "plus",
+    "view": "myPerformance"
+  },
+  "people/profile": {
+    "app": "people",
+    "view": "profile"
+  },
+  "people/myDocs": {
+    "app": "people",
+    "view": "myDocs"
+  },
+  "people/myLeave": {
+    "app": "people",
+    "view": "myLeave"
+  },
+  "people/myAttendance": {
+    "app": "people",
+    "view": "myAttendance"
+  },
+  "people/myHelp": {
+    "app": "people",
+    "view": "myHelp"
+  },
+  "people/myExit": {
+    "app": "people",
+    "view": "myExit"
+  },
+  "recruit/careers": {
+    "app": "recruit",
+    "view": "careers"
+  },
+  "payroll/myPay": {
+    "app": "payroll",
+    "view": "myPay"
+  },
+  "payroll/myBenefits": {
+    "app": "payroll",
+    "view": "myBenefits"
+  },
+  "expense/myExpenses": {
+    "app": "expense",
+    "view": "myExpenses"
+  },
+  "sign/mySign": {
+    "app": "sign",
+    "view": "mySign"
+  },
+  "learn/myLearning": {
+    "app": "learn",
+    "view": "myLearning"
+  },
+  "shift/mySchedule": {
+    "app": "shift",
+    "view": "mySchedule"
+  },
+  "people/m_emp": {
+    "app": "people",
+    "view": "m_emp"
+  },
+  "people/m_docs": {
+    "app": "people",
+    "view": "m_docs"
+  },
+  "people/m_exit": {
+    "app": "people",
+    "view": "m_exit"
+  },
+  "people/m_appraisal": {
+    "app": "people",
+    "view": "m_appraisal"
+  },
+  "people/m_reviews": {
+    "app": "people",
+    "view": "m_reviews"
+  },
+  "people/m_probrev": {
+    "app": "people",
+    "view": "m_probrev"
+  },
+  "people/m_increments": {
+    "app": "people",
+    "view": "m_increments"
+  },
+  "people/m_recog": {
+    "app": "people",
+    "view": "m_recog"
+  },
+  "people/m_assets2": {
+    "app": "people",
+    "view": "m_assets2"
+  },
+  "people/m_cards": {
+    "app": "people",
+    "view": "m_cards"
+  },
+  "people/m_facilities": {
+    "app": "people",
+    "view": "m_facilities"
+  },
+  "people/m_vendors": {
+    "app": "people",
+    "view": "m_vendors"
+  },
+  "plus/myAssets": {
+    "app": "plus",
+    "view": "myAssets"
+  },
+  "plus/performanceAdmin": {
+    "app": "plus",
+    "view": "performanceAdmin"
+  },
+  "plus/assetsAdmin": {
+    "app": "plus",
+    "view": "assetsAdmin"
+  },
+  "plus/m_joiners": {
+    "app": "plus",
+    "view": "m_joiners"
+  }
+}

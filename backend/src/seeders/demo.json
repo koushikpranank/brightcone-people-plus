@@ -1,0 +1,1730 @@
+{
+  "role": "employee",
+  "clockedIn": false,
+  "clockStart": null,
+  "company": {
+    "name": "Brightcone, Inc.",
+    "fy": "April to March",
+    "week": "Monday to Friday",
+    "tz": "Asia/Kolkata (IST)",
+    "probation": "6 months",
+    "notice": "60 days"
+  },
+  "employees": [
+    {
+      "id": "BC-1001",
+      "name": "Naresh Vemparala",
+      "role": "Founder & CEO",
+      "dept": "Leadership",
+      "loc": "Hyderabad",
+      "status": "Active",
+      "joined": "2021-03-01",
+      "mgr": "",
+      "ctc": 9600000,
+      "phone": "+91 98480 11001",
+      "shift": "General",
+      "grade": "L9",
+      "email": "naresh.vemparala@brightcone.ai"
+    },
+    {
+      "id": "BC-1004",
+      "name": "Ananya Rao",
+      "role": "People Ops Lead",
+      "dept": "People Ops",
+      "loc": "Hyderabad",
+      "status": "Active",
+      "joined": "2022-01-10",
+      "mgr": "Naresh Vemparala",
+      "ctc": 3200000,
+      "phone": "+91 98480 11004",
+      "shift": "General",
+      "grade": "L6",
+      "email": "ananya.rao@brightcone.ai"
+    },
+    {
+      "id": "BC-1012",
+      "name": "Karthik Reddy",
+      "role": "Principal AI Engineer",
+      "dept": "AI Research",
+      "loc": "Hyderabad",
+      "status": "Active",
+      "joined": "2022-04-18",
+      "mgr": "Naresh Vemparala",
+      "ctc": 6400000,
+      "phone": "+91 98480 11012",
+      "shift": "General",
+      "grade": "L8",
+      "email": "karthik.reddy@brightcone.ai"
+    },
+    {
+      "id": "BC-1019",
+      "name": "Priya Menon",
+      "role": "Engineering Manager",
+      "dept": "Engineering",
+      "loc": "Bengaluru",
+      "status": "Active",
+      "joined": "2022-07-04",
+      "mgr": "Karthik Reddy",
+      "ctc": 5200000,
+      "phone": "+91 98480 11019",
+      "shift": "General",
+      "grade": "L7",
+      "email": "priya.menon@brightcone.ai"
+    },
+    {
+      "id": "BC-1023",
+      "name": "Daniel Brooks",
+      "role": "Account Executive",
+      "dept": "Sales",
+      "loc": "San Francisco",
+      "status": "Active",
+      "joined": "2023-02-13",
+      "mgr": "Naresh Vemparala",
+      "ctc": 11500000,
+      "phone": "+1 415 555 0123",
+      "shift": "US Pacific",
+      "grade": "L6",
+      "email": "daniel.brooks@brightcone.ai"
+    },
+    {
+      "id": "BC-1031",
+      "name": "Sneha Iyer",
+      "role": "Product Designer",
+      "dept": "Design",
+      "loc": "Hyderabad",
+      "status": "On leave",
+      "joined": "2023-05-22",
+      "mgr": "Priya Menon",
+      "ctc": 2400000,
+      "phone": "+91 98480 11031",
+      "shift": "General",
+      "grade": "L5",
+      "email": "sneha.iyer@brightcone.ai"
+    },
+    {
+      "id": "BC-1038",
+      "name": "Rahul Varma",
+      "role": "Backend Engineer",
+      "dept": "Engineering",
+      "loc": "Hyderabad",
+      "status": "Active",
+      "joined": "2023-08-07",
+      "mgr": "Priya Menon",
+      "ctc": 2200000,
+      "phone": "+91 98480 11038",
+      "shift": "General",
+      "grade": "L4",
+      "email": "rahul.varma@brightcone.ai",
+      "address": "Flat 402, Aparna Towers, Kondapur, Hyderabad 500084",
+      "emergency": "Lakshmi Varma (Mother), +91 98490 22110",
+      "blood": "B+",
+      "dob": "1996-10-07",
+      "pan": "ABCPV••••K",
+      "uan": "1009••••4821",
+      "bank": "HDFC Bank ••4821"
+    },
+    {
+      "id": "BC-1042",
+      "name": "Meera Joshi",
+      "role": "Finance Manager",
+      "dept": "Finance",
+      "loc": "Hyderabad",
+      "status": "Active",
+      "joined": "2023-10-02",
+      "mgr": "Naresh Vemparala",
+      "ctc": 3000000,
+      "phone": "+91 98480 11042",
+      "shift": "General",
+      "grade": "L6",
+      "email": "meera.joshi@brightcone.ai"
+    },
+    {
+      "id": "BC-1047",
+      "name": "Arjun Nair",
+      "role": "ML Engineer",
+      "dept": "AI Research",
+      "loc": "Remote",
+      "status": "Active",
+      "joined": "2024-01-15",
+      "mgr": "Karthik Reddy",
+      "ctc": 2800000,
+      "phone": "+91 98480 11047",
+      "shift": "General",
+      "grade": "L5",
+      "email": "arjun.nair@brightcone.ai"
+    },
+    {
+      "id": "BC-1053",
+      "name": "Emily Carter",
+      "role": "Customer Success Manager",
+      "dept": "Customer Success",
+      "loc": "Austin",
+      "status": "Active",
+      "joined": "2024-03-11",
+      "mgr": "Daniel Brooks",
+      "ctc": 8200000,
+      "phone": "+1 512 555 0188",
+      "shift": "US Central",
+      "grade": "L5",
+      "email": "emily.carter@brightcone.ai"
+    },
+    {
+      "id": "BC-1058",
+      "name": "Vikram Singh",
+      "role": "DevOps Engineer",
+      "dept": "Engineering",
+      "loc": "Pune",
+      "status": "Probation",
+      "joined": "2026-08-19",
+      "mgr": "Priya Menon",
+      "ctc": 2000000,
+      "phone": "+91 98480 11058",
+      "shift": "General",
+      "grade": "L4",
+      "email": "vikram.singh@brightcone.ai"
+    },
+    {
+      "id": "BC-1061",
+      "name": "Lakshmi Prasad",
+      "role": "Recruiter",
+      "dept": "People Ops",
+      "loc": "Hyderabad",
+      "status": "Active",
+      "joined": "2024-09-02",
+      "mgr": "Ananya Rao",
+      "ctc": 1400000,
+      "phone": "+91 98480 11061",
+      "shift": "General",
+      "grade": "L3",
+      "email": "lakshmi.prasad@brightcone.ai"
+    },
+    {
+      "id": "BC-1066",
+      "name": "Farhan Ali",
+      "role": "Frontend Engineer",
+      "dept": "Engineering",
+      "loc": "Hyderabad",
+      "status": "Notice period",
+      "joined": "2024-11-25",
+      "mgr": "Priya Menon",
+      "ctc": 1800000,
+      "phone": "+91 98480 11066",
+      "shift": "General",
+      "grade": "L4",
+      "email": "farhan.ali@brightcone.ai"
+    },
+    {
+      "id": "BC-1070",
+      "name": "Divya Kulkarni",
+      "role": "Security Engineer",
+      "dept": "Engineering",
+      "loc": "Hyderabad",
+      "status": "Probation",
+      "joined": "2026-09-28",
+      "mgr": "Priya Menon",
+      "ctc": 2600000,
+      "phone": "+91 98480 11070",
+      "shift": "General",
+      "grade": "L5",
+      "email": "divya.kulkarni@brightcone.ai"
+    }
+  ],
+  "depts": [
+    {
+      "n": "Leadership",
+      "head": "Naresh Vemparala",
+      "cc": "CC-100"
+    },
+    {
+      "n": "Engineering",
+      "head": "Priya Menon",
+      "cc": "CC-200"
+    },
+    {
+      "n": "AI Research",
+      "head": "Karthik Reddy",
+      "cc": "CC-210"
+    },
+    {
+      "n": "Design",
+      "head": "Priya Menon",
+      "cc": "CC-220"
+    },
+    {
+      "n": "Sales",
+      "head": "Daniel Brooks",
+      "cc": "CC-300"
+    },
+    {
+      "n": "Customer Success",
+      "head": "Emily Carter",
+      "cc": "CC-310"
+    },
+    {
+      "n": "Finance",
+      "head": "Meera Joshi",
+      "cc": "CC-400"
+    },
+    {
+      "n": "People Ops",
+      "head": "Ananya Rao",
+      "cc": "CC-500"
+    }
+  ],
+  "grades": [
+    [
+      "L3",
+      "Associate"
+    ],
+    [
+      "L4",
+      "Engineer / Specialist"
+    ],
+    [
+      "L5",
+      "Senior"
+    ],
+    [
+      "L6",
+      "Lead / Manager"
+    ],
+    [
+      "L7",
+      "Senior Manager"
+    ],
+    [
+      "L8",
+      "Principal / Director"
+    ],
+    [
+      "L9",
+      "Executive"
+    ]
+  ],
+  "locations": [
+    "Hyderabad",
+    "Bengaluru",
+    "Pune",
+    "San Francisco",
+    "Austin",
+    "Remote"
+  ],
+  "shifts": [
+    {
+      "n": "General",
+      "s": "09:30",
+      "e": "18:30",
+      "grace": 15
+    },
+    {
+      "n": "US Pacific",
+      "s": "09:00",
+      "e": "18:00",
+      "grace": 15
+    },
+    {
+      "n": "US Central",
+      "s": "09:00",
+      "e": "18:00",
+      "grace": 15
+    },
+    {
+      "n": "Night support",
+      "s": "21:00",
+      "e": "06:00",
+      "grace": 10
+    }
+  ],
+  "leaveTypes": [
+    {
+      "n": "Earned leave",
+      "q": 18,
+      "carry": "Up to 30 days",
+      "paid": "Paid"
+    },
+    {
+      "n": "Casual leave",
+      "q": 8,
+      "carry": "Lapses",
+      "paid": "Paid"
+    },
+    {
+      "n": "Sick leave",
+      "q": 10,
+      "carry": "Lapses",
+      "paid": "Paid"
+    },
+    {
+      "n": "Comp off",
+      "q": 2,
+      "carry": "Use within 60 days",
+      "paid": "Paid"
+    },
+    {
+      "n": "Work from home",
+      "q": 24,
+      "carry": "Lapses",
+      "paid": "Paid"
+    },
+    {
+      "n": "Loss of pay",
+      "q": 0,
+      "carry": "—",
+      "paid": "Unpaid"
+    }
+  ],
+  "holidays": [
+    {
+      "d": "2026-10-02",
+      "n": "Gandhi Jayanti",
+      "t": "National"
+    },
+    {
+      "d": "2026-10-20",
+      "n": "Dussehra",
+      "t": "Festival"
+    },
+    {
+      "d": "2026-11-08",
+      "n": "Diwali",
+      "t": "Festival"
+    },
+    {
+      "d": "2026-11-24",
+      "n": "Guru Nanak Jayanti",
+      "t": "Optional"
+    },
+    {
+      "d": "2026-12-25",
+      "n": "Christmas",
+      "t": "Festival"
+    },
+    {
+      "d": "2027-01-14",
+      "n": "Sankranti",
+      "t": "Festival"
+    },
+    {
+      "d": "2027-01-26",
+      "n": "Republic Day",
+      "t": "National"
+    }
+  ],
+  "leaves": [
+    {
+      "id": "L1",
+      "emp": "Rahul Varma",
+      "type": "Earned leave",
+      "from": "2026-08-12",
+      "to": "2026-08-14",
+      "days": 3,
+      "reason": "Family function",
+      "status": "Approved"
+    },
+    {
+      "id": "L2",
+      "emp": "Rahul Varma",
+      "type": "Sick leave",
+      "from": "2026-07-02",
+      "to": "2026-07-02",
+      "days": 1,
+      "reason": "Fever",
+      "status": "Approved"
+    },
+    {
+      "id": "L3",
+      "emp": "Rahul Varma",
+      "type": "Casual leave",
+      "from": "2026-10-09",
+      "to": "2026-10-09",
+      "days": 1,
+      "reason": "Personal errand",
+      "status": "Pending"
+    },
+    {
+      "id": "L4",
+      "emp": "Emily Carter",
+      "type": "Work from home",
+      "from": "2026-10-08",
+      "to": "2026-10-08",
+      "days": 1,
+      "reason": "Home repairs",
+      "status": "Pending"
+    },
+    {
+      "id": "L5",
+      "emp": "Priya Menon",
+      "type": "Earned leave",
+      "from": "2026-10-26",
+      "to": "2026-10-30",
+      "days": 5,
+      "reason": "Vacation",
+      "status": "Pending"
+    },
+    {
+      "id": "L6",
+      "emp": "Sneha Iyer",
+      "type": "Earned leave",
+      "from": "2026-10-05",
+      "to": "2026-10-16",
+      "days": 10,
+      "reason": "Wedding",
+      "status": "Approved"
+    },
+    {
+      "id": "L7",
+      "emp": "Arjun Nair",
+      "type": "Casual leave",
+      "from": "2026-09-18",
+      "to": "2026-09-18",
+      "days": 1,
+      "reason": "",
+      "status": "Approved"
+    }
+  ],
+  "regs": [
+    {
+      "id": "R1",
+      "emp": "Vikram Singh",
+      "date": "2026-10-03",
+      "in": "09:40",
+      "out": "18:45",
+      "reason": "Forgot to clock out",
+      "status": "Pending"
+    },
+    {
+      "id": "R2",
+      "emp": "Rahul Varma",
+      "date": "2026-09-22",
+      "in": "09:30",
+      "out": "18:40",
+      "reason": "System issue",
+      "status": "Approved"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "E1",
+      "emp": "Arjun Nair",
+      "cat": "Travel",
+      "amt": 48200,
+      "date": "2026-09-29",
+      "desc": "Conference travel, Bengaluru",
+      "status": "Pending"
+    },
+    {
+      "id": "E2",
+      "emp": "Rahul Varma",
+      "cat": "Internet",
+      "amt": 1499,
+      "date": "2026-09-30",
+      "desc": "Broadband, September",
+      "status": "Approved"
+    },
+    {
+      "id": "E3",
+      "emp": "Rahul Varma",
+      "cat": "Meals",
+      "amt": 2350,
+      "date": "2026-10-01",
+      "desc": "Team dinner during release",
+      "status": "Pending"
+    },
+    {
+      "id": "E4",
+      "emp": "Daniel Brooks",
+      "cat": "Client entertainment",
+      "amt": 18600,
+      "date": "2026-09-25",
+      "desc": "Client lunch, SF",
+      "status": "Paid"
+    }
+  ],
+  "tickets": [
+    {
+      "id": "HR-2291",
+      "emp": "Rahul Varma",
+      "sub": "Update bank account for salary credit",
+      "cat": "Payroll & tax",
+      "pri": "High",
+      "status": "Open",
+      "to": "",
+      "date": "2026-10-05",
+      "notes": []
+    },
+    {
+      "id": "HR-2284",
+      "emp": "Arjun Nair",
+      "sub": "Need address proof letter for visa",
+      "cat": "Letters & documents",
+      "pri": "Normal",
+      "status": "In progress",
+      "to": "Lakshmi Prasad",
+      "date": "2026-10-03",
+      "notes": []
+    },
+    {
+      "id": "HR-2270",
+      "emp": "Rahul Varma",
+      "sub": "Add spouse to health insurance",
+      "cat": "Benefits & insurance",
+      "pri": "Normal",
+      "status": "Resolved",
+      "to": "Ananya Rao",
+      "date": "2026-09-28",
+      "notes": [
+        "Added. New e-card emailed."
+      ]
+    }
+  ],
+  "announcements": [
+    {
+      "id": "A1",
+      "t": "Open enrolment for 2027 health cover closes Oct 31",
+      "b": "Add dependents or upgrade your plan under Benefits.",
+      "d": "2026-10-05",
+      "pin": true
+    },
+    {
+      "id": "A2",
+      "t": "Q3 town hall on Oct 15, 4 pm IST",
+      "b": "Agenda: product roadmap and the Bright Works launch.",
+      "d": "2026-10-02",
+      "pin": false
+    },
+    {
+      "id": "A3",
+      "t": "Updated travel & expense policy",
+      "b": "Effective Nov 1. Please read and acknowledge it in Documents.",
+      "d": "2026-09-30",
+      "pin": false
+    }
+  ],
+  "policies": [
+    {
+      "id": "P1",
+      "n": "Employee handbook 2026",
+      "v": "3.0",
+      "d": "2026-01-05",
+      "mand": true,
+      "ack": [
+        "Rahul Varma",
+        "Arjun Nair",
+        "Priya Menon",
+        "Karthik Reddy",
+        "Meera Joshi"
+      ]
+    },
+    {
+      "id": "P2",
+      "n": "Leave & holiday policy",
+      "v": "2.1",
+      "d": "2026-03-01",
+      "mand": false,
+      "ack": [
+        "Rahul Varma"
+      ]
+    },
+    {
+      "id": "P3",
+      "n": "Travel & expense policy",
+      "v": "4.0",
+      "d": "2026-09-30",
+      "mand": true,
+      "ack": [
+        "Meera Joshi"
+      ]
+    },
+    {
+      "id": "P4",
+      "n": "Code of conduct",
+      "v": "2.0",
+      "d": "2026-01-05",
+      "mand": true,
+      "ack": [
+        "Rahul Varma",
+        "Priya Menon",
+        "Karthik Reddy"
+      ]
+    },
+    {
+      "id": "P5",
+      "n": "Remote & hybrid work policy",
+      "v": "1.2",
+      "d": "2026-06-10",
+      "mand": false,
+      "ack": []
+    },
+    {
+      "id": "P6",
+      "n": "POSH policy",
+      "v": "1.4",
+      "d": "2026-02-01",
+      "mand": true,
+      "ack": [
+        "Priya Menon"
+      ]
+    }
+  ],
+  "letters": [
+    {
+      "id": "LT1",
+      "emp": "Arjun Nair",
+      "type": "Address proof",
+      "to": "Consulate General",
+      "status": "Pending",
+      "date": "2026-10-03"
+    },
+    {
+      "id": "LT2",
+      "emp": "Rahul Varma",
+      "type": "Employment verification",
+      "to": "HDFC Bank",
+      "status": "Issued",
+      "date": "2026-08-20"
+    }
+  ],
+  "empDocs": [
+    {
+      "emp": "Divya Kulkarni",
+      "doc": "PAN card",
+      "status": "Verified"
+    },
+    {
+      "emp": "Divya Kulkarni",
+      "doc": "Aadhaar",
+      "status": "Submitted"
+    },
+    {
+      "emp": "Divya Kulkarni",
+      "doc": "Degree certificate",
+      "status": "Submitted"
+    },
+    {
+      "emp": "Divya Kulkarni",
+      "doc": "Relieving letter",
+      "status": "Not submitted"
+    },
+    {
+      "emp": "Vikram Singh",
+      "doc": "PAN card",
+      "status": "Verified"
+    },
+    {
+      "emp": "Vikram Singh",
+      "doc": "Relieving letter",
+      "status": "Submitted"
+    },
+    {
+      "emp": "Rahul Varma",
+      "doc": "PAN card",
+      "status": "Verified"
+    },
+    {
+      "emp": "Rahul Varma",
+      "doc": "Aadhaar",
+      "status": "Verified"
+    },
+    {
+      "emp": "Rahul Varma",
+      "doc": "Degree certificate",
+      "status": "Verified"
+    }
+  ],
+  "assets": [
+    {
+      "tag": "BC-LT-0142",
+      "type": "Laptop",
+      "model": "MacBook Pro 14\" M3",
+      "emp": "Rahul Varma",
+      "status": "Assigned",
+      "since": "2023-08-07"
+    },
+    {
+      "tag": "BC-MN-0088",
+      "type": "Monitor",
+      "model": "Dell U2723QE 27\"",
+      "emp": "Rahul Varma",
+      "status": "Assigned",
+      "since": "2024-02-12"
+    },
+    {
+      "tag": "BC-LT-0150",
+      "type": "Laptop",
+      "model": "MacBook Pro 14\" M3",
+      "emp": "Divya Kulkarni",
+      "status": "Assigned",
+      "since": "2026-09-28"
+    },
+    {
+      "tag": "BC-LT-0131",
+      "type": "Laptop",
+      "model": "ThinkPad X1 Carbon",
+      "emp": "Farhan Ali",
+      "status": "Assigned",
+      "since": "2024-11-25"
+    },
+    {
+      "tag": "BC-LT-0155",
+      "type": "Laptop",
+      "model": "MacBook Air 13\" M3",
+      "emp": "",
+      "status": "In stock",
+      "since": ""
+    },
+    {
+      "tag": "BC-HS-0040",
+      "type": "Headset",
+      "model": "Jabra Evolve2 65",
+      "emp": "",
+      "status": "In stock",
+      "since": ""
+    },
+    {
+      "tag": "BC-LT-0098",
+      "type": "Laptop",
+      "model": "Dell XPS 13",
+      "emp": "",
+      "status": "In repair",
+      "since": ""
+    }
+  ],
+  "assetReqs": [
+    {
+      "id": "AR1",
+      "emp": "Arjun Nair",
+      "item": "Headset",
+      "reason": "Customer calls",
+      "status": "Pending"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "J1",
+      "t": "Senior ML Engineer",
+      "dept": "AI Research",
+      "loc": "Hyderabad",
+      "type": "Full-time",
+      "status": "Open",
+      "bonus": 50000
+    },
+    {
+      "id": "J2",
+      "t": "Solutions Architect",
+      "dept": "Sales",
+      "loc": "San Francisco",
+      "type": "Full-time",
+      "status": "Open",
+      "bonus": 75000
+    },
+    {
+      "id": "J3",
+      "t": "Product Designer",
+      "dept": "Design",
+      "loc": "Hyderabad",
+      "type": "Full-time",
+      "status": "Open",
+      "bonus": 40000
+    },
+    {
+      "id": "J4",
+      "t": "QA Automation Engineer",
+      "dept": "Engineering",
+      "loc": "Pune",
+      "type": "Full-time",
+      "status": "Open",
+      "bonus": 30000
+    }
+  ],
+  "cands": [
+    {
+      "id": "C1",
+      "n": "Aditi Sharma",
+      "job": "J1",
+      "s": "Applied",
+      "sc": 82,
+      "src": "LinkedIn"
+    },
+    {
+      "id": "C2",
+      "n": "Rohan Gupta",
+      "job": "J1",
+      "s": "Applied",
+      "sc": 74,
+      "src": "Careers page"
+    },
+    {
+      "id": "C3",
+      "n": "Kavya Pillai",
+      "job": "J3",
+      "s": "Screening",
+      "sc": 88,
+      "src": "Referral"
+    },
+    {
+      "id": "C4",
+      "n": "Marcus Lee",
+      "job": "J2",
+      "s": "Screening",
+      "sc": 79,
+      "src": "Indeed"
+    },
+    {
+      "id": "C5",
+      "n": "Neha Bansal",
+      "job": "J1",
+      "s": "Interview",
+      "sc": 91,
+      "src": "LinkedIn"
+    },
+    {
+      "id": "C6",
+      "n": "Siddharth Rao",
+      "job": "J4",
+      "s": "Interview",
+      "sc": 84,
+      "src": "Referral"
+    },
+    {
+      "id": "C7",
+      "n": "Olivia Martin",
+      "job": "J2",
+      "s": "Offer",
+      "sc": 93,
+      "src": "LinkedIn"
+    },
+    {
+      "id": "C8",
+      "n": "Tejas Patil",
+      "job": "J4",
+      "s": "Hired",
+      "sc": 87,
+      "src": "Careers page"
+    }
+  ],
+  "interviews": [
+    {
+      "id": "I1",
+      "cand": "C5",
+      "round": "Technical, round 2",
+      "when": "2026-10-08T11:00",
+      "panel": "Karthik Reddy, Arjun Nair"
+    },
+    {
+      "id": "I2",
+      "cand": "C6",
+      "round": "Hiring manager",
+      "when": "2026-10-09T15:30",
+      "panel": "Priya Menon"
+    }
+  ],
+  "referrals": [
+    {
+      "id": "RF1",
+      "by": "Rahul Varma",
+      "cand": "Siddharth Rao",
+      "job": "J4",
+      "status": "Interview"
+    }
+  ],
+  "cycle": {
+    "n": "H2 2026 review",
+    "stage": 1,
+    "due": "2026-10-25"
+  },
+  "reviews": {},
+  "goals": [
+    {
+      "id": "G1",
+      "emp": "Rahul Varma",
+      "t": "Ship leave & payslip APIs for self-service",
+      "due": "2026-12-15",
+      "p": 72
+    },
+    {
+      "id": "G2",
+      "emp": "Rahul Varma",
+      "t": "Cut p95 latency of the agent gateway to 300 ms",
+      "due": "2026-11-30",
+      "p": 45
+    },
+    {
+      "id": "G3",
+      "emp": "Rahul Varma",
+      "t": "Mentor one new backend engineer",
+      "due": "2026-12-31",
+      "p": 30
+    },
+    {
+      "id": "G4",
+      "emp": "Ananya Rao",
+      "t": "Reduce time-to-hire to 30 days",
+      "due": "2026-12-31",
+      "p": 55
+    }
+  ],
+  "feedback": [
+    {
+      "from": "Priya Menon",
+      "to": "Rahul Varma",
+      "t": "The rate-limiter rewrite was clean and well tested. Keep writing design notes like that.",
+      "d": "2026-09-20"
+    },
+    {
+      "from": "Arjun Nair",
+      "to": "Rahul Varma",
+      "t": "Thanks for unblocking the embeddings pipeline at short notice.",
+      "d": "2026-09-02"
+    }
+  ],
+  "courses": [
+    {
+      "id": "CO1",
+      "t": "Information security awareness",
+      "type": "Mandatory",
+      "dur": "45 min",
+      "aud": "Everyone",
+      "due": "2026-10-31"
+    },
+    {
+      "id": "CO2",
+      "t": "POSH: Prevention of sexual harassment",
+      "type": "Mandatory",
+      "dur": "30 min",
+      "aud": "Everyone",
+      "due": "2026-10-20"
+    },
+    {
+      "id": "CO3",
+      "t": "Data privacy & HIPAA basics",
+      "type": "Mandatory",
+      "dur": "40 min",
+      "aud": "Engineering",
+      "due": "2026-11-15"
+    },
+    {
+      "id": "CO4",
+      "t": "Building agentic workflows",
+      "type": "Elective",
+      "dur": "3 h",
+      "aud": "Everyone",
+      "due": ""
+    },
+    {
+      "id": "CO5",
+      "t": "Leading high-trust teams",
+      "type": "Elective",
+      "dur": "2 h",
+      "aud": "Managers",
+      "due": ""
+    }
+  ],
+  "progress": {
+    "Rahul Varma": {
+      "CO1": 100,
+      "CO2": 60,
+      "CO4": 35
+    },
+    "Priya Menon": {
+      "CO1": 100,
+      "CO2": 100,
+      "CO3": 100,
+      "CO5": 60
+    },
+    "Karthik Reddy": {
+      "CO1": 100,
+      "CO2": 100,
+      "CO3": 80
+    },
+    "Ananya Rao": {
+      "CO1": 100,
+      "CO2": 100,
+      "CO5": 100
+    },
+    "Meera Joshi": {
+      "CO1": 100,
+      "CO2": 100
+    },
+    "Arjun Nair": {
+      "CO1": 100,
+      "CO2": 100,
+      "CO3": 100,
+      "CO4": 100
+    },
+    "Naresh Vemparala": {
+      "CO1": 100,
+      "CO2": 100
+    },
+    "Daniel Brooks": {
+      "CO1": 100
+    },
+    "Emily Carter": {
+      "CO1": 100,
+      "CO2": 40
+    },
+    "Lakshmi Prasad": {
+      "CO1": 100,
+      "CO2": 100
+    },
+    "Vikram Singh": {
+      "CO1": 100,
+      "CO2": 100,
+      "CO3": 50
+    },
+    "Divya Kulkarni": {
+      "CO1": 40
+    }
+  },
+  "plans": [
+    {
+      "n": "Group health insurance",
+      "prov": "Star Health",
+      "cover": "₹5,00,000 family floater",
+      "cost": "Company paid"
+    },
+    {
+      "n": "Group term life",
+      "prov": "HDFC Life",
+      "cover": "3x annual CTC",
+      "cost": "Company paid"
+    },
+    {
+      "n": "Group personal accident",
+      "prov": "ICICI Lombard",
+      "cover": "₹20,00,000",
+      "cost": "Company paid"
+    },
+    {
+      "n": "Top-up health cover",
+      "prov": "Star Health",
+      "cover": "₹10,00,000 extra",
+      "cost": "₹4,200 / year, payroll deduction"
+    }
+  ],
+  "dependents": {
+    "Rahul Varma": [
+      {
+        "n": "Sravya Varma",
+        "rel": "Spouse",
+        "dob": "1997-04-14"
+      },
+      {
+        "n": "Lakshmi Varma",
+        "rel": "Mother",
+        "dob": "1968-02-02"
+      }
+    ]
+  },
+  "onboard": [
+    {
+      "emp": "Divya Kulkarni",
+      "tasks": [
+        [
+          "Offer letter signed",
+          1
+        ],
+        [
+          "Laptop & accounts provisioned",
+          1
+        ],
+        [
+          "ID and PAN submitted",
+          1
+        ],
+        [
+          "Bank details for payroll",
+          0
+        ],
+        [
+          "Security & POSH training",
+          0
+        ],
+        [
+          "Buddy assigned",
+          1
+        ],
+        [
+          "30-day check-in with manager",
+          0
+        ]
+      ]
+    },
+    {
+      "emp": "Vikram Singh",
+      "tasks": [
+        [
+          "Offer letter signed",
+          1
+        ],
+        [
+          "Laptop & accounts provisioned",
+          1
+        ],
+        [
+          "ID and PAN submitted",
+          1
+        ],
+        [
+          "Bank details for payroll",
+          1
+        ],
+        [
+          "Security & POSH training",
+          1
+        ],
+        [
+          "Buddy assigned",
+          1
+        ],
+        [
+          "30-day check-in with manager",
+          0
+        ]
+      ]
+    }
+  ],
+  "resignations": [
+    {
+      "id": "RS1",
+      "emp": "Farhan Ali",
+      "date": "2026-09-01",
+      "lwd": "2026-10-30",
+      "reason": "Higher studies",
+      "status": "Accepted",
+      "check": [
+        [
+          "Manager approval",
+          1
+        ],
+        [
+          "Knowledge transfer",
+          0
+        ],
+        [
+          "Asset return",
+          0
+        ],
+        [
+          "Exit interview",
+          0
+        ],
+        [
+          "Full & final settlement",
+          0
+        ],
+        [
+          "Relieving & experience letter",
+          0
+        ]
+      ]
+    }
+  ],
+  "payroll": {
+    "month": "October 2026",
+    "step": 0,
+    "runs": [
+      {
+        "m": "September 2026",
+        "emps": 127,
+        "gross": 21420000,
+        "net": 18600000,
+        "d": "2026-09-30"
+      },
+      {
+        "m": "August 2026",
+        "emps": 125,
+        "gross": 20810000,
+        "net": 18020000,
+        "d": "2026-08-31"
+      },
+      {
+        "m": "July 2026",
+        "emps": 124,
+        "gross": 20550000,
+        "net": 17790000,
+        "d": "2026-07-31"
+      }
+    ],
+    "inputs": [
+      {
+        "emp": "Karthik Reddy",
+        "k": "Bonus",
+        "amt": 150000
+      },
+      {
+        "emp": "Arjun Nair",
+        "k": "Reimbursement",
+        "amt": 48200
+      }
+    ]
+  },
+  "decl": {
+    "Rahul Varma": {
+      "80C": 150000,
+      "80D": 18400,
+      "HRA": 270000,
+      "80CCD(1B)": 0,
+      "regime": "Old regime",
+      "status": "Submitted"
+    }
+  },
+  "perms": {
+    "HR Admin": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "Manager": [
+      1,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    "Finance": [
+      1,
+      0,
+      1,
+      0,
+      0,
+      1,
+      0
+    ],
+    "Employee": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "workflows": [
+    [
+      "Leave",
+      "Reporting manager",
+      "HR for more than 5 days"
+    ],
+    [
+      "Expense claims",
+      "Reporting manager",
+      "Finance above ₹25,000"
+    ],
+    [
+      "Attendance regularisation",
+      "Reporting manager",
+      "—"
+    ],
+    [
+      "Resignation",
+      "Reporting manager",
+      "HR Admin"
+    ],
+    [
+      "Asset requests",
+      "IT admin",
+      "—"
+    ],
+    [
+      "Letter requests",
+      "HR Admin",
+      "—"
+    ]
+  ],
+  "notif": {
+    "email": true,
+    "slack": true,
+    "digest": false,
+    "birthdays": true
+  },
+  "audit": [
+    {
+      "t": "2026-10-05 17:42",
+      "who": "Ananya Rao",
+      "a": "Published announcement \"Open enrolment for 2027 health cover\""
+    },
+    {
+      "t": "2026-10-03 11:05",
+      "who": "Meera Joshi",
+      "a": "Marked expense E4 as paid"
+    },
+    {
+      "t": "2026-09-30 19:20",
+      "who": "Ananya Rao",
+      "a": "Completed payroll for September 2026"
+    }
+  ],
+  "sign": [
+    {
+      "id": "SG-1042",
+      "doc": "Offer letter: Senior ML Engineer",
+      "tpl": "Offer letter",
+      "to": "Neha Bansal",
+      "ext": true,
+      "from": "Ananya Rao",
+      "sent": "2026-10-09",
+      "due": "2026-10-16",
+      "status": "Awaiting signature"
+    },
+    {
+      "id": "SG-1041",
+      "doc": "Travel & expense policy v4.0",
+      "tpl": "Policy acknowledgement",
+      "to": "Rahul Varma",
+      "from": "Ananya Rao",
+      "sent": "2026-10-01",
+      "due": "2026-10-31",
+      "status": "Awaiting signature"
+    },
+    {
+      "id": "SG-1039",
+      "doc": "Mutual NDA",
+      "tpl": "NDA",
+      "to": "Divya Kulkarni",
+      "from": "Ananya Rao",
+      "sent": "2026-09-28",
+      "due": "2026-10-05",
+      "status": "Completed",
+      "signed": "2026-09-28"
+    },
+    {
+      "id": "SG-1037",
+      "doc": "Offer letter: Solutions Architect",
+      "tpl": "Offer letter",
+      "to": "Olivia Martin",
+      "ext": true,
+      "from": "Ananya Rao",
+      "sent": "2026-10-06",
+      "due": "2026-10-13",
+      "status": "Viewed"
+    },
+    {
+      "id": "SG-1033",
+      "doc": "Appraisal letter, H1 2026",
+      "tpl": "Appraisal letter",
+      "to": "Rahul Varma",
+      "from": "Ananya Rao",
+      "sent": "2026-07-15",
+      "due": "2026-07-22",
+      "status": "Completed",
+      "signed": "2026-07-16"
+    },
+    {
+      "id": "SG-1030",
+      "doc": "Full and final settlement",
+      "tpl": "F&F settlement",
+      "to": "Farhan Ali",
+      "from": "Meera Joshi",
+      "sent": "2026-10-07",
+      "due": "2026-10-30",
+      "status": "Awaiting signature"
+    },
+    {
+      "id": "SG-1026",
+      "doc": "Employment agreement",
+      "tpl": "Employment agreement",
+      "to": "Vikram Singh",
+      "from": "Ananya Rao",
+      "sent": "2026-08-12",
+      "due": "2026-08-19",
+      "status": "Completed",
+      "signed": "2026-08-14"
+    },
+    {
+      "id": "SG-1021",
+      "doc": "Consulting agreement",
+      "tpl": "NDA",
+      "to": "Marcus Lee",
+      "ext": true,
+      "from": "Ananya Rao",
+      "sent": "2026-09-02",
+      "due": "2026-09-09",
+      "status": "Declined"
+    }
+  ],
+  "signTpls": [
+    {
+      "n": "Offer letter",
+      "f": 6,
+      "used": 24
+    },
+    {
+      "n": "Employment agreement",
+      "f": 9,
+      "used": 18
+    },
+    {
+      "n": "NDA",
+      "f": 4,
+      "used": 31
+    },
+    {
+      "n": "Policy acknowledgement",
+      "f": 2,
+      "used": 112
+    },
+    {
+      "n": "Appraisal letter",
+      "f": 3,
+      "used": 46
+    },
+    {
+      "n": "F&F settlement",
+      "f": 5,
+      "used": 7
+    }
+  ],
+  "posts": [
+    {
+      "id": "PO1",
+      "by": "Priya Menon",
+      "type": "Kudos",
+      "to": "Rahul Varma",
+      "t": "Huge thanks for the rate-limiter rewrite. The agent gateway p95 dropped by 40% overnight.",
+      "d": "2026-10-12",
+      "likes": [
+        "Karthik Reddy",
+        "Arjun Nair",
+        "Ananya Rao"
+      ],
+      "comments": [
+        {
+          "by": "Arjun Nair",
+          "t": "Well deserved!"
+        }
+      ]
+    },
+    {
+      "id": "PO2",
+      "by": "Ananya Rao",
+      "type": "Announcement",
+      "t": "Open enrolment for 2027 health cover closes Oct 31. Add dependents under Payroll, then Benefits.",
+      "d": "2026-10-05",
+      "likes": [
+        "Meera Joshi"
+      ],
+      "comments": []
+    },
+    {
+      "id": "PO3",
+      "by": "Karthik Reddy",
+      "type": "Update",
+      "t": "AI Research just shipped the new embeddings pipeline to production. Demo at Thursday’s lunch and learn.",
+      "d": "2026-10-03",
+      "likes": [
+        "Priya Menon",
+        "Rahul Varma",
+        "Naresh Vemparala",
+        "Emily Carter"
+      ],
+      "comments": [
+        {
+          "by": "Naresh Vemparala",
+          "t": "Great work, team."
+        }
+      ]
+    },
+    {
+      "id": "PO4",
+      "by": "Lakshmi Prasad",
+      "type": "Welcome",
+      "to": "Divya Kulkarni",
+      "t": "Please welcome Divya Kulkarni, who joins Engineering as a Security Engineer in Hyderabad.",
+      "d": "2026-09-28",
+      "likes": [
+        "Priya Menon",
+        "Vikram Singh"
+      ],
+      "comments": []
+    }
+  ],
+  "groups": [
+    {
+      "n": "Hyderabad office",
+      "m": 9
+    },
+    {
+      "n": "Engineering guild",
+      "m": 7
+    },
+    {
+      "n": "Bright Works launch",
+      "m": 12
+    },
+    {
+      "n": "Sports & fitness club",
+      "m": 6
+    }
+  ],
+  "swaps": [
+    {
+      "id": "SW1",
+      "emp": "Emily Carter",
+      "date": "2026-10-16",
+      "from": "US Central",
+      "to": "Night support",
+      "with": "Daniel Brooks",
+      "reason": "Doctor’s appointment",
+      "status": "Pending"
+    },
+    {
+      "id": "SW2",
+      "emp": "Vikram Singh",
+      "date": "2026-10-17",
+      "from": "General",
+      "to": "Night support",
+      "with": "",
+      "reason": "Cover the release deployment window",
+      "status": "Pending"
+    },
+    {
+      "id": "SW3",
+      "emp": "Rahul Varma",
+      "date": "2026-09-26",
+      "from": "General",
+      "to": "Off",
+      "with": "Farhan Ali",
+      "reason": "Personal",
+      "status": "Approved"
+    }
+  ],
+  "roster": {},
+  "published": false,
+  "resetAt": 1793351254474,
+  "accounts": [
+    {
+      "email": "naresh.vemparala@brightcone.ai",
+      "name": "Naresh Vemparala",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "ananya.rao@brightcone.ai",
+      "name": "Ananya Rao",
+      "role": "HR Admin",
+      "pass": "Admin@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "karthik.reddy@brightcone.ai",
+      "name": "Karthik Reddy",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "priya.menon@brightcone.ai",
+      "name": "Priya Menon",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "daniel.brooks@brightcone.ai",
+      "name": "Daniel Brooks",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "sneha.iyer@brightcone.ai",
+      "name": "Sneha Iyer",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "rahul.varma@brightcone.ai",
+      "name": "Rahul Varma",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "meera.joshi@brightcone.ai",
+      "name": "Meera Joshi",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "arjun.nair@brightcone.ai",
+      "name": "Arjun Nair",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "emily.carter@brightcone.ai",
+      "name": "Emily Carter",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "vikram.singh@brightcone.ai",
+      "name": "Vikram Singh",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "lakshmi.prasad@brightcone.ai",
+      "name": "Lakshmi Prasad",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "farhan.ali@brightcone.ai",
+      "name": "Farhan Ali",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    },
+    {
+      "email": "divya.kulkarni@brightcone.ai",
+      "name": "Divya Kulkarni",
+      "role": "Employee",
+      "pass": "Welcome@123",
+      "status": "Active",
+      "fails": 0,
+      "last": null
+    }
+  ],
+  "v": 3
+}

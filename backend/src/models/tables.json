@@ -1,0 +1,521 @@
+{
+  "demo": {
+    "role": {
+      "table": "demo.\"role\"",
+      "kind": "scalar",
+      "natural": "id"
+    },
+    "clockedIn": {
+      "table": "demo.\"clockedIn\"",
+      "kind": "scalar",
+      "natural": "id"
+    },
+    "clockStart": {
+      "table": "demo.\"clockStart\"",
+      "kind": "scalar",
+      "natural": "id"
+    },
+    "company": {
+      "table": "demo.\"company\"",
+      "kind": "object",
+      "natural": "id"
+    },
+    "employees": {
+      "table": "demo.\"employees\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "depts": {
+      "table": "demo.\"depts\"",
+      "kind": "array",
+      "natural": "n"
+    },
+    "grades": {
+      "table": "demo.\"grades\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "locations": {
+      "table": "demo.\"locations\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "shifts": {
+      "table": "demo.\"shifts\"",
+      "kind": "array",
+      "natural": "n"
+    },
+    "leaveTypes": {
+      "table": "demo.\"leaveTypes\"",
+      "kind": "array",
+      "natural": "n"
+    },
+    "holidays": {
+      "table": "demo.\"holidays\"",
+      "kind": "array",
+      "natural": "d"
+    },
+    "leaves": {
+      "table": "demo.\"leaves\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "regs": {
+      "table": "demo.\"regs\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "expenses": {
+      "table": "demo.\"expenses\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "tickets": {
+      "table": "demo.\"tickets\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "announcements": {
+      "table": "demo.\"announcements\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "policies": {
+      "table": "demo.\"policies\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "letters": {
+      "table": "demo.\"letters\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "empDocs": {
+      "table": "demo.\"empDocs\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "assets": {
+      "table": "demo.\"assets\"",
+      "kind": "array",
+      "natural": "tag"
+    },
+    "assetReqs": {
+      "table": "demo.\"assetReqs\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "jobs": {
+      "table": "demo.\"jobs\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "cands": {
+      "table": "demo.\"cands\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "interviews": {
+      "table": "demo.\"interviews\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "referrals": {
+      "table": "demo.\"referrals\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "cycle": {
+      "table": "demo.\"cycle\"",
+      "kind": "object",
+      "natural": "id"
+    },
+    "reviews": {
+      "table": "demo.\"reviews\"",
+      "kind": "object",
+      "natural": "id"
+    },
+    "goals": {
+      "table": "demo.\"goals\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "feedback": {
+      "table": "demo.\"feedback\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "courses": {
+      "table": "demo.\"courses\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "progress": {
+      "table": "demo.\"progress\"",
+      "kind": "object",
+      "natural": "id"
+    },
+    "plans": {
+      "table": "demo.\"plans\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "dependents": {
+      "table": "demo.\"dependents\"",
+      "kind": "object",
+      "natural": "id"
+    },
+    "onboard": {
+      "table": "demo.\"onboard\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "resignations": {
+      "table": "demo.\"resignations\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "payroll": {
+      "table": "demo.\"payroll\"",
+      "kind": "object",
+      "natural": "id"
+    },
+    "decl": {
+      "table": "demo.\"decl\"",
+      "kind": "object",
+      "natural": "id"
+    },
+    "perms": {
+      "table": "demo.\"perms\"",
+      "kind": "object",
+      "natural": "id"
+    },
+    "workflows": {
+      "table": "demo.\"workflows\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "notif": {
+      "table": "demo.\"notif\"",
+      "kind": "object",
+      "natural": "id"
+    },
+    "audit": {
+      "table": "demo.\"audit\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "sign": {
+      "table": "demo.\"sign\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "signTpls": {
+      "table": "demo.\"signTpls\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "posts": {
+      "table": "demo.\"posts\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "groups": {
+      "table": "demo.\"groups\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "swaps": {
+      "table": "demo.\"swaps\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "roster": {
+      "table": "demo.\"roster\"",
+      "kind": "object",
+      "natural": "id"
+    },
+    "published": {
+      "table": "demo.\"published\"",
+      "kind": "scalar",
+      "natural": "id"
+    },
+    "resetAt": {
+      "table": "demo.\"resetAt\"",
+      "kind": "scalar",
+      "natural": "id"
+    },
+    "accounts": {
+      "table": "demo.\"accounts\"",
+      "kind": "array",
+      "natural": "email"
+    },
+    "v": {
+      "table": "demo.\"v\"",
+      "kind": "scalar",
+      "natural": "id"
+    }
+  },
+  "live": {
+    "emp": {
+      "table": "live.\"emp\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "profile": {
+      "table": "live.\"profile\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "probation": {
+      "table": "live.\"probation\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "docs": {
+      "table": "live.\"docs\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "exit": {
+      "table": "live.\"exit\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "appraisal": {
+      "table": "live.\"appraisal\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "reviews": {
+      "table": "live.\"reviews\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "probrev": {
+      "table": "live.\"probrev\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "increments": {
+      "table": "live.\"increments\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "recog": {
+      "table": "live.\"recog\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "assets2": {
+      "table": "live.\"assets2\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "cards": {
+      "table": "live.\"cards\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "facilities": {
+      "table": "live.\"facilities\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "vendors": {
+      "table": "live.\"vendors\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "manpower": {
+      "table": "live.\"manpower\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "cands": {
+      "table": "live.\"cands\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "interviews2": {
+      "table": "live.\"interviews2\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "offers2": {
+      "table": "live.\"offers2\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "joining": {
+      "table": "live.\"joining\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "onboard2": {
+      "table": "live.\"onboard2\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "interns": {
+      "table": "live.\"interns\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "att": {
+      "table": "live.\"att\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "logs": {
+      "table": "live.\"logs\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "leaves2": {
+      "table": "live.\"leaves2\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "wfh": {
+      "table": "live.\"wfh\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "compoff": {
+      "table": "live.\"compoff\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "holidays2": {
+      "table": "live.\"holidays2\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "payroll2": {
+      "table": "live.\"payroll2\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "structure": {
+      "table": "live.\"structure\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "revisions": {
+      "table": "live.\"revisions\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "payslips2": {
+      "table": "live.\"payslips2\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "pfesi": {
+      "table": "live.\"pfesi\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "statutory": {
+      "table": "live.\"statutory\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "events": {
+      "table": "live.\"events\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "feedback": {
+      "table": "live.\"feedback\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "townhall": {
+      "table": "live.\"townhall\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "training": {
+      "table": "live.\"training\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "posh": {
+      "table": "live.\"posh\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "sectrain": {
+      "table": "live.\"sectrain\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "handbook": {
+      "table": "live.\"handbook\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "policies": {
+      "table": "live.\"policies\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "acks": {
+      "table": "live.\"acks\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "officeexp": {
+      "table": "live.\"officeexp\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "goals": {
+      "table": "live.\"goals\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "checkins": {
+      "table": "live.\"checkins\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "pips": {
+      "table": "live.\"pips\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "promos": {
+      "table": "live.\"promos\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "idps": {
+      "table": "live.\"idps\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "succession": {
+      "table": "live.\"succession\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "surveys": {
+      "table": "live.\"surveys\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "licences": {
+      "table": "live.\"licences\"",
+      "kind": "array",
+      "natural": "id"
+    },
+    "actions": {
+      "table": "live.\"actions\"",
+      "kind": "array",
+      "natural": "id"
+    }
+  }
+}
