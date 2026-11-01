@@ -28,8 +28,7 @@ jobs:
       JWT_SECRET: ci-only-jwt-signing-secret-not-for-production-0123456789abcdef
       SESSION_SECRET: ci-only-session-signing-secret-not-for-production-0123456789abcdef
       PORT: '5150'
-      SEAORM_FRESH_DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/brightcone_seaorm_fresh_ci
-      SEAORM_DRIFT_DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/brightcone_seaorm_drift_ci
+      SCHEMA_TEST_DATABASE_URL: postgres://postgres:postgres@127.0.0.1:5432/brightcone_schema_fresh_ci
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
@@ -48,8 +47,7 @@ jobs:
           sudo systemctl start postgresql@16-main
           sudo -u postgres psql -v ON_ERROR_STOP=1 -c "ALTER USER postgres PASSWORD 'postgres';"
           createdb brightcone_ci
-          createdb brightcone_seaorm_fresh_ci
-          createdb brightcone_seaorm_drift_ci
+          createdb brightcone_schema_fresh_ci
       - name: Install JavaScript dependencies
         run: |
           npm ci
@@ -59,10 +57,9 @@ jobs:
           cargo fmt --manifest-path backend/Cargo.toml --all -- --check
           npm run build
           cargo test --locked --manifest-path backend/Cargo.toml --workspace
-      - name: Fresh migration and rollback tests
+      - name: Autonomous schema, repair, rollback and append-only tests
         run: |
-          cargo test --locked --manifest-path backend/Cargo.toml -p brightcone-migration --test postgres creates_fresh_schema -- --ignored
-          cargo test --locked --manifest-path backend/Cargo.toml -p brightcone-migration --test postgres incompatible_existing_schema -- --ignored
+          cargo test --locked --manifest-path backend/Cargo.toml --test schema schema_sync_contract -- --ignored --test-threads=1
       - name: Build and start the test API
         run: |
           cargo build --locked --manifest-path backend/Cargo.toml --workspace

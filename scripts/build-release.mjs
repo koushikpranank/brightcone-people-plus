@@ -8,10 +8,15 @@ run('npm',['--prefix','frontend','ci']);
 run('npm',['--prefix','frontend','run','build']);
 run('cargo',['build','--locked','--release','--workspace','-j',process.env.CARGO_BUILD_JOBS||'3','--manifest-path','backend/Cargo.toml']);
 const target=path.join(root,'dist/brightcone');
+if(fs.existsSync(target)){
+ const relative=path.relative(fs.realpathSync(root),fs.realpathSync(target));
+ if(relative!==path.join('dist','brightcone'))throw new Error('Release cleanup target must resolve to this project\'s dist/brightcone directory.');
+ fs.rmSync(target,{recursive:true,force:true});
+}
 fs.mkdirSync(path.join(target,'bin'),{recursive:true});
 fs.mkdirSync(path.join(target,'backend/config'),{recursive:true});
 const files=[];
-for(const name of ['brightcone-people-plus','brightcone-migrate']){
+for(const name of ['brightcone-people-plus','brightcone-schema']){
  const file=name+(process.platform==='win32'?'.exe':'');
  fs.copyFileSync(path.join(root,'backend/target/release',file),path.join(target,'bin',file));
  files.push('bin/'+file);

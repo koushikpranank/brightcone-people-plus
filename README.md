@@ -2,7 +2,7 @@
 
 A full-stack HR portal covering employee records, recruiting, onboarding, attendance, payroll, expenses, performance, learning and offboarding. Runs natively with **PostgreSQL 16**; Docker is not required.
 
-The frontend uses TypeScript, Vite and Tailwind CSS. The backend uses Rust, Loco and Tokio. **SeaORM 2.0.4 owns database connections and Rust migrations**; existing checked SQLx business queries share its PostgreSQL pool.
+The frontend uses TypeScript, Vite and Tailwind CSS. The backend uses Rust, Loco and Tokio. **SeaORM 2.0.4 owns database connections and autonomous schema synchronization**; existing checked SQLx business queries share its PostgreSQL pool.
 
 ## Features
 
@@ -23,24 +23,24 @@ cd brightcone-people-plus
 npm ci
 npm --prefix frontend ci
 npm run db:setup
-npm run db:migrate
+npm run db:sync
 npm run dev
 ```
 
 Open **http://127.0.0.1:5175**. The API uses **5155**; the project-local PostgreSQL cluster uses **55440**, database **brightcone_demo**, with the development login **postgres / postgres**.
 
-`db:setup` creates the root `.env` with independent random signing secrets when it is missing. The actual `.env`, database files and backups remain local. Only environment templates are versioned. See [DATABASE.md](DATABASE.md) for pgAdmin and migration instructions.
+`db:setup` creates the root `.env` with independent random signing secrets when it is missing. The actual `.env`, database files and backups remain local. Only environment templates are versioned. See [DATABASE.md](DATABASE.md) for pgAdmin and schema synchronization instructions.
 
 ## Use an existing PostgreSQL server
 
 Copy `.env.example` to `.env`, set `DATABASE_URL` to a PostgreSQL 16 database you own, and replace both signing-secret placeholders with independent random values of at least 32 characters. Keep `PG*` values consistent when using psql. Install dependencies as above, then run `npm run dev`.
 
-The backend applies pending SeaORM migrations and initializes the original sample company only when its company table is empty. Existing records are retained. Cross-platform manual commands:
+The backend synchronizes its declared schema on every startup and initializes the original sample company only when its company table is empty. Synchronization creates missing tables, columns, constraints and indexes without rewriting existing records. Incompatible definitions stop startup for review. Cross-platform manual commands:
 
 ```sh
-cargo run --locked --manifest-path backend/Cargo.toml -p brightcone-migration -- up
-cargo run --locked --manifest-path backend/Cargo.toml -p brightcone-migration -- status
-cargo run --locked --manifest-path backend/Cargo.toml -p brightcone-migration -- verify
+cargo run --locked --manifest-path backend/Cargo.toml --bin brightcone-schema -- sync
+cargo run --locked --manifest-path backend/Cargo.toml --bin brightcone-schema -- status
+cargo run --locked --manifest-path backend/Cargo.toml --bin brightcone-schema -- verify
 ```
 
 ## Demonstration sign-ins
@@ -92,13 +92,13 @@ The browser suite uses installed Chrome. If needed, install it with `frontend/no
 
 Coverage includes 25 Rust business/money tests, 52 register CRUD/archive/restore paths, 66 role/area combinations and four browser tests covering the supplied views and principal interactions. Additional scripts exercise shared dialogs, demo-table CRUD, custom money endpoints and a fictional complete employee lifecycle.
 
-SeaORM integration tests in `backend/migration/tests/postgres.rs` are ignored by default because they require explicitly configured isolated databases. CI runs fresh creation and mismatch rollback. The adoption case needs a restored local lifecycle fixture and checks every business row, including account hashes and recorded money.
+Schema integration tests in `backend/tests/schema.rs` are ignored by default because they require explicitly configured isolated databases. CI tests fresh creation, repeated/concurrent startup, missing-object repair, incompatible-schema rollback and database-enforced append-only history. The adoption case uses a restored local lifecycle fixture and verifies every business row, including account hashes and recorded money.
 
 ## Source layout
 
 ```text
 backend/config/       Loco runtime configuration
-backend/migration/    SeaORM Rust migrations and frozen schema metadata
+backend/src/schema/  Autonomous synchronizer and typed table manifest
 backend/src/          API, business services, models and seed data
 backend/tests/        Business and money tests
 backend/.sqlx/        Required offline query metadata
@@ -106,7 +106,7 @@ frontend/src/         TypeScript SPA, views and shared renderer
 frontend/public/      Application assets
 frontend/tests/       Browser tests
 deploy/linux/         Nginx and systemd examples
-scripts/              Development, build, migration and test utilities
+scripts/              Development, build, schema and test utilities
 specification/        Reference HTML and extracted inventories
 .github/workflows/    CI and native release packaging
 ```
@@ -115,7 +115,7 @@ The supplied reference contains 14 employees, 104 view functions, 52 registers a
 
 Use PostgreSQL `pg_dump`/`pg_restore` for complete backups. The portal's live-register JSON import/export is append-only and is not a full backup of accounts, policy history or the money ledger. Database dumps, recordings, reports and local assistant/editor state are excluded from Git.
 
-The original HTML, checksum, inventories and source generators are retained. `generate-runtime.mjs` regenerates the compatibility renderer; `generate-schema.mjs` updates transport metadata/types, not migration SQL. Add new SeaORM migrations for later schema changes instead of editing the applied baseline.
+The original HTML, checksum, inventories and source generators are retained. `generate-runtime.mjs` regenerates the compatibility renderer; `generate-schema.mjs` updates transport metadata/types. Database declarations live in `backend/src/schema/manifest.json`. Additive changes are synchronized at startup; type/default/nullability changes require explicit database review. There is no migration crate, version sequence or migration history. Audit and money-history tables reject update/delete/truncate; the UI displays the latest 500 audit events while PostgreSQL retains the full history.
 
 ## Current limits
 

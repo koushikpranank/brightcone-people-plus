@@ -4,14 +4,13 @@ version = "0.1.0"
 edition = "2021"
 default-run = "brightcone-people-plus"
 
-[workspace]
-members = ["migration"]
-default-members = ["."]
-resolver = "2"
-
 [[bin]]
 name = "brightcone-people-plus"
 path = "src/bin/main.rs"
+
+[[bin]]
+name = "brightcone-schema"
+path = "src/bin/schema.rs"
 
 [dependencies]
 loco-rs = { version = "=1.2.0", default-features = false, features = ["cli", "cache_inmem"] }
@@ -19,8 +18,7 @@ axum = { version = "0.8", features = ["macros"] }
 async-trait = "0.1"
 tokio = { version = "1", features = ["full"] }
 sqlx = { version = "0.9", default-features = false, features = ["runtime-tokio", "tls-rustls-ring-webpki", "postgres", "json", "chrono", "uuid", "macros"] }
-sea-orm = { version = "=2.0.4", default-features = false, features = ["sqlx-postgres", "runtime-tokio", "with-json"] }
-migration = { package = "brightcone-migration", path = "migration" }
+sea-orm = { version = "=2.0.4", default-features = false, features = ["sqlx-postgres", "runtime-tokio", "with-json", "macros"] }
 serde = { version = "1", features = ["derive"] }
 serde_json = "1"
 argon2 = { version = "0.5", features = ["std"] }

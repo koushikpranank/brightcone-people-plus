@@ -5,7 +5,7 @@ const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const write=(p,v)=>{const f=path.join(root,p);fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSync(f,v)};
 const seed=read('backend/src/seeders/demo.json'), reg=read('backend/src/models/registry.json'), inv=read('specification/inventory.json');
 const q=s=>'"'+s.replaceAll('"','""')+'"';
-// Schema DDL is owned by the SeaORM crate in backend/migration/.
+// Schema DDL is owned by the autonomous manifest in backend/src/schema/.
 // This generator updates only source-derived transport metadata and TypeScript.
 const manifest={demo:{},live:{}};
 for(const [group,entries] of [["demo",Object.entries(seed)],["live",Object.entries(reg)]]){

@@ -21,6 +21,11 @@ test('native API: auth roles, 52 registers, archive/restore, lockout, backup and
   const vals={...d.defaults};
   for(const f of d.f){if(f.ro||f.noForm)continue;let v='';if(f.t==='emp')v=ids.emp||'';else if(f.t==='ref')v=ids[f.ref]||'';else if(f.t==='tel')v='+919000000001';else if(f.t==='email')v=`api.${k}.${suffix}@brightcone.ai`;else if(['money','number'].includes(f.t))v=1;else if(f.t==='date')v=day;else if(f.t==='month')v=day.slice(0,7);else if(f.t==='time')v='09:00';else if(f.t==='yesno')v='Yes';else if(f.t==='select')v=f.o?.[0]||(f.k==='aud'?'All employees':'');else if(f.req)v=`API ${k} ${suffix}-${++index}`;if(vals[f.k]===undefined)vals[f.k]=v;}
   if(k==='profile')Object.assign(vals,{aadhaar:'',pan:'',ifsc:''});
+  if(k==='leaves2'){
+   const workday=new Date(day+'T00:00:00Z');
+   while([0,6].includes(workday.getUTCDay()))workday.setUTCDate(workday.getUTCDate()+1);
+   Object.assign(vals,{from:workday.toISOString().slice(0,10),to:workday.toISOString().slice(0,10)});
+  }
   if(k==='acks')vals.policy=ids.policies;
   if(k==='pfesi')vals.challan='API-'+suffix;
   if(k==='holidays2')vals.date=new Date(Date.UTC(2030,0,1)+((Math.floor(Date.now()/1000)%10000)*86400000)).toISOString().slice(0,10);

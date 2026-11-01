@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "db:setup": "pwsh -NoProfile -File scripts/setup-local.ps1",
-    "db:migrate": "pwsh -NoProfile -File scripts/database.ps1 -Action up",
+    "db:sync": "pwsh -NoProfile -File scripts/database.ps1 -Action sync",
     "db:status": "pwsh -NoProfile -File scripts/database.ps1 -Action status",
     "db:verify": "pwsh -NoProfile -File scripts/database.ps1 -Action verify",
     "build": "npm --prefix frontend run build",

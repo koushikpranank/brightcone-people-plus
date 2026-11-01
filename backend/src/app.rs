@@ -44,7 +44,7 @@ impl Hooks for App {
         let orm = Database::connect(options)
             .await
             .map_err(|e| loco_rs::Error::Message(e.to_string()))?;
-        migration::up(&orm)
+        crate::schema::run_autonomous_sync(&orm)
             .await
             .map_err(|e| loco_rs::Error::Message(e.to_string()))?;
         // Existing checked SQLx queries share SeaORM's pool; no second pool or driver.

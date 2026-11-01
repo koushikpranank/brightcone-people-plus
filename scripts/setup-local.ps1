@@ -46,7 +46,10 @@ if (!(Test-Path -LiteralPath (Join-Path $dataRoot 'PG_VERSION'))) {
 if ($LASTEXITCODE -ne 0) {
     $pgLog = Join-Path $localRoot 'postgres.log'
     $pgCtlArgs = @('-D', ('"' + $dataRoot + '"'), '-l', ('"' + $pgLog + '"'), '-w', 'start')
-    $startResult = Start-Process -FilePath (Join-Path $pgBin 'pg_ctl.exe') -ArgumentList $pgCtlArgs -WindowStyle Hidden -Wait -PassThru
+    $startResult = Start-Process -FilePath (Join-Path $pgBin 'pg_ctl.exe') -ArgumentList $pgCtlArgs -WindowStyle Hidden -PassThru
+    # Start-Process -Wait also waits for the long-running postgres descendant.
+    # Wait only for pg_ctl, which exits once the database is ready.
+    $startResult.WaitForExit()
     if ($startResult.ExitCode -ne 0) { throw "PostgreSQL failed to start. See $pgLog" }
 }
 $dbName = $dbUri.AbsolutePath.TrimStart('/')
@@ -62,4 +65,4 @@ if ($dbExists -ne '1') {
 }
 Remove-Item Env:PGPASSWORD
 Write-Output "PostgreSQL 16 is ready: host=127.0.0.1 port=$($dbUri.Port) database=$dbName user=$dbUser."
-Write-Output 'Connection values are in the root .env. Run npm run db:migrate to apply SeaORM migrations, then npm run dev.'
+Write-Output 'Connection values are in the root .env. Run npm run db:sync to synchronize the schema, then npm run dev.'

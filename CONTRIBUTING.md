@@ -10,7 +10,7 @@ npm run build
 npm run test:unit
 ```
 
-Add new Rust migrations under `backend/migration/` for database changes and register them with the migrator. Keep the applied baseline intact. Test creation/adoption against isolated PostgreSQL 16 databases. Include updated `backend/.sqlx` metadata if checked queries change.
+Update the typed declarations in `backend/src/schema/manifest.json` for database changes. The autonomous synchronizer applies additions and rejects incompatible existing definitions; it does not maintain migration files or versions. Test fresh creation, idempotence, additive repair, mismatch rollback and append-only persistence against isolated PostgreSQL 16 databases. Include updated `backend/.sqlx` metadata if checked queries change.
 
 Run mutation API/browser suites sequentially against a separate test instance. Do not use a live company database as a fixture. Exclude `.env`, dumps, employee exports, browser traces, generated reports and local tool state from commits.
 

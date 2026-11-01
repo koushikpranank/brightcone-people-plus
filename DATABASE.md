@@ -25,11 +25,12 @@ Expand **Databases > brightcone_demo > Schemas**:
 
 - `demo`: portal employee/company state and demonstration registers.
 - `live`: 52 HR registers plus supporting responses, settings and audit tables.
-- `public`: sessions, app metadata, response deduplication, money snapshots, policy history and SeaORM history.
+- `public`: sessions, app metadata, response deduplication, money snapshots, policy history and database-enforced append-only history.
 
 ```sql
 SELECT current_database(), current_user, version();
-SELECT * FROM public.seaql_migrations;
+SELECT table_schema, table_name FROM information_schema.tables
+WHERE table_schema IN ('demo','live') ORDER BY table_schema,table_name;
 SELECT id, record FROM demo.employees ORDER BY position;
 SELECT id, record FROM live.emp ORDER BY position;
 SELECT id, kind, employee_id, period, policy_revision, record
@@ -42,7 +43,7 @@ PowerShell 7:
 
 ```powershell
 npm run db:setup
-npm run db:migrate
+npm run db:sync
 npm run db:status
 npm run db:verify
 ```
@@ -50,21 +51,38 @@ npm run db:verify
 Cross-platform:
 
 ```sh
-cargo run --locked --manifest-path backend/Cargo.toml -p brightcone-migration -- up
-cargo run --locked --manifest-path backend/Cargo.toml -p brightcone-migration -- status
-cargo run --locked --manifest-path backend/Cargo.toml -p brightcone-migration -- verify
+cargo run --locked --manifest-path backend/Cargo.toml --bin brightcone-schema -- sync
+cargo run --locked --manifest-path backend/Cargo.toml --bin brightcone-schema -- status
+cargo run --locked --manifest-path backend/Cargo.toml --bin brightcone-schema -- verify
 ```
 
-Startup also applies pending migrations and seeds the sample company only when the company table is empty.
+Startup automatically runs the same synchronizer before seeding or serving requests. Seeding occurs only when the company table is empty.
 
-## Schema ownership
+## Manifest-driven startup synchronization
 
-The `backend/migration/` crate uses **sea-orm 2.0.4** and **sea-orm-migration 2.0.4**. Its Rust baseline creates/adopts 113 application tables, 1,395 columns and two audit views. `schema.json` is frozen metadata describing types, generated expressions, constraints, indexes and defaults; it contains no employee record values.
+`backend/src/schema/mod.rs` implements `run_autonomous_sync`, following the provided additive synchronization pattern. `manifest.rs` supplies typed `Column`, `ColumnType` and `Table` declarations loaded from `manifest.json`. The manifest describes this project's 113 application tables, 1,395 columns, constraints, indexes, generated expressions, defaults and two audit views; it contains no employee record values.
 
-SeaORM owns the connection and migration lifecycle. Existing checked SQLx business queries share its PostgreSQL pool; they have not all been rewritten as SeaORM entities. Keep `backend/.sqlx` in Git: it allows checked-query compilation without a live database.
+On every startup, one PostgreSQL transaction takes an advisory lock, inspects the schema by namespace and table, and creates missing objects. Existing columns are checked by name rather than physical order, so repaired columns and additional custom columns are supported. Existing type, nullability, identity, default, generated-expression, declared-constraint and index mismatches fail with a review message. The transaction rolls back all preceding additions on failure. Tables and business columns are never automatically dropped or converted.
 
-The old SQL-file runner is replaced. SeaORM writes `public.seaql_migrations`. Existing schemas are verified before the old `_sqlx_migrations` bookkeeping is retired in the same advisory-locked transaction. Business records, account hashes and money history are retained. A schema mismatch aborts adoption. The helper exposes no destructive reset command.
+The migration crate, versioned files and migration dependency are removed. After verification succeeds, obsolete `public.seaql_migrations` and `public._sqlx_migrations` bookkeeping tables are retired within the same transaction. No new migration history is created. `status`/`verify` inspect without changing the schema.
 
-The native helper stores its development cluster under `.local/postgres-native/`. Dumps, adoption fixtures and lifecycle evidence stay outside Git. Use complete PostgreSQL backups before migrating real HR data; the UI register export is not a full restore backup.
+The supplied sample refers to another application's `users`, `hr_records` and normalized People/Time tables. This implementation applies its synchronization mechanism to this project's actual `demo`, `live` and money schemas, preserving the current API, IDs, roles and data instead of creating unused parallel tables.
 
-Add new Rust migrations for later changes; do not regenerate/edit the applied baseline. See [SeaORM migration documentation](https://www.sea-ql.org/SeaORM/docs/migration/writing-migration/).
+## Append-only history
+
+Database triggers reject UPDATE, DELETE and TRUNCATE on `demo.audit`, `live.audit`, `public.money_runs` and `public.money_policy_history`. Audit persistence inserts new rows rather than deleting/rebuilding old rows. The portal still loads its latest 500 audit events; older events remain stored in PostgreSQL. Business payroll and settlement snapshots retain their original amounts and policy.
+
+SeaORM owns the connection. Existing checked SQLx business queries share its PostgreSQL pool; they have not all been rewritten as SeaORM entities. Keep `backend/.sqlx` in Git because it provides checked-query build metadata, not migrations.
+
+## Verification and backups
+
+The schema unit tests check the manifest and declaration safety. Opt-in PostgreSQL tests in `backend/tests/schema.rs` cover fresh creation, concurrent/repeated startup, missing-column/index/constraint repair, extra-column retention, incompatible-schema rollback, append-only audit/money protection and adoption of an existing HR database. Tests require explicit isolated `brightcone_schema_*` databases.
+
+```powershell
+$env:SCHEMA_TEST_DATABASE_URL='postgres://postgres:postgres@127.0.0.1:55440/brightcone_schema_test'
+cargo test --manifest-path backend/Cargo.toml --test schema schema_sync_contract -- --ignored
+```
+
+Create the isolated database before running this test; do not point it at your company database. The optional existing-data test additionally uses `SCHEMA_UPGRADE_DATABASE_URL` for a restored lifecycle fixture.
+
+The native helper stores its development cluster under `.local/postgres-native/`. Dumps and lifecycle evidence remain outside Git. Back up the complete PostgreSQL database before applying schema changes to real HR data. The UI register export is not a full restore backup. Incompatible destructive changes require a reviewed DBA change or restore procedure; there is no production reset helper.

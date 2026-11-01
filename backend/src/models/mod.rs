@@ -67,6 +67,16 @@ pub async fn load(db: &mut PgConnection) -> Result<Snapshot, sqlx::Error> {
     let mut snap = Snapshot::empty();
     for group in ["demo", "live"] {
         for (key, meta) in TABLES[group].as_object().unwrap() {
+            if group == "demo" && key == "audit" {
+                snap.demo[key] = json!(
+                    sqlx::query_scalar::<_, Value>(
+                        "SELECT record FROM demo.audit ORDER BY position,id LIMIT 500"
+                    )
+                    .fetch_all(&mut *db)
+                    .await?
+                );
+                continue;
+            }
             let rows = queries::select(&mut *db, group, key).await?;
             let val = if s(meta, "kind") == "array" {
                 Value::Array(
@@ -101,9 +111,11 @@ pub async fn load(db: &mut PgConnection) -> Result<Snapshot, sqlx::Error> {
             .await?
     );
     snap.live["audit"] = json!(
-        sqlx::query_scalar::<_, Value>("SELECT record FROM live.audit ORDER BY position")
-            .fetch_all(&mut *db)
-            .await?
+        sqlx::query_scalar::<_, Value>(
+            "SELECT record FROM live.audit ORDER BY position,id LIMIT 500"
+        )
+        .fetch_all(&mut *db)
+        .await?
     );
     if let Some(adv) =
         sqlx::query_scalar::<_, Value>("SELECT record FROM live.settings_adv WHERE id")
@@ -165,6 +177,10 @@ pub async fn persist(
             if a == b {
                 continue;
             }
+            if group == "demo" && key == "audit" {
+                append_audit(db, "demo.audit", a, b).await?;
+                continue;
+            }
             let before = rows(a, meta);
             let after = rows(b, meta);
             for (id, (pos, record)) in &after {
@@ -213,17 +229,7 @@ pub async fn persist(
     {
         if k == "audit" {
             if old.live[k] != *v {
-                sqlx::query("DELETE FROM live.audit")
-                    .execute(&mut *db)
-                    .await?;
-                for (i, r) in v.as_array().into_iter().flatten().enumerate() {
-                    sqlx::query("INSERT INTO live.audit(id,position,record) VALUES($1,$2,$3)")
-                        .bind(format!("{i:06}"))
-                        .bind(i as i32)
-                        .bind(r)
-                        .execute(&mut *db)
-                        .await?;
-                }
+                append_audit(db, "live.audit", &old.live[k], v).await?;
             }
             continue;
         }
@@ -244,6 +250,56 @@ pub async fn persist(
             continue;
         }
         sqlx::query("INSERT INTO public.app_meta (key,value) VALUES ($1,$2) ON CONFLICT(key) DO UPDATE SET value=EXCLUDED.value").bind(k).bind(v).execute(&mut *db).await?;
+    }
+    Ok(())
+}
+
+/// The UI retains its newest 500 events; PostgreSQL retains the full append-only history.
+async fn append_audit(
+    db: &mut PgConnection,
+    table: &str,
+    old: &Value,
+    next: &Value,
+) -> Result<(), sqlx::Error> {
+    let (select, insert) = match table {
+        "demo.audit" => (
+            "SELECT coalesce(min(position),0)::bigint FROM demo.audit",
+            "INSERT INTO demo.audit(id,position,record) VALUES($1,$2,$3)",
+        ),
+        "live.audit" => (
+            "SELECT coalesce(min(position),0)::bigint FROM live.audit",
+            "INSERT INTO live.audit(id,position,record) VALUES($1,$2,$3)",
+        ),
+        _ => return Err(sqlx::Error::Protocol("Unknown audit store".into())),
+    };
+    let mut counts = BTreeMap::<String, usize>::new();
+    for row in old.as_array().into_iter().flatten() {
+        *counts.entry(row.to_string()).or_default() += 1;
+    }
+    let mut added = Vec::new();
+    for row in next.as_array().into_iter().flatten() {
+        let count = counts.entry(row.to_string()).or_default();
+        if *count > 0 {
+            *count -= 1;
+        } else {
+            added.push(row);
+        }
+    }
+    if added.is_empty() {
+        return Ok(());
+    }
+    let minimum: i64 = sqlx::query_scalar(select).fetch_one(&mut *db).await?;
+    let first = minimum
+        .checked_sub(added.len() as i64)
+        .filter(|n| *n >= i32::MIN as i64)
+        .ok_or_else(|| sqlx::Error::Protocol("Audit position capacity exceeded".into()))?;
+    for (index, row) in added.into_iter().enumerate() {
+        sqlx::query(insert)
+            .bind(uuid::Uuid::new_v4().to_string())
+            .bind((first + index as i64) as i32)
+            .bind(row)
+            .execute(&mut *db)
+            .await?;
     }
     Ok(())
 }
